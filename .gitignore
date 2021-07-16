@@ -37,8 +37,6 @@ public/workbox-*.js
 storybook-static
 
 # assets
-public/fonts/*
-!public/fonts/.gitkeep
 
 # outside files
 
