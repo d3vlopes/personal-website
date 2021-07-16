@@ -1,0 +1,23 @@
+Configura a font a ser utilizada ()
+  - Baixar a fonte no site https://google-webfonts-helper.herokuapp.com/fonts
+  - Colocar as fontes dentro de public/fonts
+  - Adiciona a @font-face da font selecionada em src/styles/global.ts
+
+Configurar o arquivo style/theme.ts ()
+com todos os sizes, cores e tamanhos que o projeto ira utilizar
+
+Configurar o arquivo src/pages/_app.tsx com as informações do projeto ()
+
+Configurar o componente Container ()
+
+Configurar o componente Grid se for necessário ()
+
+Criar uma copia de .env.development e adicionar os valores
+
+Verificar no package.json se o caminho para o --endpoint está correto
+
+Se estiver utilizando o Strapi adicionar o arquivo convertToNonNull.js
+para não deixar valores null
+
+
+Configurar o arquivo manifest em public/manifest.json
