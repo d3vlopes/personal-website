@@ -1,15 +1,38 @@
 import { createGlobalStyle, css } from 'styled-components'
 
 const GlobalStyles = createGlobalStyle`
- /* Exemplo de carregamento da fonte
+  /* Highlight */
   @font-face {
-    font-family: 'Poppins';
-    font-style: normal;
-    font-weight: 300;
-    src: local(''),
-        url('/fonts/poppins-v15-latin-300.woff2') format('woff2')
-    }
-  */
+  font-family: 'CodeNext-ExtraBold';
+  font-style: normal;
+  font-weight: normal;
+  src: local(''), url('/fonts/CodeNext-ExtraBold.woff2') format('woff2');
+  }
+
+  /* Heading */
+  @font-face {
+  font-family: 'Gilroy-Bold';
+  font-style: normal;
+  font-weight: normal;
+  src: local(''), url('/fonts/Gilroy-Bold.woff') format('woff');
+  }
+
+  /* Body */
+  @font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 400;
+  src: local(''),
+       url('/fonts/rubik-v14-latin-400.woff2') format('woff2')
+  }
+
+  @font-face {
+  font-family: 'Rubik';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('/fonts/rubik-v14-latin-500.woff2') format('woff2')
+  }
 
 
   * {
@@ -32,8 +55,8 @@ const GlobalStyles = createGlobalStyle`
     }
 
     body {
-      font-family: ${theme.font.family};
-      font-size: ${theme.font.sizes.medium};
+      font-family: ${theme.font.body};
+      font-size: ${theme.font.sizes[400]};
     }
   `}
 `
