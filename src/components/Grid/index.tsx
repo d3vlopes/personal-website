@@ -5,7 +5,7 @@ export const Grid = styled.div`
     display: grid;
     // Se auto preenche
     grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
-    grid-gap: ${theme.spacings[600]};
-    margin: ${theme.spacings[600]} 0;
+    grid-gap: ${theme.spacings.medium};
+    margin: ${theme.spacings.medium} 0;
   `}
 `
