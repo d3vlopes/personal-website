@@ -7,6 +7,11 @@ export default {
   args: {
     size: 'large',
   },
+  parameters: {
+    backgrounds: {
+      default: 'secondary',
+    },
+  },
 } as Meta<LogoProps>
 
 export const Default: Story<LogoProps> = (args) => {
