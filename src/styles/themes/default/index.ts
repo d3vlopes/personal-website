@@ -34,7 +34,9 @@ export default {
   },
   colors: {
     primary: {
+      light: '#7864B2',
       main: '#6D59A8',
+      dark: '#543F8C',
     },
     secondary: {
       main: '#DEE7EA',
@@ -67,6 +69,7 @@ export default {
     large: '4.0rem',
     xlarge: '4.8rem',
     xxlarge: '8rem',
+    huge: '9rem',
   },
   layers: {
     base: 10,
