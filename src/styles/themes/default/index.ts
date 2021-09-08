@@ -39,12 +39,13 @@ export default {
       dark: '#543F8C',
     },
     secondary: {
-      main: '#DEE7EA',
-      dark: '#CAD5D9',
+      main: '#83A848',
+      dark: '#76993D',
     },
     complementary: {
-      green: '#83A848',
-      greenDark: '#76993D',
+      light: '#F7FDFF',
+      main: '#DEE7EA',
+      dark: '#CAD5D9',
     },
     bg: {
       main: '#23252F',
@@ -69,7 +70,7 @@ export default {
     large: '4.0rem',
     xlarge: '4.8rem',
     xxlarge: '8rem',
-    huge: '9rem',
+    huge: '12rem',
   },
   layers: {
     base: 10,
@@ -79,6 +80,7 @@ export default {
     alwaysOnTop: 50,
   },
   transition: {
+    slow: '0.5s ease-in-out',
     default: '0.3s ease-in-out',
     fast: '0.1s ease-in-out',
   },
