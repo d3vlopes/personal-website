@@ -7,7 +7,7 @@ describe('<Logo />', () => {
   it('should render Logo large size by default', () => {
     renderWithTheme(<Logo />)
 
-    const logo = screen.getByLabelText(/Leandro Lopes/i)
+    const logo = screen.getByLabelText(/LL/i)
 
     expect(logo).toHaveStyle({
       width: '6rem',
@@ -17,7 +17,7 @@ describe('<Logo />', () => {
   it('should render Logo small size', () => {
     renderWithTheme(<Logo size="small" />)
 
-    const logo = screen.getByLabelText(/Leandro Lopes/i)
+    const logo = screen.getByLabelText(/LL/i)
 
     expect(logo).toHaveStyle({
       width: '4rem',
