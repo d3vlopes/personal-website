@@ -9,27 +9,30 @@ type ButtonTypes =
 export type ButtonProps = {
   variant?: 'primary' | 'secondary' | 'outline'
   size?: 'small' | 'medium' | 'large'
-  expand?: boolean
   icon?: JSX.Element
+  expand?: boolean
+  hoverUp?: boolean
   as?: React.ElementType
 } & ButtonTypes
 
 const Button: React.ForwardRefRenderFunction<S.WrapperProps, ButtonProps> = (
   {
     children,
-    icon,
-    size = 'medium',
-    expand = false,
     variant = 'primary',
+    size = 'medium',
+    icon,
+    expand = false,
+    hoverUp = false,
     ...props
   },
   ref,
 ) => (
   <S.Wrapper
-    size={size}
-    expand={expand}
-    hasIcon={!!icon}
     variant={variant}
+    size={size}
+    hasIcon={!!icon}
+    expand={expand}
+    hoverUp={hoverUp}
     ref={ref}
     {...props}
   >

@@ -107,4 +107,20 @@ describe('<Button />', () => {
       '/link',
     )
   })
+
+  it('should up while hover', async () => {
+    renderWithTheme(<Button hoverUp>Button</Button>)
+
+    const button = getByRole('button', { name: /button/i })
+
+    expect(button).toHaveStyleRule('transform', 'translateY(-0.5rem)', {
+      modifier: ':hover',
+    })
+  })
+
+  it('should match snapshot', () => {
+    const { container } = renderWithTheme(<Button>Button</Button>)
+
+    expect(container.firstChild).toMatchSnapshot()
+  })
 })

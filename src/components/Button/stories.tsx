@@ -11,6 +11,8 @@ export default {
   },
   args: {
     size: 'medium',
+    expand: false,
+    hoverUp: false,
   },
   argTypes: {
     icon: {
@@ -42,7 +44,6 @@ export const Primary: Story<ButtonProps> = (args) => {
 Primary.args = {
   children: 'Button',
   variant: 'primary',
-  expand: false,
 }
 
 export const Secondary: Story<ButtonProps> = (args) => {

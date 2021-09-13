@@ -81,7 +81,7 @@ const wrapperModifiers = {
 }
 
 export const Wrapper = styled.button<WrapperProps>`
-  ${({ theme, variant, size, expand, hasIcon }) => css`
+  ${({ theme, variant, size, expand, hasIcon, hoverUp }) => css`
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -96,7 +96,7 @@ export const Wrapper = styled.button<WrapperProps>`
     }
 
     &:hover {
-      transform: translateY(-0.5rem);
+      transform: ${hoverUp ? 'translateY(-0.5rem)' : 'translateY(0)'};
 
       svg {
         color: ${theme.colors.primary.main};
