@@ -31,14 +31,8 @@ export const Wrapper = styled.div`
   `}
 `
 
-export const Icon = styled.div`
-  ${({ theme }) => css`
-    svg {
-      width: 6rem;
-      height: 6rem;
-      color: ${theme.colors.primary.main};
-    }
-  `}
+export const Icon = styled.img`
+  max-width: min(6rem, 100%);
 `
 
 export const Title = styled.h3`

@@ -1,12 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<CardSkill /> should match snapshot 1`] = `
-.c2 {
-  display: inline-block;
-  vertical-align: middle;
-  overflow: hidden;
-}
-
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
@@ -39,7 +33,7 @@ exports[`<CardSkill /> should match snapshot 1`] = `
   box-shadow: 0px 20px 40px rgba(202,213,217,0.1);
 }
 
-.c0:hover .c3::after {
+.c0:hover .c2::after {
   content: '';
   position: absolute;
   left: 0;
@@ -53,13 +47,11 @@ exports[`<CardSkill /> should match snapshot 1`] = `
   margin-bottom: 0.8rem;
 }
 
-.c1 svg {
-  width: 6rem;
-  height: 6rem;
-  color: #6D59A8;
+.c1 {
+  max-width: min(6rem,100%);
 }
 
-.c4 {
+.c3 {
   position: relative;
   font-family: Gilroy-Bold;
   font-size: 2.2rem;
@@ -67,7 +59,7 @@ exports[`<CardSkill /> should match snapshot 1`] = `
   padding: 1.6rem 0 0.8rem 0;
 }
 
-.c5 {
+.c4 {
   font-size: 1.8rem;
   line-height: 150%;
   text-align: center;
@@ -78,34 +70,18 @@ exports[`<CardSkill /> should match snapshot 1`] = `
 <div
   class="c0"
 >
-  <div
+  <img
+    alt="Desafios"
     class="c1"
-  >
-    <svg
-      aria-hidden="true"
-      class="c2"
-      data-testid="icon"
-      fill="currentColor"
-      focusable="false"
-      viewBox="0 0 24 24"
-      xmlns="http://www.w3.org/2000/svg"
-    >
-      <path
-        d="M0 0h24v24H0z"
-        fill="none"
-      />
-      <path
-        d="M7.05 13.406l3.534 3.536-1.413 1.414 1.415 1.415-1.414 1.414-2.475-2.475-2.829 2.829-1.414-1.414 2.829-2.83-2.475-2.474 1.414-1.414 1.414 1.413 1.413-1.414zM3 3l3.546.003 11.817 11.818 1.415-1.414 1.414 1.414-2.474 2.475 2.828 2.829-1.414 1.414-2.829-2.829-2.475 2.475-1.414-1.414 1.414-1.415L3.003 6.531 3 3zm14.457 0L21 3.003l.002 3.523-4.053 4.052-3.536-3.535L17.457 3z"
-      />
-    </svg>
-  </div>
+    src="/img/icons/sword.svg"
+  />
   <h3
-    class="c3 c4"
+    class="c2 c3"
   >
     Desafios
   </h3>
   <p
-    class="c5"
+    class="c4"
   >
     Estou sempre em busca de novos desafios que me tirem do meu porto seguro.
   </p>

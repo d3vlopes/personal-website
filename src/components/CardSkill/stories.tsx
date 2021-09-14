@@ -1,7 +1,5 @@
 import { Story, Meta } from '@storybook/react'
 
-import { Sword } from '@styled-icons/remix-fill/Sword'
-
 import CardSkill, { CardSkillProps } from '.'
 import mock from './mock'
 
@@ -9,14 +7,9 @@ export default {
   title: 'Components/CardSkill',
   component: CardSkill,
   args: {
-    icon: <Sword />,
+    icon: mock[0].icon,
     title: mock[0].title,
     description: mock[0].description,
-  },
-  argTypes: {
-    icon: {
-      type: '',
-    },
   },
   parameters: {
     layout: 'centered',
