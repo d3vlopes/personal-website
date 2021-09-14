@@ -8,10 +8,11 @@ const { getByRole, getByTestId } = screen
 
 describe('<Menu />', () => {
   it('should render Menu', () => {
-    renderWithTheme(<Menu {...mock} />)
+    renderWithTheme(<Menu activeLink="/" {...mock} />)
 
     const logo = getByRole('img', { name: /LL/i })
     const navigation = getByTestId('navigation').querySelectorAll('a')
+    const active = getByTestId('navigation').querySelector('a')
 
     const github = getByTestId(/github-desktop/i)
     const linkedin = getByTestId(/linkedin-desktop/i)
@@ -19,6 +20,10 @@ describe('<Menu />', () => {
 
     expect(logo).toBeInTheDocument()
     expect(navigation).toHaveLength(mock.links.length)
+
+    expect(active).toHaveStyle({
+      color: '#6D59A8',
+    })
 
     expect(github).toBeInTheDocument()
     expect(linkedin).toBeInTheDocument()
