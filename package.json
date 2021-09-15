@@ -33,6 +33,8 @@
   "dependencies": {
     "@apollo/client": "^3.3.21",
     "@styled-icons/boxicons-logos": "^10.37.0",
+    "@styled-icons/boxicons-regular": "^10.38.0",
+    "@styled-icons/boxicons-solid": "^10.38.0",
     "@styled-icons/entypo-social": "^10.34.0",
     "@styled-icons/fluentui-system-filled": "^10.35.0",
     "@styled-icons/foundation": "^10.34.0",
