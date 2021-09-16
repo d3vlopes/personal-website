@@ -60,7 +60,7 @@ export default {
       dark: '#1A1C23',
     },
     white: '#FFFFFF',
-    grey: '255, 255, 255, 0.5',
+    grey: 'rgba(255, 255, 255, 0.5)',
   },
   spacings: {
     xxsmall: '0.8rem',
