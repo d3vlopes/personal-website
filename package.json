@@ -1,6 +1,6 @@
 {
   "name": "my-portfolio",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -32,6 +32,14 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
+    "@styled-icons/boxicons-logos": "^10.37.0",
+    "@styled-icons/boxicons-regular": "^10.38.0",
+    "@styled-icons/boxicons-solid": "^10.38.0",
+    "@styled-icons/entypo-social": "^10.34.0",
+    "@styled-icons/fluentui-system-filled": "^10.35.0",
+    "@styled-icons/foundation": "^10.34.0",
+    "@styled-icons/material-outlined": "^10.34.0",
+    "@styled-icons/remix-fill": "^10.18.0",
     "dotenv": "^10.0.0",
     "graphql": "^15.5.1",
     "next": "11.1.0",
@@ -55,7 +63,7 @@
     "@types/node": "^16.3.1",
     "@types/react": "^17.0.18",
     "@types/styled-components": "^5.1.12",
-    "@typescript-eslint/eslint-plugin": "^4.28.3",
+    "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.28.3",
     "apollo": "^2.33.4",
     "babel-loader": "^8.2.2",
@@ -74,6 +82,7 @@
     "lint-staged": "^11.0.0",
     "plop": "^2.7.4",
     "prettier": "^2.3.2",
+    "storybook-addon-designs": "^6.1.0",
     "storybook-addon-next-router": "^3.0.7",
     "typescript": "^4.3.5"
   },
