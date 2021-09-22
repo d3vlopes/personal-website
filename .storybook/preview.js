@@ -27,6 +27,10 @@ export const parameters = {
         name: 'secondary-dark',
         value: theme.colors.bg.secondary.dark,
       },
+      {
+        name: 'neutral',
+        value: '#373737',
+      },
     ],
   },
 }
