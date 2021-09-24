@@ -1,0 +1,201 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Project /> should match snapshot 1`] = `
+.c4 {
+  position: relative;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  font-family: Gilroy-Bold;
+  max-width: 100%;
+  font-size: 3.2rem;
+  line-height: calc(3.2rem + 1rem);
+}
+
+.c6 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  border: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  background-color: #6D59A8;
+  font-size: 1.8rem;
+  width: 17.5rem;
+  height: 5rem;
+}
+
+.c6:focus {
+  outline: 1px dashed;
+}
+
+.c6:hover {
+  -webkit-transform: translateY(0);
+  -ms-transform: translateY(0);
+  transform: translateY(0);
+}
+
+.c6:hover svg {
+  color: #6D59A8;
+}
+
+.c6 span {
+  font-family: Rubik,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
+  font-weight: 500;
+  line-height: 100%;
+  color: #FFFFFF;
+  -webkit-letter-spacing: 0.05rem;
+  -moz-letter-spacing: 0.05rem;
+  -ms-letter-spacing: 0.05rem;
+  letter-spacing: 0.05rem;
+}
+
+.c6:hover {
+  background-color: #543F8C;
+}
+
+.c6 svg {
+  width: 2.2rem;
+  height: 2.2rem;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 8rem;
+  margin-bottom: calc(12rem + 4.6rem);
+}
+
+.c0:last-of-type {
+  margin-bottom: 12rem;
+}
+
+.c1 {
+  position: relative;
+}
+
+.c1::before {
+  content: '';
+  position: absolute;
+  top: -4.6rem;
+  left: -4.6rem;
+  max-width: 48.1rem;
+  width: 100%;
+  height: 24.1rem;
+  background: #3B3A51;
+  z-index: -1;
+}
+
+.c2 {
+  width: 100%;
+  max-width: 51.3rem;
+  box-shadow: 10px 15px 10px 2px rgba(0,0,0,0.15);
+  border-radius: 0.4rem;
+}
+
+.c3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.c5 {
+  font-size: 1.6rem;
+  line-height: 170%;
+  color: #DEE7EA;
+  margin: 1.6rem 0 3.2rem;
+  max-width: 59.8rem;
+  width: 100%;
+}
+
+@media (max-width:1170px) {
+  .c0 {
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+}
+
+@media (max-width:768px) {
+  .c0 {
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+@media (max-width:768px) {
+  .c1::before {
+    top: -20%;
+    height: 20rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c2 {
+    height: 23.4rem;
+  }
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+  >
+    <a
+      href="/project/kurtis-classrom"
+    >
+      <img
+        alt="Project Name"
+        class="c2"
+        src="/img/projects/kurtis.png"
+      />
+    </a>
+  </div>
+  <div
+    class="c3"
+  >
+    <h3
+      class="c4"
+    >
+      Project Name
+    </h3>
+    <p
+      class="c5"
+    >
+      Loren ipsum dolor
+    </p>
+    <a
+      class="c6"
+      data-testid="button"
+      href="/project/kurtis-classrom"
+    >
+      <span>
+        Saber mais
+      </span>
+    </a>
+  </div>
+</div>
+`
