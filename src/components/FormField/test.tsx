@@ -26,7 +26,7 @@ describe('<FormField />', () => {
 
   it('should render FormField like textarea', () => {
     const { container } = renderWithTheme(
-      <FormField type="textarea" label="Message" name="message" />,
+      <FormField variant="textarea" label="Message" name="message" />,
     )
 
     const textarea = container.querySelector('textarea')
@@ -65,7 +65,7 @@ describe('<FormField />', () => {
           onFieldChange={onTextAreaChange}
           label="FormField"
           name="FormField"
-          type="textarea"
+          variant="textarea"
         />
         ,
       </ThemeProvider>,

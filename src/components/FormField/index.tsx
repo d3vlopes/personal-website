@@ -9,7 +9,7 @@ import {
 import * as S from './styles'
 
 export type FormFieldProps = {
-  type?: 'input' | 'textarea'
+  variant?: 'input' | 'textarea'
   label: string
   initialValue?: string
   error?: string
@@ -19,7 +19,7 @@ export type FormFieldProps = {
   TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const FormField = ({
-  type = 'input',
+  variant = 'input',
   label,
   name,
   initialValue = '',
@@ -66,7 +66,7 @@ const FormField = ({
   return (
     <S.Wrapper error={!!error}>
       <S.FieldWrapper error={!!error}>
-        {type === 'input' ? renderInput() : renderTextArea()}
+        {variant === 'input' ? renderInput() : renderTextArea()}
         {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
       </S.FieldWrapper>
       {!!error && <S.Error>{error}</S.Error>}

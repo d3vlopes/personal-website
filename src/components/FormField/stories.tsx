@@ -11,7 +11,7 @@ export default {
     },
   },
   args: {
-    type: 'input',
+    variant: 'input',
     label: 'Email',
     name: 'email',
     initialValue: '',
@@ -55,7 +55,7 @@ export const textarea: Story<FormFieldProps> = (args) => {
 }
 
 textarea.args = {
-  type: 'textarea',
+  variant: 'textarea',
   label: 'Message',
   value:
     'Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit',
