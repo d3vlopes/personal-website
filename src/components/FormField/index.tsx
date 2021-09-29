@@ -2,6 +2,7 @@ import {
   Dispatch,
   InputHTMLAttributes,
   useState,
+  useEffect,
   SetStateAction,
   TextareaHTMLAttributes,
 } from 'react'
@@ -31,6 +32,28 @@ const FormField = ({
   const [textAreaValue, setTextAreaValue] = useState(initialValue)
   const [hasFocus, setFocus] = useState(false)
 
+  const fieldValues = {
+    inputValue: Boolean(inputValue.length),
+    textAreaValue: Boolean(textAreaValue.length),
+    initialValue: Boolean(initialValue.length),
+  }
+
+  const hasFieldValue =
+    fieldValues.inputValue ||
+    fieldValues.textAreaValue ||
+    fieldValues.initialValue
+
+  useEffect(() => {
+    if (
+      error ||
+      initialValue.length ||
+      inputValue.length ||
+      textAreaValue.length
+    ) {
+      setFocus(true)
+    }
+  }, [error, initialValue.length, inputValue.length, textAreaValue.length])
+
   const onChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
     setValue: Dispatch<SetStateAction<string>>,
@@ -41,6 +64,15 @@ const FormField = ({
     !!onFieldChange && onFieldChange(newValue)
   }
 
+  const handleFocus = () => {
+    setFocus(true)
+  }
+
+  const handleBlur = () => {
+    if (hasFieldValue) return
+    setFocus(false)
+  }
+
   const renderInput = () => (
     <S.Input
       type="text"
@@ -48,7 +80,8 @@ const FormField = ({
       value={inputValue}
       name={name}
       id={name}
-      onFocus={() => setFocus(true)}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       {...props}
     />
   )
@@ -59,14 +92,19 @@ const FormField = ({
       onChange={(event) => onChange(event, setTextAreaValue)}
       name={name}
       id={name}
-      onFocus={() => setFocus(true)}
+      onFocus={handleFocus}
+      onBlur={handleBlur}
       {...props}
     />
   )
 
   return (
     <S.Wrapper error={!!error}>
-      <S.FieldWrapper error={!!error} hasFocus={hasFocus}>
+      <S.FieldWrapper
+        error={!!error}
+        hasFocus={hasFocus}
+        hasFieldValue={hasFieldValue}
+      >
         {variant === 'input' ? renderInput() : renderTextArea()}
         {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
       </S.FieldWrapper>

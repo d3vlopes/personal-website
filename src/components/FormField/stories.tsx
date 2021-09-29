@@ -15,7 +15,6 @@ export default {
     label: 'Email',
     name: 'email',
     initialValue: '',
-    disabled: false,
     error: undefined,
   },
   argTypes: {
@@ -41,7 +40,7 @@ export const withError: Story<FormFieldProps> = (args) => {
 
 withError.args = {
   label: 'Email',
-  value: 'test.com.br',
+  initialValue: 'test.com.br',
   error: 'Ops... something is wrong',
 }
 
@@ -56,6 +55,6 @@ export const textarea: Story<FormFieldProps> = (args) => {
 textarea.args = {
   variant: 'textarea',
   label: 'Message',
-  value:
+  initialValue:
     'Lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit lorem ipsum dolor sit',
 }
