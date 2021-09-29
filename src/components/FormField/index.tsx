@@ -9,7 +9,7 @@ import {
 import * as S from './styles'
 
 export type FormFieldProps = {
-  type?: 'input' | 'textarea'
+  variant?: 'input' | 'textarea'
   label: string
   initialValue?: string
   error?: string
@@ -19,7 +19,7 @@ export type FormFieldProps = {
   TextareaHTMLAttributes<HTMLTextAreaElement>
 
 const FormField = ({
-  type = 'input',
+  variant = 'input',
   label,
   name,
   initialValue = '',
@@ -29,6 +29,7 @@ const FormField = ({
 }: FormFieldProps) => {
   const [inputValue, setInputValue] = useState(initialValue)
   const [textAreaValue, setTextAreaValue] = useState(initialValue)
+  const [hasFocus, setFocus] = useState(false)
 
   const onChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
@@ -46,8 +47,8 @@ const FormField = ({
       onChange={(event) => onChange(event, setInputValue)}
       value={inputValue}
       name={name}
-      required
       id={name}
+      onFocus={() => setFocus(true)}
       {...props}
     />
   )
@@ -55,18 +56,18 @@ const FormField = ({
   const renderTextArea = () => (
     <S.TextArea
       value={textAreaValue}
-      required
       onChange={(event) => onChange(event, setTextAreaValue)}
       name={name}
       id={name}
+      onFocus={() => setFocus(true)}
       {...props}
     />
   )
 
   return (
     <S.Wrapper error={!!error}>
-      <S.FieldWrapper error={!!error}>
-        {type === 'input' ? renderInput() : renderTextArea()}
+      <S.FieldWrapper error={!!error} hasFocus={hasFocus}>
+        {variant === 'input' ? renderInput() : renderTextArea()}
         {!!label && <S.Label htmlFor={name}>{label}</S.Label>}
       </S.FieldWrapper>
       {!!error && <S.Error>{error}</S.Error>}

@@ -64,7 +64,6 @@ exports[`<FormField /> should render FormField like input 1`] = `
       class="c2"
       id="name"
       name="name"
-      required=""
       type="text"
       value=""
     />
