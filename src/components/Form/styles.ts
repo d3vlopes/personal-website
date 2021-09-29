@@ -15,7 +15,7 @@ export const FormGroup = styled.div`
   ${({ theme }) => css`
     ${media.greaterThan('medium')`
       display: flex;
-      gap: ${theme.spacings.xsmall};
+      gap: ${theme.spacings.medium};
     `}
   `}
 `

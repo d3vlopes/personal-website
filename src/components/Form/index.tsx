@@ -12,12 +12,22 @@ const Form = () => {
   return (
     <S.Wrapper>
       <form onSubmit={handleSubmit}>
-        <FormField label="Nome" name="name" />
+        <FormField label="Nome" name="name" data-testid="name" />
         <S.FormGroup>
-          <FormField label="Email" name="email" />
-          <FormField label="Assunto" name="subject" />
+          <FormField
+            type="email"
+            label="Email"
+            name="email"
+            data-testid="mail"
+          />
+          <FormField label="Assunto" name="subject" data-testid="subject" />
         </S.FormGroup>
-        <FormField type="textarea" label="Message" name="message" />
+        <FormField
+          variant="textarea"
+          label="Message"
+          name="message"
+          data-testid="message"
+        />
         <Button size="small">Enviar</Button>
       </form>
     </S.Wrapper>
