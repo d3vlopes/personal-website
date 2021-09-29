@@ -17,7 +17,6 @@ export default {
     initialValue: '',
     disabled: false,
     error: undefined,
-    fullWidth: false,
   },
   argTypes: {
     onInput: { action: 'changed' },
