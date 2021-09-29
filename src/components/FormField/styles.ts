@@ -3,10 +3,11 @@ import styled, { css, DefaultTheme } from 'styled-components'
 type WrapperProps = {
   error?: boolean
   hasFocus?: boolean
+  hasFieldValue?: boolean
 }
 
 export const FieldWrapper = styled.div<WrapperProps>`
-  ${({ theme, error, hasFocus }) => css`
+  ${({ theme, error, hasFocus, hasFieldValue }) => css`
     position: relative;
     background-color: ${theme.colors.bg.secondary.main};
     border-radius: ${theme.border.radius.small};
@@ -16,13 +17,25 @@ export const FieldWrapper = styled.div<WrapperProps>`
     textarea {
       padding: ${theme.spacings.medium} ${theme.spacings.small};
       background-color: transparent;
-      border: 0;
-      outline: none;
       width: 100%;
       font-size: ${theme.font.sizes.small};
       font-family: ${theme.font.body};
       line-height: 150%;
       color: ${theme.colors.text.light};
+      border: 0;
+
+      & {
+        border: ${hasFieldValue &&
+        `1px solid ${theme.colors.complementary.main}`};
+      }
+
+      &:focus {
+        outline: none;
+      }
+
+      & ~ label {
+        top: ${hasFieldValue && '-1.8rem'};
+      }
 
       &:focus ~ label,
       &:valid ~ label,
@@ -32,10 +45,6 @@ export const FieldWrapper = styled.div<WrapperProps>`
         transition: all ${theme.transition.ease.default};
         color: ${theme.colors.text.light};
         font-size: ${theme.font.sizes.xxsmall};
-      }
-
-      &:valid {
-        border: 1px solid ${theme.colors.complementary.main};
       }
     }
   `}
@@ -85,7 +94,7 @@ const wrapperModifiers = {
   error: (theme: DefaultTheme) => css`
     ${FieldWrapper} input,
     ${FieldWrapper} textarea {
-      border-color: ${theme.colors.red};
+      border: 1px solid ${theme.colors.red};
     }
   `,
 }
