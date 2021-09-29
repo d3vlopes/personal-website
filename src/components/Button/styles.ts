@@ -92,7 +92,7 @@ export const Wrapper = styled.button<WrapperProps>`
     border-radius: ${theme.border.radius.medium};
 
     &:focus {
-      outline: 1px dashed;
+      outline: 1px dashed ${theme.colors.complementary.main};
     }
 
     &:hover {
