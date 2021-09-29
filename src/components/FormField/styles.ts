@@ -2,10 +2,11 @@ import styled, { css, DefaultTheme } from 'styled-components'
 
 type WrapperProps = {
   error?: boolean
+  hasFocus?: boolean
 }
 
 export const FieldWrapper = styled.div<WrapperProps>`
-  ${({ theme, error }) => css`
+  ${({ theme, error, hasFocus }) => css`
     position: relative;
     background-color: ${theme.colors.bg.secondary.main};
     border-radius: ${theme.border.radius.small};
@@ -27,7 +28,7 @@ export const FieldWrapper = styled.div<WrapperProps>`
       &:valid ~ label,
       ${TextArea}:focus ~ label,
       ${TextArea}:valid ~ label {
-        top: -1.8rem;
+        top: ${hasFocus && '-1.8rem'};
         transition: all ${theme.transition.ease.default};
         color: ${theme.colors.text.light};
         font-size: ${theme.font.sizes.xxsmall};
