@@ -9,6 +9,10 @@ export default {
   args: mock,
   parameters: {
     layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=874%3A1208',
+    },
   },
 } as Meta
 
