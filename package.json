@@ -1,6 +1,6 @@
 {
   "name": "my-portfolio",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -46,6 +46,7 @@
     "next-pwa": "^5.2.24",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-inlinesvg": "^2.3.0",
     "styled-components": "5.3.0",
     "styled-media-query": "^2.1.2"
   },
@@ -60,7 +61,7 @@
     "@testing-library/react": "^12.0.0",
     "@testing-library/user-event": "^13.1.6",
     "@types/jest": "^26.0.24",
-    "@types/node": "^16.3.1",
+    "@types/node": "^16.10.2",
     "@types/react": "^17.0.18",
     "@types/styled-components": "^5.1.12",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
