@@ -92,7 +92,7 @@ export const Wrapper = styled.button<WrapperProps>`
     border-radius: ${theme.border.radius.medium};
 
     &:focus {
-      outline: 1px dashed;
+      outline: 1px dashed ${theme.colors.complementary.main};
     }
 
     &:hover {
@@ -108,7 +108,7 @@ export const Wrapper = styled.button<WrapperProps>`
       font-weight: ${theme.font.weight.medium};
       line-height: 100%;
       color: ${theme.colors.text.light};
-      margin-left: ${theme.spacings.xxsmall};
+      margin-left: ${hasIcon && theme.spacings.xxsmall};
       letter-spacing: 0.05rem;
     }
 

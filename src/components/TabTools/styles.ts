@@ -66,10 +66,7 @@ export const Button = styled.button<TabsProps>`
     `}
 
     &:hover {
-      color: ${darken(
-        0.2,
-        active ? theme.colors.text.light : theme.colors.grey,
-      )};
+      color: ${!active && darken(0.2, theme.colors.grey)};
     }
 
     svg {

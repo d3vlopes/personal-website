@@ -61,6 +61,7 @@ export default {
     },
     white: '#FFFFFF',
     grey: 'rgba(255, 255, 255, 0.5)',
+    red: '#FF6347',
   },
   spacings: {
     xxsmall: '0.8rem',
@@ -83,5 +84,10 @@ export default {
     slow: '0.5s ease-in-out',
     default: '0.3s ease-in-out',
     fast: '0.1s ease-in-out',
+    ease: {
+      slow: '0.5s ease',
+      default: '0.25s ease',
+      fast: '0.1s ease',
+    },
   },
 } as const

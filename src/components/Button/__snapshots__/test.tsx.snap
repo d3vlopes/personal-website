@@ -28,7 +28,7 @@ exports[`<Button /> should match snapshot 1`] = `
 }
 
 .c0:focus {
-  outline: 1px dashed;
+  outline: 1px dashed #DEE7EA;
 }
 
 .c0:hover {
@@ -46,7 +46,6 @@ exports[`<Button /> should match snapshot 1`] = `
   font-weight: 500;
   line-height: 100%;
   color: #FFFFFF;
-  margin-left: 0.8rem;
   -webkit-letter-spacing: 0.05rem;
   -moz-letter-spacing: 0.05rem;
   -ms-letter-spacing: 0.05rem;

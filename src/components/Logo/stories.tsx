@@ -11,6 +11,10 @@ export default {
     backgrounds: {
       default: 'secondary',
     },
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=875%3A1072',
+    },
   },
 } as Meta<LogoProps>
 

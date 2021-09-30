@@ -9,6 +9,10 @@ export default {
   args: mock,
   parameters: {
     layout: 'fullscreen',
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=874%3A1208',
+    },
   },
 } as Meta
 
@@ -17,64 +21,6 @@ export const Default: Story<MenuProps> = (args) => {
     <>
       <div style={{ height: '100rem' }}>
         <Menu {...args} />
-        <p style={{ padding: '13rem 0' }}>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus,
-          dolorum aperiam. Qui deserunt molestiae nulla eum distinctio repellat
-          quos, error recusandae dolores, quod porro blanditiis impedit quaerat
-          repellendus soluta cumque. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Accusamus, dolorum aperiam. Qui deserunt molestiae
-          nulla eum distinctio repellat quos, error recusandae dolores, quod
-          porro blanditiis impedit quaerat repellendus soluta cumque. Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorum
-          aperiam. Qui deserunt molestiae nulla eum distinctio repellat quos,
-          error recusandae dolores, quod porro blanditiis impedit quaerat
-          repellendus soluta cumque. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Accusamus, dolorum aperiam. Qui deserunt molestiae
-          nulla eum distinctio repellat quos, error recusandae dolores, quod
-          porro blanditiis impedit quaerat repellendus soluta cumque. Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorum
-          aperiam. Qui deserunt molestiae nulla eum distinctio repellat quos,
-          error recusandae dolores, quod porro blanditiis impedit quaerat
-          repellendus soluta cumque. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Accusamus, dolorum aperiam. Qui deserunt molestiae
-          nulla eum distinctio repellat quos, error recusandae dolores, quod
-          porro blanditiis impedit quaerat repellendus soluta cumque. Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorum
-          aperiam. Qui deserunt molestiae nulla eum distinctio repellat quos,
-          error recusandae dolores, quod porro blanditiis impedit quaerat
-          repellendus soluta cumque. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Accusamus, dolorum aperiam. Qui deserunt molestiae
-          nulla eum distinctio repellat quos, error recusandae dolores, quod
-          porro blanditiis impedit quaerat repellendus soluta cumque. Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorum
-          aperiam. Qui deserunt molestiae nulla eum distinctio repellat quos,
-          error recusandae dolores, quod porro blanditiis impedit quaerat
-          repellendus soluta cumque. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Accusamus, dolorum aperiam. Qui deserunt molestiae
-          nulla eum distinctio repellat quos, error recusandae dolores, quod
-          porro blanditiis impedit quaerat repellendus soluta cumque. Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorum
-          aperiam. Qui deserunt molestiae nulla eum distinctio repellat quos,
-          error recusandae dolores, quod porro blanditiis impedit quaerat
-          repellendus soluta cumque. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Accusamus, dolorum aperiam. Qui deserunt molestiae
-          nulla eum distinctio repellat quos, error recusandae dolores, quod
-          porro blanditiis impedit quaerat repellendus soluta cumque. Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorum
-          aperiam. Qui deserunt molestiae nulla eum distinctio repellat quos,
-          error recusandae dolores, quod porro blanditiis impedit quaerat
-          repellendus soluta cumque. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Accusamus, dolorum aperiam. Qui deserunt molestiae
-          nulla eum distinctio repellat quos, error recusandae dolores, quod
-          porro blanditiis impedit quaerat repellendus soluta cumque. Lorem
-          ipsum dolor sit amet, consectetur adipisicing elit. Accusamus, dolorum
-          aperiam. Qui deserunt molestiae nulla eum distinctio repellat quos,
-          error recusandae dolores, quod porro blanditiis impedit quaerat
-          repellendus soluta cumque. Lorem ipsum dolor sit amet, consectetur
-          adipisicing elit. Accusamus, dolorum aperiam. Qui deserunt molestiae
-          nulla eum distinctio repellat quos, error recusandae dolores, quod
-          porro blanditiis impedit quaerat repellendus soluta cumque.
-        </p>
       </div>
     </>
   )

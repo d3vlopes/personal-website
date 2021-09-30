@@ -72,10 +72,6 @@ exports[`<TabTools /> should match snapshot 1`] = `
   cursor: pointer;
 }
 
-.c2:hover {
-  color: #ccc;
-}
-
 .c2 svg {
   width: 4.5rem;
   height: 4.5rem;

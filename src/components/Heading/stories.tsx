@@ -4,6 +4,12 @@ import Heading, { HeadingProps } from '.'
 export default {
   title: 'Components/Heading',
   component: Heading,
+  parameters: {
+    design: {
+      type: 'figma',
+      url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=874%3A1077',
+    },
+  },
   args: {
     children: 'Title',
     lineBottom: false,
