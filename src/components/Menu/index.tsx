@@ -1,19 +1,12 @@
 import Link from 'next/link'
-import { useState } from 'react'
-import { Github } from '@styled-icons/boxicons-logos'
-import { LinkedinWithCircle as Linkedin } from '@styled-icons/entypo-social'
-import { Whatsapp } from '@styled-icons/remix-fill/Whatsapp'
+import { Fragment, useState } from 'react'
 
 import { Container } from 'components/Container'
+import ContactLink, { ContactLinkProps } from 'components/ContactLink'
 import Logo from 'components/Logo'
 import MediaMatch from 'components/MediaMatch'
 
 import * as S from './styles'
-
-type ContactLink = {
-  name: string
-  link: string
-}
 
 type MenuLink = {
   id: string
@@ -22,9 +15,9 @@ type MenuLink = {
 }
 
 export type MenuProps = {
-  contactLinks: ContactLink[]
-  activeLink?: '/' | '/projects' | '/about' | '/learning' | '/contact'
   links: MenuLink[]
+  contactLinks: ContactLinkProps[]
+  activeLink?: '/' | '/projects' | '/about' | '/learning' | '/contact'
 }
 
 const Menu = ({ links, contactLinks, activeLink }: MenuProps) => {
@@ -37,6 +30,14 @@ const Menu = ({ links, contactLinks, activeLink }: MenuProps) => {
           {link.text}
         </S.MenuLink>
       </Link>
+    )
+  }
+
+  const renderContactLinks = (contact: ContactLinkProps) => {
+    return (
+      <Fragment key={`contact-${contact.name}`}>
+        <ContactLink {...contact} />
+      </Fragment>
     )
   }
 
@@ -62,31 +63,11 @@ const Menu = ({ links, contactLinks, activeLink }: MenuProps) => {
           </S.MenuNav>
         </MediaMatch>
         <MediaMatch greaterThan="medium">
-          <S.ContactLinks aria-label="Links de contato">
-            <a href={contactLinks[0].link} target="_blank" rel="noreferrer">
-              <Github
-                size={45}
-                aria-label={contactLinks[0].name}
-                title={contactLinks[0].name}
-                data-testid={`${contactLinks[0].name}-desktop`}
-              />
-            </a>
-            <a href={contactLinks[1].link} target="_blank" rel="noreferrer">
-              <Linkedin
-                size={45}
-                aria-label={contactLinks[1].name}
-                title={contactLinks[1].name}
-                data-testid={`${contactLinks[1].name}-desktop`}
-              />
-            </a>
-            <a href={contactLinks[2].link} target="_blank" rel="noreferrer">
-              <Whatsapp
-                size={45}
-                aria-label={contactLinks[2].name}
-                title={contactLinks[2].name}
-                data-testid={`${contactLinks[2].name}-desktop`}
-              />
-            </a>
+          <S.ContactLinks
+            aria-label="Links de contato"
+            data-testid="contact-links"
+          >
+            {contactLinks.map(renderContactLinks)}
           </S.ContactLinks>
         </MediaMatch>
       </Container>
@@ -103,28 +84,11 @@ const Menu = ({ links, contactLinks, activeLink }: MenuProps) => {
         </S.MenuIcon>
         <S.MenuNav>
           {links.map(renderMenuLinks)}
-          <S.ContactLinks aria-label="Links de contato">
-            <a href={contactLinks[0].link} target="_blank" rel="noreferrer">
-              <Github
-                size={45}
-                aria-label={contactLinks[0].name}
-                title={contactLinks[0].name}
-              />
-            </a>
-            <a href={contactLinks[1].link} target="_blank" rel="noreferrer">
-              <Linkedin
-                size={45}
-                aria-label={contactLinks[1].name}
-                title={contactLinks[1].name}
-              />
-            </a>
-            <a href={contactLinks[2].link} target="_blank" rel="noreferrer">
-              <Whatsapp
-                size={45}
-                aria-label={contactLinks[2].name}
-                title={contactLinks[2].name}
-              />
-            </a>
+          <S.ContactLinks
+            aria-label="Links de contato"
+            data-testid="contact-links"
+          >
+            {contactLinks.map(renderContactLinks)}
           </S.ContactLinks>
         </S.MenuNav>
       </S.MenuFull>

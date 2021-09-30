@@ -110,30 +110,8 @@ export const MenuLink = styled.a<MenuLinkProps>`
 export const ContactLinks = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: ${theme.spacings.xxsmall};
-    justify-content: initial;
-
-    ${media.lessThan('medium')`
-      margin-top: ${theme.spacings.large};
-    `}
-
-    ${media.greaterThan('medium')`
-      justify-content: flex-end;
-    `}
-
-    svg {
-      color: ${theme.colors.primary.main};
-      transition: color ${theme.transition.default};
-
-      ${media.lessThan('large')`
-        width: 4rem;
-        height: 4rem;
-      `}
-    }
-
-    svg:hover {
-      color: ${theme.colors.complementary.main};
-    }
+    gap: ${theme.spacings.xsmall};
+    justify-content: end;
   `}
 `
 

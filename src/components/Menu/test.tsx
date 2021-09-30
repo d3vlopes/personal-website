@@ -1,10 +1,19 @@
 import { screen, fireEvent } from '@testing-library/react'
+import { Props } from 'react-inlinesvg/esm'
 import { renderWithTheme } from 'utils/test/helpers'
 
 import Menu from '.'
 import mock from './mock'
 
-const { getByRole, getByTestId } = screen
+const { getByRole, getByTestId, getAllByTestId } = screen
+
+jest.mock('react-inlinesvg', () => {
+  function ReactInlineSVG({ name }: Props) {
+    return <svg aria-label={name} />
+  }
+
+  return ReactInlineSVG
+})
 
 describe('<Menu />', () => {
   it('should render Menu', () => {
@@ -13,21 +22,16 @@ describe('<Menu />', () => {
     const logo = getByRole('img', { name: /LL/i })
     const navigation = getByTestId('navigation').querySelectorAll('a')
     const active = getByTestId('navigation').querySelector('a')
-
-    const github = getByTestId(/github-desktop/i)
-    const linkedin = getByTestId(/linkedin-desktop/i)
-    const whats = getByTestId(/whatsapp-desktop/i)
+    const contactLinks = getAllByTestId('contact-links')
 
     expect(logo).toBeInTheDocument()
     expect(navigation).toHaveLength(mock.links.length)
+    // desktop e mobile
+    expect(contactLinks).toHaveLength(2)
 
     expect(active).toHaveStyle({
       color: '#6D59A8',
     })
-
-    expect(github).toBeInTheDocument()
-    expect(linkedin).toBeInTheDocument()
-    expect(whats).toBeInTheDocument()
   })
 
   it('should handle the open/close mobile menu ', () => {
