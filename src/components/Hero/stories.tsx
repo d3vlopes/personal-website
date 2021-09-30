@@ -13,7 +13,7 @@ export default {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=687%3A1157',
+      url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=868%3A1086',
     },
   },
   args: mock,

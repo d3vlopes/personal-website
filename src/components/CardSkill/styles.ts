@@ -15,7 +15,7 @@ export const Wrapper = styled.div`
     &:hover {
       transform: scale(1.1);
       background: ${theme.colors.complementary.dark};
-      box-shadow: 0px 20px 40px rgba(202, 213, 217, 0.1);
+      box-shadow: 0px 10px 15px rgba(202, 213, 217, 0.1);
 
       ${Title}::after {
         content: '';

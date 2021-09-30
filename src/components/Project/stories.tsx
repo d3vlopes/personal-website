@@ -11,7 +11,7 @@ export default {
     },
     design: {
       type: 'figma',
-      url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=769%3A1073',
+      url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=868%3A1189',
     },
   },
   args: mock[1],
