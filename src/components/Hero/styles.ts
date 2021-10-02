@@ -14,15 +14,13 @@ export const Wrapper = styled.div`
     background-image: url('/img/hero/hero-left.svg');
     background-repeat: repeat;
     background-size: contain;
-    background-position: center;
+    background-position: bottom center;
     width: 100%;
     min-height: 44rem;
 
     ${media.lessThan('medium')`
       padding: 0 ${theme.spacings.small} 0 ${theme.spacings.small};
-      background-image: url('/img/hero/hero-top.svg'), url('/img/hero/hero-bottom.svg');
-      background-repeat: no-repeat;
-      background-position: top left, bottom right;
+      background-image: none;
     `}
   `}
 `
