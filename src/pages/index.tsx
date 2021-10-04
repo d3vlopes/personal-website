@@ -1,23 +1,19 @@
-// import { initializeApollo } from 'utils/apollo'
-// import { SAMPLE_QUERY } from 'graphql/queries/sample'
+import Home, { HomeTemplateProps } from 'templates/Home'
 
-export default function Home() {
-  // if (props.data) return <p>{JSON.stringify(props.data, null, 2)}</p>
+import mockMenu from 'components/Menu/mock'
+import mockFooter from 'components/ContactLink/mock'
+import mockHero from 'components/Hero/mock'
 
-  return <div>Home</div>
+export default function Index(props: HomeTemplateProps) {
+  return <Home {...props} />
 }
 
 export async function getServerSideProps() {
-  // const apolloClient = initializeApollo()
-
-  // const { data } = await apolloClient.query({ query: SAMPLE_QUERY })
-
-  // retorno dos dados
   return {
     props: {
-      // data: data,
-      // Se existir algo no cache, ele pega
-      // initialApolloState: apolloClient.cache.extract(),
+      menu: mockMenu,
+      footer: mockFooter,
+      hero: mockHero,
     },
   }
 }
