@@ -4,7 +4,7 @@ import media from 'styled-media-query'
 import { Wrapper as HeadingStyles } from 'components/Heading/styles'
 import { Wrapper as ButtonStyles } from 'components/Button/styles'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.main`
   ${({ theme }) => css`
     position: relative;
     display: flex;
