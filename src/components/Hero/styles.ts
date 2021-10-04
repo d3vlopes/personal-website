@@ -6,7 +6,6 @@ import { Wrapper as ButtonStyles } from 'components/Button/styles'
 
 export const Wrapper = styled.main`
   ${({ theme }) => css`
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +26,6 @@ export const Wrapper = styled.main`
 
 export const Card = styled.div`
   ${({ theme }) => css`
-    position: relative;
     margin: ${theme.spacings.xlarge} 0 ${theme.spacings.xxlarge} 0;
     width: 100%;
     max-width: 66.4rem;

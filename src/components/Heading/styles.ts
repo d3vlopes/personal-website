@@ -41,7 +41,7 @@ const wrapperModifiers = {
 
 export const Wrapper = styled.h1<HeadingProps>`
   ${({ theme, size, lineBottom }) => css`
-    position: relative;
+    position: ${lineBottom && 'relative'};
     display: inline-flex;
     font-family: ${theme.font.heading};
     max-width: 100%;
