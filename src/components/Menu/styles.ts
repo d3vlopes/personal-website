@@ -5,7 +5,8 @@ import { Container as ContainerStyles } from 'components/Container'
 
 export const Wrapper = styled.menu`
   ${({ theme }) => css`
-    position: fixed;
+    /* position: fixed;
+    top: 0; */
     background-color: ${theme.colors.bg.secondary.dark};
     width: 100%;
     padding-top: ${theme.spacings.small};

@@ -15,4 +15,18 @@ export default [
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis nam nulla bibendum cras viverra fermentum vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis nam nulla bibendum cras viverra fermentum vitae. ',
     slug: 'won-games',
   },
+  {
+    src: '/img/projects/kurtis.png',
+    name: 'Kurtis Classrom',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis nam nulla bibendum cras viverra fermentum vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis nam nulla bibendum cras viverra fermentum vitae. ',
+    slug: 'kurtis-classrom-2',
+  },
+  {
+    src: '/img/projects/won.png',
+    name: 'Won Games',
+    description:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis nam nulla bibendum cras viverra fermentum vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis nam nulla bibendum cras viverra fermentum vitae. ',
+    slug: 'won-games-2',
+  },
 ] as ProjectProps[]

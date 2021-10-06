@@ -9,8 +9,9 @@ export const Wrapper = styled.div`
     background: ${theme.colors.complementary.main};
     border-radius: ${theme.border.radius.large};
     width: min(29rem, 100%);
-    padding: 4.1rem 0 6.1rem 0;
+    padding: 3rem;
     transition: all 0.3s ease-in-out;
+    height: min(29.6rem, 33rem);
 
     &:hover {
       transform: scale(1.1);
@@ -21,7 +22,8 @@ export const Wrapper = styled.div`
         content: '';
         position: absolute;
         left: 0;
-        bottom: -0.4rem;
+        bottom: -0.8rem;
+        margin-bottom: ${theme.spacings.xsmall};
         width: 100%;
         display: inline-flex;
         border: 0.2rem solid ${theme.colors.primary.main};
@@ -51,6 +53,6 @@ export const Description = styled.p`
     line-height: 150%;
     text-align: center;
     color: ${theme.colors.text.dark};
-    padding: 0 ${theme.spacings.xsmall};
+    padding: ${theme.spacings.xsmall};
   `}
 `
