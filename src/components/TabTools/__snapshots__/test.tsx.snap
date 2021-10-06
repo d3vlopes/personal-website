@@ -118,7 +118,7 @@ exports[`<TabTools /> should match snapshot 1`] = `
 
 .c5 {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(21rem,1fr));
+  grid-template-columns: repeat(2,1fr);
   background-color: #302F43;
   padding: 4.0rem 4.8rem;
   gap: 1.6rem;
@@ -128,7 +128,7 @@ exports[`<TabTools /> should match snapshot 1`] = `
 
 .c7 {
   display: none;
-  grid-template-columns: repeat(auto-fit,minmax(21rem,1fr));
+  grid-template-columns: repeat(2,1fr);
   background-color: #302F43;
   padding: 4.0rem 4.8rem;
   gap: 1.6rem;
@@ -159,6 +159,10 @@ exports[`<TabTools /> should match snapshot 1`] = `
 @media (max-width:768px) {
   .c1 {
     padding: 1.6rem;
+    -webkit-box-pack: space-around;
+    -webkit-justify-content: space-around;
+    -ms-flex-pack: space-around;
+    justify-content: space-around;
   }
 }
 
@@ -185,6 +189,18 @@ exports[`<TabTools /> should match snapshot 1`] = `
   .c4 svg {
     width: 3.5rem;
     height: 3.5rem;
+  }
+}
+
+@media (min-width:1170px) {
+  .c5 {
+    grid-template-columns: repeat(3,1fr);
+  }
+}
+
+@media (min-width:1170px) {
+  .c7 {
+    grid-template-columns: repeat(3,1fr);
   }
 }
 

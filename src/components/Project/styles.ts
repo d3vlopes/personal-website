@@ -4,11 +4,12 @@ import media from 'styled-media-query'
 export const Wrapper = styled.div`
   ${({ theme }) => css`
     display: flex;
-    gap: 8rem;
+    gap: 0 8rem;
     margin-bottom: calc(${theme.spacings.huge} + 4.6rem);
 
     ${media.lessThan('large')`
       flex-direction: column;
+      gap: 8rem 0;
     `}
 
     ${media.lessThan('medium')`
@@ -24,6 +25,11 @@ export const Wrapper = styled.div`
 export const ImageWrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
+    z-index: 1;
+
+    ${media.between('medium', 'huge')`
+      left: ${theme.spacings.small};
+    `}
 
     &::before {
       content: '';
@@ -35,6 +41,10 @@ export const ImageWrapper = styled.div`
       height: 24.1rem;
       background: ${theme.colors.bg.secondary.main};
       z-index: -1;
+
+      ${media.between('medium', 'huge')`
+        left: -2.6rem;
+      `}
 
       ${media.lessThan('medium')`
         top: -20%;
@@ -52,7 +62,6 @@ export const Image = styled.img`
     border-radius: ${theme.border.radius.small};
 
     ${media.lessThan('medium')`
-
         height: 23.4rem;
       `}
   `}

@@ -22,6 +22,7 @@ export const Tabs = styled.div<TabsProps>`
 
     ${media.lessThan('medium')`
       padding:  ${theme.spacings.xsmall};
+      justify-content: space-around;
     `}
 
     &::after {
@@ -86,11 +87,15 @@ export const Button = styled.button<TabsProps>`
 export const Content = styled.div<TabsProps>`
   ${({ theme, active }) => css`
     display: ${active ? 'grid' : 'none'};
-    grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
+    grid-template-columns: repeat(2, 1fr);
     background-color: ${theme.colors.bg.secondary.dark};
     padding: ${theme.spacings.large} ${theme.spacings.xlarge};
     gap: ${theme.spacings.xsmall};
     transition: all ${theme.transition.slow};
+
+    ${media.greaterThan('large')`
+      grid-template-columns: repeat(3, 1fr);
+    `}
   `}
 `
 
