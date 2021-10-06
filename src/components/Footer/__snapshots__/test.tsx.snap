@@ -1,0 +1,128 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Footer /> should render Footer 1`] = `
+.c2 {
+  display: inline-block;
+  vertical-align: middle;
+  overflow: hidden;
+}
+
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 4.8rem 0 1.6rem;
+  background: #302F43;
+}
+
+.c0 p {
+  font-size: 1.8rem;
+  line-height: 150%;
+  color: rgba(255,255,255,0.5);
+}
+
+.c0 p svg {
+  color: red;
+}
+
+.c0 p svg:hover {
+  -webkit-animation: pulse 0.25s infinite alternate;
+  animation: pulse 0.25s infinite alternate;
+}
+
+.c0 p span:nth-child(2) {
+  color: #FFFFFF;
+}
+
+.c1 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  gap: 1.6rem;
+  margin-bottom: 1.6rem;
+}
+
+@media (max-width:1170px) {
+
+}
+
+<div
+  class="c0"
+>
+  <div
+    class="c1"
+    data-testid="contact-links"
+  >
+    <div
+      class=""
+    >
+      <a
+        href="https://github.com/d3vlopes"
+        rel="noopenner, noreferrer"
+        target="_blank"
+      >
+        <svg
+          aria-label="Github"
+        />
+      </a>
+    </div>
+    <div
+      class=""
+    >
+      <a
+        href="https://www.linkedin.com/in/d3vlopes/"
+        rel="noopenner, noreferrer"
+        target="_blank"
+      >
+        <svg
+          aria-label="Linkedin"
+        />
+      </a>
+    </div>
+    <div
+      class=""
+    >
+      <a
+        href="https://api.whatsapp.com/send?phone=5551997465898&text=Contato%20pelo%20site"
+        rel="noopenner, noreferrer"
+        target="_blank"
+      >
+        <svg
+          aria-label="Whatsapp"
+        />
+      </a>
+    </div>
+  </div>
+  <p>
+    Desenvolvido com 
+    <svg
+      aria-hidden="true"
+      aria-label="heart"
+      class="c2"
+      fill="currentColor"
+      focusable="false"
+      height="25"
+      viewBox="0 0 24 24"
+      width="25"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M20.205 4.791a5.938 5.938 0 0 0-4.209-1.754A5.906 5.906 0 0 0 12 4.595a5.904 5.904 0 0 0-3.996-1.558 5.942 5.942 0 0 0-4.213 1.758c-2.353 2.363-2.352 6.059.002 8.412L12 21.414l8.207-8.207c2.354-2.353 2.355-6.049-.002-8.416z"
+      />
+    </svg>
+     por
+    <span>
+       Leandro Lopes
+    </span>
+  </p>
+</div>
+`

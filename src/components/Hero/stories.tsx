@@ -21,7 +21,7 @@ export default {
 
 export const Default: Story<HeroProps> = (args) => {
   return (
-    <div>
+    <div style={{ padding: '4rem 0', background: '#23252F' }}>
       <Hero {...args} />
     </div>
   )

@@ -32,6 +32,7 @@ const Project = ({ src, name, description, slug }: ProjectProps) => {
           data-testid="button"
           as="a"
           href={`/project/${slug}`}
+          hoverUp
         >
           Saber mais
         </Button>

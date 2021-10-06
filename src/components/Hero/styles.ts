@@ -4,25 +4,28 @@ import media from 'styled-media-query'
 import { Wrapper as HeadingStyles } from 'components/Heading/styles'
 import { Wrapper as ButtonStyles } from 'components/Button/styles'
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.main`
   ${({ theme }) => css`
-    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: ${theme.colors.bg.main};
+    background-image: url('/img/hero/hero-left.svg');
+    background-repeat: repeat;
+    background-size: contain;
+    background-position: bottom center;
     width: 100%;
     min-height: 44rem;
 
     ${media.lessThan('medium')`
       padding: 0 ${theme.spacings.small} 0 ${theme.spacings.small};
+      background-image: none;
     `}
   `}
 `
 
 export const Card = styled.div`
   ${({ theme }) => css`
-    position: relative;
     margin: ${theme.spacings.xlarge} 0 ${theme.spacings.xxlarge} 0;
     width: 100%;
     max-width: 66.4rem;
@@ -125,6 +128,7 @@ export const Photo = styled.div<PhotoProps>`
 export const Hello = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.complementary.dark};
+    margin-bottom: 0.4rem;
 
     ${media.lessThan('medium')`
       font-size: ${theme.font.sizes.xxsmall};
@@ -138,7 +142,7 @@ export const Description = styled.h2`
     font-size: ${theme.font.sizes.small};
     line-height: 150%;
     color: ${theme.colors.complementary.dark};
-    margin-top: -0.5rem;
+    margin-top: 0rem;
 
     ${media.lessThan('medium')`
       font-size: ${theme.font.sizes.xsmall};
