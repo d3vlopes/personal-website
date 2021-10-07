@@ -1,4 +1,3 @@
-import Image, { ImageLoaderProps } from 'next/image'
 import { useState, Fragment } from 'react'
 
 import { CodeCurly } from '@styled-icons/boxicons-regular/CodeCurly'
@@ -23,21 +22,11 @@ const TabTools = ({ developer, design }: TabToolsProps) => {
     setIsOpen(!isOpen)
   }
 
-  const Loader = ({ src, width, quality }: ImageLoaderProps) => {
-    return `${src}?w=${width}&q=${quality || 75}`
-  }
-
   const renderTools = (tool: Tool) => {
     return (
       <Fragment key={`tool-${tool.name}`}>
         <S.Tool>
-          <Image
-            loader={Loader}
-            src={tool.src}
-            alt={tool.name}
-            width={35}
-            height={35}
-          />
+          <S.Image src={tool.src} alt={tool.name} />
           <p>{tool.name}</p>
         </S.Tool>
       </Fragment>
@@ -61,7 +50,8 @@ const TabTools = ({ developer, design }: TabToolsProps) => {
         aria-hidden={!isOpen}
         data-testid="content-development"
       >
-        {developer.map(renderTools)}
+        <div>{developer.slice(0, 6).map(renderTools)}</div>
+        <div>{developer.slice(6, 12).map(renderTools)}</div>
       </S.Content>
       <S.Content
         active={!isOpen}

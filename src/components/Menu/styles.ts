@@ -5,8 +5,6 @@ import { Container as ContainerStyles } from 'components/Container'
 
 export const Wrapper = styled.menu`
   ${({ theme }) => css`
-    /* position: fixed;
-    top: 0; */
     background-color: ${theme.colors.bg.secondary.dark};
     width: 100%;
     padding-top: ${theme.spacings.small};
@@ -15,13 +13,10 @@ export const Wrapper = styled.menu`
     ${ContainerStyles} {
       display: grid;
       align-items: center;
+      grid-template-columns: 5% 80% 15%;
 
       ${media.lessThan('medium')`
         grid-template-columns: repeat(2, 1fr);
-      `}
-
-      ${media.greaterThan('medium')`
-        grid-template-columns: 10rem 1fr 20rem;
       `}
 
       ${media.greaterThan('large')`

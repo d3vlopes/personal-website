@@ -117,21 +117,30 @@ exports[`<TabTools /> should match snapshot 1`] = `
 }
 
 .c5 {
-  display: grid;
-  grid-template-columns: repeat(2,1fr);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
   background-color: #302F43;
-  padding: 4.0rem 4.8rem;
-  gap: 1.6rem;
+  padding: 4.0rem 0;
+  gap: 2.4rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
-.c7 {
+.c8 {
   display: none;
-  grid-template-columns: repeat(2,1fr);
+  -webkit-box-pack: space-around;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: space-around;
+  justify-content: space-around;
   background-color: #302F43;
-  padding: 4.0rem 4.8rem;
-  gap: 1.6rem;
+  padding: 4.0rem 0;
+  gap: 2.4rem;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
@@ -141,19 +150,23 @@ exports[`<TabTools /> should match snapshot 1`] = `
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-align-content: space-between;
-  -ms-flex-line-pack: space-between;
-  align-content: space-between;
   -webkit-align-items: center;
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  gap: 0.8rem;
+  gap: 1.6rem;
+  margin-top: 1.6rem;
 }
 
 .c6 p {
   font-size: 1.8rem;
   line-height: 150%;
+}
+
+.c7 {
+  width: 3.5rem;
+  height: 3.5rem;
+  max-width: 100%;
 }
 
 @media (max-width:768px) {
@@ -192,15 +205,36 @@ exports[`<TabTools /> should match snapshot 1`] = `
   }
 }
 
-@media (min-width:1170px) {
+@media (max-width:450px) {
   .c5 {
-    grid-template-columns: repeat(3,1fr);
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 4.0rem 1.6rem;
   }
 }
 
-@media (min-width:1170px) {
+@media (max-width:450px) {
+  .c8 {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    padding: 4.0rem 1.6rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c6 p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width:768px) {
   .c7 {
-    grid-template-columns: repeat(3,1fr);
+    width: 3rem;
+    height: 3rem;
   }
 }
 
@@ -253,385 +287,168 @@ exports[`<TabTools /> should match snapshot 1`] = `
     class="c5"
     data-testid="content-development"
   >
-    <div
-      class="c6"
-    >
+    <div>
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="React"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/react.svg"
         />
+        <p>
+          React
+        </p>
       </div>
-      <p>
-        React
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="NextJS"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/nextjs.svg"
         />
+        <p>
+          NextJS
+        </p>
       </div>
-      <p>
-        NextJS
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="TypeScript"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/typescript.svg"
         />
+        <p>
+          TypeScript
+        </p>
       </div>
-      <p>
-        TypeScript
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="Storybook"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/storybook.svg"
         />
+        <p>
+          Storybook
+        </p>
       </div>
-      <p>
-        Storybook
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="Jest"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/jest.svg"
         />
+        <p>
+          Jest
+        </p>
       </div>
-      <p>
-        Jest
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="Testing Library"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/testing-library.svg"
         />
+        <p>
+          Testing Library
+        </p>
       </div>
-      <p>
-        Testing Library
-      </p>
     </div>
-    <div
-      class="c6"
-    >
+    <div>
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="Node"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/node.svg"
         />
+        <p>
+          Node
+        </p>
       </div>
-      <p>
-        Node
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="GraphQL"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/graphql.svg"
         />
+        <p>
+          GraphQL
+        </p>
       </div>
-      <p>
-        GraphQL
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="HTML 5"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/html.svg"
         />
+        <p>
+          HTML 5
+        </p>
       </div>
-      <p>
-        HTML 5
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="CSS 3"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/css.svg"
         />
+        <p>
+          CSS 3
+        </p>
       </div>
-      <p>
-        CSS 3
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="JavaScript"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/javascript.svg"
         />
+        <p>
+          JavaScript
+        </p>
       </div>
-      <p>
-        JavaScript
-      </p>
-    </div>
-    <div
-      class="c6"
-    >
       <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+        class="c6"
       >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
         <img
           alt="Git"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+          class="c7"
+          src="/img/tools/dev/git.svg"
         />
+        <p>
+          Git
+        </p>
       </div>
-      <p>
-        Git
-      </p>
     </div>
   </div>
   <div
     aria-hidden="true"
-    class="c7"
+    class="c8"
     data-testid="content-design"
   >
     <div
       class="c6"
     >
-      <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
-      >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
-        <img
-          alt="Figma"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-        />
-      </div>
+      <img
+        alt="Figma"
+        class="c7"
+        src="/img/tools/design/figma.svg"
+      />
       <p>
         Figma
       </p>
@@ -639,28 +456,11 @@ exports[`<TabTools /> should match snapshot 1`] = `
     <div
       class="c6"
     >
-      <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
-      >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
-        <img
-          alt="Photoshop"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-        />
-      </div>
+      <img
+        alt="Photoshop"
+        class="c7"
+        src="/img/tools/design/photoshop.svg"
+      />
       <p>
         Photoshop
       </p>
@@ -668,28 +468,11 @@ exports[`<TabTools /> should match snapshot 1`] = `
     <div
       class="c6"
     >
-      <div
-        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
-      >
-        <div
-          style="box-sizing: border-box; display: block; max-width: 100%;"
-        >
-          <img
-            alt=""
-            aria-hidden="true"
-            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzUiIGhlaWdodD0iMzUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgdmVyc2lvbj0iMS4xIi8+"
-            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
-          />
-        </div>
-        <noscript />
-        <img
-          alt="illustrator"
-          data-nimg="true"
-          decoding="async"
-          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
-        />
-      </div>
+      <img
+        alt="illustrator"
+        class="c7"
+        src="/img/tools/design/illustrator.svg"
+      />
       <p>
         illustrator
       </p>

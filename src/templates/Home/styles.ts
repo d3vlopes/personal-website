@@ -89,7 +89,7 @@ export const CallOfLearning = styled.div`
     grid-template-columns: repeat(2, 40%);
     justify-content: center;
     justify-items: center;
-    margin-bottom: ${theme.spacings.xxlarge};
+    margin-bottom: calc(${theme.spacings.xxlarge} * 2);
     width: 100%;
 
     ${media.lessThan('large')`
@@ -99,7 +99,6 @@ export const CallOfLearning = styled.div`
 
     ${media.lessThan('medium')`
       grid-template-columns: 1fr;
-      padding: 0 ${theme.spacings.small};
     `}
 
     ${Content} {
@@ -113,6 +112,11 @@ export const CallOfLearning = styled.div`
 
       ${media.lessThan('medium')`
         border-radius: ${theme.border.radius.large};
+        padding: ${theme.spacings.large} ${theme.spacings.small};
+      `}
+
+      ${media.lessThan('small')`
+        padding: ${theme.spacings.medium} ${theme.spacings.xsmall};
       `}
 
       ${HeadingStyles} {
