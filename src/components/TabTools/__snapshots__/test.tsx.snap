@@ -213,6 +213,13 @@ exports[`<TabTools /> should match snapshot 1`] = `
     justify-content: center;
     padding: 4.0rem 1.6rem;
   }
+
+  .c5 .content-design {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 4.0rem 0;
+  }
 }
 
 @media (max-width:450px) {
@@ -223,11 +230,24 @@ exports[`<TabTools /> should match snapshot 1`] = `
     justify-content: center;
     padding: 4.0rem 1.6rem;
   }
+
+  .c8 .content-design {
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    padding: 4.0rem 0;
+  }
 }
 
 @media (max-width:768px) {
   .c6 p {
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width:450px) {
+  .c6 p {
+    font-size: 1.4rem;
   }
 }
 
@@ -438,7 +458,7 @@ exports[`<TabTools /> should match snapshot 1`] = `
   </div>
   <div
     aria-hidden="true"
-    class="c8"
+    class="c8 content-design"
     data-testid="content-design"
   >
     <div
