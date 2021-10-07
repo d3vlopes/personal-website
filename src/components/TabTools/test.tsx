@@ -33,7 +33,7 @@ describe('<TabTools />', () => {
     expect(designContent.getAttribute('aria-hidden')).toBe('true')
 
     expect(developmentContent).toHaveStyle({
-      display: 'grid',
+      display: 'flex',
     })
     expect(designContent).toHaveStyle({
       display: 'none',
@@ -58,7 +58,7 @@ describe('<TabTools />', () => {
       display: 'none',
     })
     expect(designContent).toHaveStyle({
-      display: 'grid',
+      display: 'flex',
     })
 
     fireEvent.click(developmentButton)

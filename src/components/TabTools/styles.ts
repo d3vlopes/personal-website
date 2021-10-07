@@ -86,15 +86,16 @@ export const Button = styled.button<TabsProps>`
 
 export const Content = styled.div<TabsProps>`
   ${({ theme, active }) => css`
-    display: ${active ? 'grid' : 'none'};
-    grid-template-columns: repeat(2, 1fr);
+    display: ${active ? 'flex' : 'none'};
+    justify-content: space-around;
     background-color: ${theme.colors.bg.secondary.dark};
-    padding: ${theme.spacings.large} ${theme.spacings.xlarge};
-    gap: ${theme.spacings.xsmall};
+    padding: ${theme.spacings.large} 0;
+    gap: ${theme.spacings.small};
     transition: all ${theme.transition.slow};
 
-    ${media.greaterThan('large')`
-      grid-template-columns: repeat(3, 1fr);
+    ${media.lessThan('small')`
+      justify-content: center;
+      padding: ${theme.spacings.large} ${theme.spacings.xsmall};
     `}
   `}
 `
@@ -102,13 +103,28 @@ export const Content = styled.div<TabsProps>`
 export const Tool = styled.div`
   ${({ theme }) => css`
     display: flex;
-    align-content: space-between;
     align-items: center;
-    gap: ${theme.spacings.xxsmall};
+    gap: ${theme.spacings.xsmall};
+    margin-top: ${theme.spacings.xsmall};
 
     p {
       font-size: ${theme.font.sizes.small};
       line-height: 150%;
+
+      ${media.lessThan('medium')`
+        font-size: ${theme.font.sizes.xsmall};
+      `}
     }
+  `}
+`
+
+export const Image = styled.img`
+  width: 3.5rem;
+  height: 3.5rem;
+  max-width: 100%;
+
+  ${media.lessThan('medium')`
+    width: 3rem;
+    height: 3rem;
   `}
 `
