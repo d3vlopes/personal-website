@@ -96,6 +96,11 @@ export const Content = styled.div<TabsProps>`
     ${media.lessThan('small')`
       justify-content: center;
       padding: ${theme.spacings.large} ${theme.spacings.xsmall};
+
+      .content-design {
+        flex-wrap: wrap;
+        padding: ${theme.spacings.large} 0;
+      }
     `}
   `}
 `
@@ -113,6 +118,10 @@ export const Tool = styled.div`
 
       ${media.lessThan('medium')`
         font-size: ${theme.font.sizes.xsmall};
+      `}
+
+      ${media.lessThan('small')`
+        font-size: ${theme.font.sizes.xxsmall};
       `}
     }
   `}
