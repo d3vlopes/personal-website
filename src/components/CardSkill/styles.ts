@@ -9,7 +9,6 @@ export const Wrapper = styled.div`
     background: ${theme.colors.complementary.main};
     border-radius: ${theme.border.radius.large};
     width: min(29rem, 100%);
-    padding: 3rem;
     transition: all 0.3s ease-in-out;
     height: min(29.6rem, 33rem);
 
