@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 import { Wrapper as HeroStyles } from 'components/Hero/styles'
-import { Wrapper as CardSkillStyles } from 'components/CardSkill/styles'
+import { Container as ContainerStyles } from 'components/Container'
 import { Wrapper as TabTools } from 'components/TabTools/styles'
 import { Wrapper as HeadingStyles } from 'components/Heading/styles'
 import { Wrapper as FormStyles } from 'components/Form/styles'
@@ -11,6 +11,10 @@ export const Hero = styled.div`
   ${({ theme }) => css`
     ${HeroStyles} {
       margin: ${theme.spacings.medium} 0 ${theme.spacings.xxlarge};
+
+      ${media.lessThan('medium')`
+        margin: ${theme.spacings.medium} 0 ${theme.spacings.large};
+      `}
     }
   `}
 `
@@ -23,16 +27,21 @@ export const SectionSkills = styled.section`
     background-color: ${theme.colors.bg.secondary.dark};
     padding: ${theme.spacings.xxlarge} 0;
     margin-bottom: ${theme.spacings.xxlarge};
+
+    ${media.lessThan('medium')`
+      margin-bottom: ${theme.spacings.large};
+      padding: ${theme.spacings.large} 0;
+    `}
   `}
 `
 
 export const Break = styled.div`
-  display: none;
+  display: flex;
+  flex-basis: 100%;
+  height: 0;
 
-  ${media.lessThan('huge')`
-    display: flex;
-    flex-basis: 100%;
-    height: 0;
+  ${media.lessThan('large')`
+    display: none;
   `}
 `
 
@@ -41,27 +50,16 @@ export const CardSkills = styled.div`
     display: flex;
     justify-content: center;
     margin-top: ${theme.spacings.xlarge};
-
-    ${CardSkillStyles} {
-      margin-left: ${theme.spacings.medium};
-    }
+    gap: ${theme.spacings.medium};
 
     ${media.lessThan('huge')`
       flex-wrap: wrap;
-      margin-bottom: ${theme.spacings.medium};
-
-      ${CardSkillStyles} {
-        margin-bottom: ${theme.spacings.medium};
-      }
+      gap: ${theme.spacings.medium};
     `}
 
     ${media.lessThan('medium')`
       flex-direction: column;
       align-items: center;
-
-      ${CardSkillStyles} {
-        margin-left: 0;
-      }
     `}
   `}
 `
@@ -72,6 +70,11 @@ export const SectionTools = styled.section`
     align-items: center;
     padding: ${theme.spacings.xxlarge} 0;
     margin-bottom: ${theme.spacings.xxlarge};
+
+    ${media.lessThan('medium')`
+      margin-bottom: ${theme.spacings.large};
+      padding: ${theme.spacings.large} 0;
+    `}
 
     ${TabTools} {
       margin-top: ${theme.spacings.large};
@@ -99,6 +102,7 @@ export const CallOfLearning = styled.div`
 
     ${media.lessThan('medium')`
       grid-template-columns: 1fr;
+      margin-bottom: calc(${theme.spacings.large} * 2);
     `}
 
     ${Content} {
@@ -156,16 +160,31 @@ export const SectionProjectsRecents = styled.section`
     padding: ${theme.spacings.xxlarge} 0;
     margin-bottom: ${theme.spacings.xxlarge};
     background-color: ${theme.colors.bg.secondary.dark};
+
+    ${media.lessThan('medium')`
+      padding: ${theme.spacings.large} 0;
+    `}
+
+    ${media.lessThan('medium')`
+      margin-bottom: ${theme.spacings.large};
+    `}
+
+    ${ContainerStyles} {
+      display: flex;
+      flex-direction: column;
+      gap: ${theme.spacings.huge};
+    }
   `}
 `
 
 export const Projects = styled.div`
   ${({ theme }) => css`
-    margin-top: ${theme.spacings.huge};
+    margin: ${theme.spacings.huge} 0;
     align-self: normal;
 
     ${media.lessThan('large')`
       align-self: center;
+      margin: ${theme.spacings.huge} 0 ${theme.spacings.large};
     `}
   `}
 `
@@ -177,6 +196,10 @@ export const SectionContact = styled.section`
     align-items: center;
     padding: ${theme.spacings.xxlarge} 0;
     margin-bottom: ${theme.spacings.xxlarge};
+
+    ${media.lessThan('medium')`
+      padding: ${theme.spacings.large} 0;
+    `}
 
     ${FormStyles} {
       margin-top: ${theme.spacings.large};
