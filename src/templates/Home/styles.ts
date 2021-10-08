@@ -58,10 +58,6 @@ export const CardSkills = styled.div`
 
     ${media.lessThan('huge')`
       flex-wrap: wrap;
-<<<<<<< HEAD
-=======
-      gap: ${theme.spacings.medium};
->>>>>>> 1920985c742e8ded06e64e4205e441b6b122a452
     `}
 
     ${media.lessThan('medium')`
@@ -179,7 +175,7 @@ export const SectionProjectsRecents = styled.section`
     ${ContainerStyles} {
       display: flex;
       flex-direction: column;
-      gap: ${theme.spacings.huge};
+      gap: 20rem;
     }
   `}
 `
