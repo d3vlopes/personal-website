@@ -78,11 +78,6 @@ exports[`<Project /> should match snapshot 1`] = `
   display: -ms-flexbox;
   display: flex;
   gap: 0 8rem;
-  margin-bottom: calc(12rem + 4.6rem);
-}
-
-.c0:last-of-type {
-  margin-bottom: 12rem;
 }
 
 .c1 {
