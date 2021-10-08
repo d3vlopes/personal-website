@@ -58,6 +58,10 @@ export const CardSkills = styled.div`
 
     ${media.lessThan('huge')`
       flex-wrap: wrap;
+<<<<<<< HEAD
+=======
+      gap: ${theme.spacings.medium};
+>>>>>>> 1920985c742e8ded06e64e4205e441b6b122a452
     `}
 
     ${media.lessThan('medium')`
