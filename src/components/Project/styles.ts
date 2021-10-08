@@ -2,23 +2,16 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 export const Wrapper = styled.div`
-  ${({ theme }) => css`
-    display: flex;
-    gap: 0 8rem;
-    margin-bottom: calc(${theme.spacings.huge} + 4.6rem);
+  display: flex;
+  gap: 0 8rem;
 
-    ${media.lessThan('large')`
-      flex-direction: column;
-      gap: 8rem 0;
-    `}
+  ${media.lessThan('large')`
+    flex-direction: column;
+    gap: 8rem 0;
+  `}
 
-    ${media.lessThan('medium')`
-      align-items: center;
-    `}
-
-    &:last-of-type {
-      margin-bottom: ${theme.spacings.huge};
-    }
+  ${media.lessThan('medium')`
+    align-items: center;
   `}
 `
 
