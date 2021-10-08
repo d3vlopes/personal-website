@@ -54,6 +54,7 @@ const TabTools = ({ developer, design }: TabToolsProps) => {
         <div>{developer.slice(6, 12).map(renderTools)}</div>
       </S.Content>
       <S.Content
+        className="content-design"
         active={!isOpen}
         aria-hidden={isOpen}
         data-testid="content-design"
