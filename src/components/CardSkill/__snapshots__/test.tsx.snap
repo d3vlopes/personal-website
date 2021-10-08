@@ -20,7 +20,6 @@ exports[`<CardSkill /> should match snapshot 1`] = `
   background: #DEE7EA;
   border-radius: 1.2rem;
   width: min(29rem,100%);
-  padding: 3rem;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   height: min(29.6rem,33rem);
