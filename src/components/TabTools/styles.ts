@@ -93,14 +93,14 @@ export const Content = styled.div<TabsProps>`
     gap: ${theme.spacings.small};
     transition: all ${theme.transition.slow};
 
+    &.content-design {
+      flex-wrap: wrap;
+      padding: ${theme.spacings.large} 0;
+    }
+
     ${media.lessThan('small')`
       justify-content: center;
       padding: ${theme.spacings.large} ${theme.spacings.xsmall};
-
-      .content-design {
-        flex-wrap: wrap;
-        padding: ${theme.spacings.large} 0;
-      }
     `}
   `}
 `
