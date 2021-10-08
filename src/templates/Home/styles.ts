@@ -40,7 +40,11 @@ export const Break = styled.div`
   flex-basis: 100%;
   height: 0;
 
-  ${media.lessThan('large')`
+  ${media.greaterThan('huge')`
+    display: none;
+  `}
+
+  ${media.lessThan('medium')`
     display: none;
   `}
 `
@@ -54,7 +58,6 @@ export const CardSkills = styled.div`
 
     ${media.lessThan('huge')`
       flex-wrap: wrap;
-      gap: ${theme.spacings.medium};
     `}
 
     ${media.lessThan('medium')`
