@@ -105,7 +105,7 @@ describe('<Home />', () => {
     expect(
       getByRole('heading', { name: 'Minha jornada de aprendizado' }),
     ).toBeInTheDocument()
-    expect(getByRole('button', { name: 'Saber mais' })).toBeInTheDocument()
+    expect(getByTestId('button')).toBeInTheDocument()
     expect(getByTestId('call of learning image')).toHaveStyle({
       'background-image': 'url(/img/books.svg)',
     })

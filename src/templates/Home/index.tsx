@@ -7,6 +7,7 @@ import Base from 'templates/Base'
 import Heading from 'components/Heading'
 import Button from 'components/Button'
 import Form from 'components/Form'
+import MediaMatch from 'components/MediaMatch'
 import TabTools, { TabToolsProps } from 'components/TabTools'
 import CardSkill, { CardSkillProps } from 'components/CardSkill'
 import Hero, { HeroProps } from 'components/Hero'
@@ -78,11 +79,25 @@ const Home = ({
             <Heading as="h2" size="huge">
               Minha jornada de aprendizado
             </Heading>
-            <Link href="/learning" passHref>
-              <Button variant="secondary" size="large" hoverUp>
-                Saber mais
-              </Button>
-            </Link>
+            <MediaMatch greaterThan="medium">
+              <Link href="/learning" passHref>
+                <Button
+                  variant="secondary"
+                  size="large"
+                  hoverUp
+                  data-testid="button"
+                >
+                  Saber mais
+                </Button>
+              </Link>
+            </MediaMatch>
+            <MediaMatch lessThan="medium">
+              <Link href="/learning" passHref>
+                <Button variant="secondary" size="medium" hoverUp>
+                  Saber mais
+                </Button>
+              </Link>
+            </MediaMatch>
           </S.Content>
           <S.Image data-testid="call of learning image" />
         </S.CallOfLearning>

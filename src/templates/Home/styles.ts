@@ -137,6 +137,9 @@ export const CallOfLearning = styled.div`
 
         ${media.lessThan('medium')`
           font-size: ${theme.font.sizes.xlarge};
+          margin-bottom: ${theme.spacings.xsmall};
+          line-height: calc(${theme.font.sizes.xlarge} + 1rem);
+          max-width: 25rem;
         `}
       }
     }
