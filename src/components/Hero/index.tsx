@@ -23,7 +23,7 @@ const Hero = ({ photo, hello, name, description, buttonText }: HeroProps) => {
           <span></span>
         </S.Window>
         <S.ContainerCard>
-          <S.Photo src={photo} data-testid="photo" />
+          <S.Photo role="img" src={photo} aria-label={name} />
           <div>
             {!!hello && <S.Hello>{hello}</S.Hello>}
             <Heading size="highlight">{name}</Heading>
