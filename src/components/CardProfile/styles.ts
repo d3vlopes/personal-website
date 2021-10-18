@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  animation: moveUp 0.9s cubic-bezier(0.425, 1.14, 0.47, 1.125) forwards;
+  animation: moveUp 1s cubic-bezier(0.425, 1.14, 0.47, 1.125) forwards;
 
   @keyframes moveUp {
     0% {
@@ -46,8 +46,11 @@ export const Details = styled.div`
     border-radius: ${theme.border.radius.large};
     margin-top: ${theme.spacings.large};
     padding: ${theme.spacings.small} ${theme.spacings.medium};
-    width: 100%;
     max-width: 43.1rem;
+
+    ${media.lessThan('medium')`
+      margin: ${theme.spacings.large} ${theme.spacings.medium};
+    `}
 
     & > div:nth-child(1) {
       display: flex;

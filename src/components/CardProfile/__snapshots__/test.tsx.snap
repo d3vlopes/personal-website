@@ -18,8 +18,8 @@ exports[`<CardProfile /> should render CardProfile 1`] = `
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
-  -webkit-animation: moveUp 0.9s cubic-bezier(0.425,1.14,0.47,1.125) forwards;
-  animation: moveUp 0.9s cubic-bezier(0.425,1.14,0.47,1.125) forwards;
+  -webkit-animation: moveUp 1s cubic-bezier(0.425,1.14,0.47,1.125) forwards;
+  animation: moveUp 1s cubic-bezier(0.425,1.14,0.47,1.125) forwards;
 }
 
 .c1 {
@@ -44,7 +44,6 @@ exports[`<CardProfile /> should render CardProfile 1`] = `
   border-radius: 1.2rem;
   margin-top: 4.0rem;
   padding: 2.4rem 3.2rem;
-  width: 100%;
   max-width: 43.1rem;
 }
 
@@ -66,6 +65,12 @@ exports[`<CardProfile /> should render CardProfile 1`] = `
   font-size: 1.8rem;
   font-weight: 400;
   color: #DEE7EA;
+}
+
+@media (max-width:768px) {
+  .c2 {
+    margin: 4.0rem 3.2rem;
+  }
 }
 
 @media (max-width:768px) {
