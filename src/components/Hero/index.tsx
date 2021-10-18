@@ -1,4 +1,5 @@
-/* eslint-disable @next/next/no-img-element */
+import Link from 'next/link'
+
 import Button from 'components/Button'
 import Heading from 'components/Heading'
 import MediaMatch from 'components/MediaMatch'
@@ -29,9 +30,11 @@ const Hero = ({ photo, hello, name, description, buttonText }: HeroProps) => {
             <Heading size="highlight">{name}</Heading>
             <S.Description>{description}</S.Description>
             <MediaMatch greaterThan="medium">
-              <Button expand hoverUp data-testid="button">
-                {buttonText}
-              </Button>
+              <Link href="/about" passHref>
+                <Button as="a" expand hoverUp data-testid="button">
+                  {buttonText}
+                </Button>
+              </Link>
             </MediaMatch>
             <MediaMatch lessThan="medium">
               <Button hoverUp>{buttonText}</Button>
