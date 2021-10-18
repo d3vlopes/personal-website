@@ -32,18 +32,30 @@ export default [
   },
   {
     title: 'Primeiro emprego',
-    content: `Após a formação, tive a oportunidade de trabalhar em uma agência de desenvolvimento aqui da cidade a Empório Adamantis. Foi como um sonho realizado estar ali dentro e poder ver de perto todo o processo de criação, desde do briefing, design até o desenvolvimento.
-    Trabalhei lá como desenvolvedor Full Stack, atuava tanto no backend, como no frontend, criando novas aplicações ou fazendo alterações em alguma que já estava em produção quando necessário.
-    Fiquei lá um período curto, mais foi uma experiência muito importante para mim, me ajudou a se transformar no profissional que sou hoje.
+    content: `<p>Após a formação, tive a oportunidade de trabalhar em uma
+    agência de desenvolvimento aqui da cidade a Empório Adamantis.
+    Foi como um sonho realizado estar ali dentro e poder ver de perto todo o processo
+    de criação, desde do briefing, design até o desenvolvimento.</p>
+    <p>Trabalhei lá como desenvolvedor Full Stack, atuava tanto no backend,
+    como no frontend, criando novas aplicações ou fazendo alterações em alguma
+    que já estava em produção quando necessário.</p>
+    <p>Fiquei lá um período curto, mais foi uma experiência muito importante para mim,
+    me ajudou a se transformar no profissional que sou hoje.</p>
     `,
   },
   {
     title: 'Frontend e Design',
-    content: `Depois da saida da Empório, foquei em estudar bastante, aprender novas tecnologias e me preparar bem para voltar ao mercado de trabalho.
-    Foi ai que decidi me especializar no frontend, que era a parte do desenolvimento que eu mais gostava de trabalhar.
-    E essa escolha de se especializar apenas em uma área do desenvolvimento também me ajudou a poder fazer outra coisa que eu amava, que era trabalhar com design e criação de interfaces.
-    Eu sempre gostei muito de criar coisas, desenhar e era algo que eu tinha muita vontade de estudar e me especializar.
-    Como os profissionais de UI e Frontend trabalham próxmos, foi perfeito conseguir juntar duas coisas que eu amo e trabalhar com elas juntas.
+    content: `<p>Depois da saida da Empório, foquei em estudar bastante,
+    aprender novas tecnologias e me preparar bem para voltar ao mercado de trabalho.</p>
+    <p>Foi ai que decidi me especializar no frontend,
+    que era a parte do desenolvimento que eu mais gostava de trabalhar.</p>
+    <p>E essa escolha de se especializar apenas em uma área do desenvolvimento
+    também me ajudou a poder fazer outra coisa que eu amava,
+    que era trabalhar com design e criação de interfaces.</p>
+    <p>Eu sempre gostei muito de criar coisas,
+    desenhar e era algo que eu tinha muita vontade de estudar e me especializar.</p>
+    <p>Como os profissionais de UI e Frontend trabalham próxmos,
+    foi perfeito conseguir juntar duas coisas que eu amo e trabalhar com elas juntas.</p>
     `,
   },
 ] as CardTimelineProps[]
