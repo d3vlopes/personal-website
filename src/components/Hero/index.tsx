@@ -37,7 +37,11 @@ const Hero = ({ photo, hello, name, description, buttonText }: HeroProps) => {
               </Link>
             </MediaMatch>
             <MediaMatch lessThan="medium">
-              <Button hoverUp>{buttonText}</Button>
+              <Link href="/about" passHref>
+                <Button as="a" hoverUp>
+                  {buttonText}
+                </Button>
+              </Link>
             </MediaMatch>
           </div>
         </S.ContainerCard>
