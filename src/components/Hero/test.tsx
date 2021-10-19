@@ -17,7 +17,7 @@ describe('<Hero />', () => {
   it('should render Hero', () => {
     renderWithTheme(<Hero {...props} />)
 
-    const photo = getByTestId('photo')
+    const photo = getByRole('img', { name: 'Leandro Lopes' })
     const hello = getByText('Olá me chamo')
     const name = getByRole('heading', { name: /leandro lopes/i })
     const description = getByText('Desenvolvedor Frontend | UI/UX design')
@@ -39,7 +39,7 @@ describe('<Hero />', () => {
       />,
     )
 
-    const photo = getByTestId('photo')
+    const photo = getByRole('img', { name: 'Leandro Lopes' })
     const hello = queryByText('Olá me chamo')
     const name = getByRole('heading', { name: /leandro lopes/i })
     const description = getByText('Desenvolvedor Frontend | UI/UX design')

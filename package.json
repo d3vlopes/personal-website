@@ -1,6 +1,6 @@
 {
   "name": "my-portfolio",
-  "version": "0.1.2",
+  "version": "0.0.2",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -42,6 +42,7 @@
     "@styled-icons/remix-fill": "^10.18.0",
     "dotenv": "^10.0.0",
     "graphql": "^15.5.1",
+    "medium-zoom": "^1.0.6",
     "next": "11.1.0",
     "next-pwa": "^5.2.24",
     "react": "17.0.2",
