@@ -67,11 +67,64 @@ export const ContentContainer = styled.div`
 
 export const Description = styled.p`
   ${({ theme }) => css`
-    font-size: ${theme.font.sizes.xsmall};
+    font-size: ${theme.font.sizes.small};
     line-height: 170%;
     color: ${theme.colors.complementary.main};
     margin: ${theme.spacings.xsmall} 0 ${theme.spacings.medium};
     max-width: 59.8rem;
     width: 100%;
+
+    ${media.lessThan('medium')`
+      font-size: ${theme.font.sizes.xsmall};
+    `}
+  `}
+`
+
+export const WrapperGrid = styled.div`
+  ${({ theme }) => css`
+    display: flex;
+    flex-direction: column;
+    width: min(100%, 39.8rem);
+
+    a {
+      text-decoration: none;
+      color: ${theme.colors.text.light};
+      transition: color ${theme.transition.default};
+
+      &:hover {
+        color: ${theme.colors.primary.main};
+      }
+    }
+  `}
+`
+
+export const ImageGrid = styled.img`
+  ${({ theme }) => css`
+    min-height: 29.2rem;
+    width: 100%;
+    border-radius: ${theme.border.radius.medium} ${theme.border.radius.medium} 0
+      0;
+  `}
+`
+
+export const ContentGridContainer = styled.div`
+  ${({ theme }) => css`
+    display: inline-block;
+    background-color: ${theme.colors.bg.secondary.main};
+    min-height: 16.6rem;
+    border-radius: 0 0 ${theme.border.radius.medium}
+      ${theme.border.radius.medium};
+    margin-top: -3rem;
+    text-align: center;
+    padding: ${theme.spacings.medium} ${theme.spacings.xsmall};
+  `}
+`
+
+export const DescriptionGrid = styled.p`
+  ${({ theme }) => css`
+    font-size: ${theme.font.sizes.xsmall};
+    line-height: 1.5;
+    color: ${theme.colors.complementary.main};
+    margin-top: ${theme.spacings.xxsmall};
   `}
 `
