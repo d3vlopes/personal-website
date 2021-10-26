@@ -10,12 +10,14 @@ const props: ProjectProps = {
   slug: 'kurtis-classrom',
 }
 
-const { getByRole, getByText, getByTestId } = screen
+const { getByRole, getByText, getByTestId, queryByTestId } = screen
 
 describe('<Project />', () => {
   it('should render Project', () => {
-    renderWithTheme(<Project {...props} />)
+    renderWithTheme(<Project {...props} variant="list" />)
 
+    const wrapperList = getByTestId('list')
+    const wrapperGrid = queryByTestId('grid')
     const image = getByRole('img', {
       name: /project name/i,
     })
@@ -23,10 +25,40 @@ describe('<Project />', () => {
     const description = getByText('Loren ipsum dolor')
     const button = getByTestId('button')
 
+    expect(wrapperList).toBeInTheDocument()
+    expect(wrapperGrid).not.toBeInTheDocument()
     expect(image).toHaveAttribute('src', '/img/projects/kurtis.png')
-    expect(name).toBeInTheDocument()
-    expect(description).toBeInTheDocument()
+    expect(name).toHaveStyle({
+      'font-size': '3.2rem',
+    })
+    expect(description).toHaveStyle({
+      'font-size': '1.8rem',
+    })
     expect(button).toBeInTheDocument()
+  })
+
+  it('should render with grid layout ', () => {
+    renderWithTheme(<Project {...props} variant="grid" />)
+
+    const wrapperList = queryByTestId('list')
+    const wrapperGrid = getByTestId('grid')
+    const image = getByRole('img', {
+      name: /project name/i,
+    })
+    const name = getByRole('heading', { name: /project name/i })
+    const description = getByText('Loren ipsum dolor')
+    const button = queryByTestId('button')
+
+    expect(wrapperList).not.toBeInTheDocument()
+    expect(wrapperGrid).toBeInTheDocument()
+    expect(image).toHaveAttribute('src', '/img/projects/kurtis.png')
+    expect(name).toHaveStyle({
+      'font-size': '2.2rem',
+    })
+    expect(description).toHaveStyle({
+      'font-size': '1.6rem',
+    })
+    expect(button).not.toBeInTheDocument()
   })
 
   it('should match snapshot', () => {

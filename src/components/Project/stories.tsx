@@ -14,10 +14,13 @@ export default {
       url: 'https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=868%3A1189',
     },
   },
-  args: mock[1],
+  args: {
+    ...mock[1],
+    variant: 'list',
+  },
 } as Meta<ProjectProps>
 
-export const Default: Story<ProjectProps> = (args) => {
+export const List: Story<ProjectProps> = (args) => {
   return (
     <div
       style={{
@@ -31,4 +34,30 @@ export const Default: Story<ProjectProps> = (args) => {
       <Project {...args} />
     </div>
   )
+}
+
+export const Grid: Story<ProjectProps> = (args) => {
+  return (
+    <div
+      style={{
+        display: 'flex',
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+        paddingTop: '8rem',
+      }}
+    >
+      <Project {...args} />
+    </div>
+  )
+}
+
+Grid.parameters = {
+  backgrounds: {
+    default: 'primary',
+  },
+}
+
+Grid.args = {
+  variant: 'grid',
 }
