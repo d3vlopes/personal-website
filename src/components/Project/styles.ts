@@ -1,6 +1,8 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
+import { Wrapper as HeadingStyles } from 'components/Heading/styles'
+
 export const Wrapper = styled.div`
   display: flex;
   gap: 0 8rem;
@@ -10,7 +12,7 @@ export const Wrapper = styled.div`
     gap: 8rem 0;
   `}
 
-  ${media.lessThan('medium')`
+  ${media.lessThan('large')`
     align-items: center;
   `}
 `
@@ -19,10 +21,6 @@ export const ImageWrapper = styled.div`
   ${({ theme }) => css`
     position: relative;
     z-index: 1;
-
-    ${media.between('medium', 'huge')`
-      left: ${theme.spacings.small};
-    `}
 
     &::before {
       content: '';
@@ -55,8 +53,8 @@ export const Image = styled.img`
     border-radius: ${theme.border.radius.small};
 
     ${media.lessThan('medium')`
-        height: 23.4rem;
-      `}
+      height: 23.4rem;
+    `}
   `}
 `
 
@@ -84,7 +82,6 @@ export const WrapperGrid = styled.div`
   ${({ theme }) => css`
     display: flex;
     flex-direction: column;
-    width: min(100%, 39.8rem);
 
     a {
       text-decoration: none;
@@ -94,6 +91,10 @@ export const WrapperGrid = styled.div`
       &:hover {
         color: ${theme.colors.primary.main};
       }
+    }
+
+    ${HeadingStyles} {
+      margin-bottom: 0;
     }
   `}
 `
@@ -109,12 +110,6 @@ export const ImageGrid = styled.img`
 
 export const ContentGridContainer = styled.div`
   ${({ theme }) => css`
-    display: inline-block;
-    background-color: ${theme.colors.bg.secondary.main};
-    min-height: 16.6rem;
-    border-radius: 0 0 ${theme.border.radius.medium}
-      ${theme.border.radius.medium};
-    margin-top: -3rem;
     text-align: center;
     padding: ${theme.spacings.medium} ${theme.spacings.xsmall};
   `}
@@ -126,5 +121,9 @@ export const DescriptionGrid = styled.p`
     line-height: 1.5;
     color: ${theme.colors.complementary.main};
     margin-top: ${theme.spacings.xxsmall};
+
+    ${media.lessThan('medium')`
+      display: none;
+    `}
   `}
 `

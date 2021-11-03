@@ -132,18 +132,12 @@ exports[`<Project /> should match snapshot 1`] = `
   }
 }
 
-@media (max-width:768px) {
+@media (max-width:1170px) {
   .c0 {
     -webkit-align-items: center;
     -webkit-box-align: center;
     -ms-flex-align: center;
     align-items: center;
-  }
-}
-
-@media (min-width:768px) and (max-width:1440px) {
-  .c1 {
-    left: 2.4rem;
   }
 }
 
