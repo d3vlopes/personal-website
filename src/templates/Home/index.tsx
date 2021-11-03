@@ -107,7 +107,7 @@ const Home = ({
           Projetos recentes
         </Heading>
         <S.Projects>
-          <Container>{projects.map(renderProjects)}</Container>
+          <Container>{projects.slice(0, 4).map(renderProjects)}</Container>
         </S.Projects>
       </S.SectionProjectsRecents>
       <S.SectionContact>
