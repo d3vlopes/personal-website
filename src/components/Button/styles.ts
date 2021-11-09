@@ -29,7 +29,6 @@ const wrapperModifiers = {
     &:hover {
       span {
         color: ${theme.colors.primary.main};
-        transition: all ${theme.transition.default};
       }
 
       border: 1px solid ${theme.colors.primary.main};
@@ -75,7 +74,6 @@ const wrapperModifiers = {
 
     svg {
       color: ${theme.colors.complementary.main};
-      transition: all ${theme.transition.default};
     }
   `,
 }
@@ -86,7 +84,8 @@ export const Wrapper = styled.button<WrapperProps>`
     justify-content: center;
     align-items: center;
     border: none;
-    transition: all ${theme.transition.default};
+    transition: background ${theme.transition.fast},
+      transform ${theme.transition.default};
     text-decoration: none;
     cursor: pointer;
     border-radius: ${theme.border.radius.medium};

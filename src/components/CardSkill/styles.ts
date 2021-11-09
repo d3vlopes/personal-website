@@ -9,7 +9,7 @@ export const Wrapper = styled.div`
     background: ${theme.colors.complementary.main};
     border-radius: ${theme.border.radius.large};
     width: min(29rem, 100%);
-    transition: all 0.3s ease-in-out;
+    transition: all ${theme.transition.default};
     height: min(29.6rem, 33rem);
 
     &:hover {
