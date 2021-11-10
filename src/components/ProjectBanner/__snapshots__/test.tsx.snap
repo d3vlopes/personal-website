@@ -142,6 +142,12 @@ exports[`<ProjectBanner /> should render ProjectBanner 1`] = `
   color: #DEE7EA;
 }
 
+@media (max-width:768px) {
+  .c0 {
+    background-size: 100% 100%;
+  }
+}
+
 <div
   aria-label="Imagem de destaque do projeto"
   class="c0"
