@@ -27,7 +27,7 @@ export type HomeTemplateProps = {
   projects: ProjectProps[]
 }
 
-const Home = ({
+const HomeTemplate = ({
   menu,
   footer,
   hero,
@@ -120,4 +120,4 @@ const Home = ({
   )
 }
 
-export default Home
+export default HomeTemplate

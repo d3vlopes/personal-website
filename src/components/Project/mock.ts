@@ -18,7 +18,7 @@ export default [
   },
   {
     src: '/img/projects/kurtis.png',
-    name: 'Kurtis Classrom',
+    name: 'Kurtis Classrom 2',
     description:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis nam nulla bibendum cras viverra fermentum vitae. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas felis nam nulla bibendum cras viverra fermentum vitae. ',
     slug: 'kurtis-classrom-2',

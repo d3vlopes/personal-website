@@ -20,7 +20,7 @@ export type AboutTemplateProps = {
   cardTimeline: CardTimelineProps[]
 }
 
-const About = ({
+const AboutTemplate = ({
   menu,
   footer,
   title,
@@ -52,4 +52,4 @@ const About = ({
   )
 }
 
-export default About
+export default AboutTemplate
