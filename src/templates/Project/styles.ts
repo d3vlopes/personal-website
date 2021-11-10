@@ -21,6 +21,8 @@ export const Content = styled.div`
 export const ButtonGroup = styled.div`
   ${({ theme }) => css`
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: ${theme.spacings.xsmall};
     margin: ${theme.spacings.large} 0 ${theme.spacings.xxlarge};
   `}

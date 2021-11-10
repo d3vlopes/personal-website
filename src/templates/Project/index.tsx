@@ -3,15 +3,16 @@ import { Behance } from '@styled-icons/evaicons-solid/Behance'
 
 import Base from 'templates/Base'
 
+import { Container } from 'components/Container'
 import { ContactLinkProps } from 'components/ContactLink'
 import { MenuProps } from 'components/Menu'
 import ProjectBanner, { ProjectBannerProps } from 'components/ProjectBanner'
-import TextContent from 'components/TextContent'
-import Button from 'components/Button'
 import Project, { ProjectProps } from 'components/Project'
+import TextContent from 'components/TextContent'
+import Heading from 'components/Heading'
+import Button from 'components/Button'
 
 import * as S from './styles'
-import Heading from 'components/Heading'
 
 export type ProjectTemplateProps = {
   menu: MenuProps
@@ -43,31 +44,33 @@ const ProjectTemplate = ({
       <S.Wrapper>
         <ProjectBanner {...banner} />
         <S.Main>
-          <S.Content>
-            <TextContent content={content} />
-            <S.ButtonGroup>
-              <Button
-                as="a"
-                role="button"
-                href={projectCodeUrl}
-                target="_blank"
-                variant="outline"
-                icon={<Github />}
-              >
-                Ver código
-              </Button>
-              <Button
-                as="a"
-                role="button"
-                href={projectDesignUrl}
-                target="_blank"
-                variant="outline"
-                icon={<Behance />}
-              >
-                Ver design
-              </Button>
-            </S.ButtonGroup>
-          </S.Content>
+          <Container>
+            <S.Content>
+              <TextContent content={content} />
+              <S.ButtonGroup>
+                <Button
+                  as="a"
+                  role="button"
+                  href={projectCodeUrl}
+                  target="_blank"
+                  variant="outline"
+                  icon={<Github />}
+                >
+                  Ver código
+                </Button>
+                <Button
+                  as="a"
+                  role="button"
+                  href={projectDesignUrl}
+                  target="_blank"
+                  variant="outline"
+                  icon={<Behance />}
+                >
+                  Ver design
+                </Button>
+              </S.ButtonGroup>
+            </S.Content>
+          </Container>
           <S.SectionMoreProjects>
             <Heading as="h2" size="xxxlarge" lineBottom>
               Mais projetos
