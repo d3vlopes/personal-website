@@ -69,7 +69,7 @@ describe('<Projects />', () => {
     expect(sectionProjects).toHaveStyle({
       display: 'grid',
       gap: '1.6rem',
-      'grid-template-columns': 'repeat(2,minmax(20rem,1fr))',
+      'grid-template-columns': '1fr',
       margin: '4.0rem 0',
     })
     expect(projectContainer[0]).toHaveStyle({
