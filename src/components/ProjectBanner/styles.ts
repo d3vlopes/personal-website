@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components'
+import media from 'styled-media-query'
 
 import { Wrapper as ButtonStyles } from 'components/Button/styles'
 import { Wrapper as HeadingStyles } from 'components/Heading/styles'
@@ -27,6 +28,10 @@ export const Cover = styled.div<CoverProps>`
     background-size: cover;
     background-position: top center;
     background-repeat: no-repeat;
+
+    ${media.lessThan('medium')`
+      background-size: 100% 100%;
+    `}
 
     ${HeadingStyles} {
       margin-bottom: ${theme.spacings.xsmall};
