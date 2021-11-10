@@ -72,6 +72,7 @@ export const Projects = styled.div`
 
           ${media.lessThan('medium')`
             display: inherit;
+            width: 100%;
           `}
         }
       }

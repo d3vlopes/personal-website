@@ -110,9 +110,7 @@ export const SectionProjects = styled.section<LayoutDisplayProps>`
     display: ${display === 'grid' ? 'grid' : 'flex'};
     flex-direction: ${display === 'list' ? 'column' : ''};
     gap: ${display === 'grid' ? theme.spacings.xsmall : theme.spacings.huge};
-    grid-template-columns: ${display === 'grid'
-      ? 'repeat(2, minmax(20rem, 1fr))'
-      : ''};
+    grid-template-columns: ${display === 'grid' ? '1fr' : ''};
     margin: ${display === 'grid' ? theme.spacings.large : theme.spacings.huge} 0;
     transition: ${display === 'list' ? `gap ${theme.transition.slow}` : ''};
 
