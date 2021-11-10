@@ -49,9 +49,9 @@ exports[`<TextContent /> should match snapshot 1`] = `
 }
 
 .c0 img:hover {
-  -webkit-transform: scale(1.2);
-  -ms-transform: scale(1.2);
-  transform: scale(1.2);
+  -webkit-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .c0 .image {
@@ -139,6 +139,14 @@ exports[`<TextContent /> should match snapshot 1`] = `
 @media (max-width:768px) {
   .c0 {
     font-size: 1.6rem;
+  }
+}
+
+@media (max-width:768px) {
+  .c0 img:hover {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
   }
 }
 

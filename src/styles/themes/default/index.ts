@@ -60,6 +60,7 @@ export default {
       dark: '#1A1C23',
     },
     white: '#FFFFFF',
+    dark: '#1A1C23',
     grey: 'rgba(255, 255, 255, 0.5)',
     red: '#FF6347',
   },

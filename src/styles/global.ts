@@ -58,6 +58,7 @@ const GlobalStyles = createGlobalStyle`
       font-family: ${theme.font.body};
       font-size: ${theme.font.sizes.xsmall};
       color: ${theme.colors.white};
+      background: ${theme.colors.bg.main};
     }
   `}
 `

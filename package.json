@@ -1,6 +1,6 @@
 {
   "name": "my-portfolio",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -32,10 +32,12 @@
   },
   "dependencies": {
     "@apollo/client": "^3.3.21",
+    "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-logos": "^10.37.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
     "@styled-icons/boxicons-solid": "^10.38.0",
     "@styled-icons/entypo-social": "^10.34.0",
+    "@styled-icons/evaicons-solid": "^10.34.0",
     "@styled-icons/fluentui-system-filled": "^10.35.0",
     "@styled-icons/foundation": "^10.34.0",
     "@styled-icons/material-outlined": "^10.34.0",

@@ -48,12 +48,15 @@ export const Wrapper = styled.div`
       transition: all ${theme.transition.default};
 
       &:hover {
-        transform: scale(1.2);
+        transform: scale(1.1);
+
+        ${media.lessThan('medium')`
+          transform: scale(1);
+        `}
       }
     }
 
     .image {
-      //background: ${theme.colors.bg.secondary.main};
       line-height: 0;
       margin: ${theme.spacings.small} 0;
     }

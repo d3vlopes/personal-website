@@ -1,4 +1,4 @@
-import Home, { HomeTemplateProps } from 'templates/Home'
+import HomeTemplate, { HomeTemplateProps } from 'templates/Home'
 
 import mockMenu from 'components/Menu/mock'
 import mockFooter from 'components/ContactLink/mock'
@@ -8,7 +8,7 @@ import mockTools from 'components/TabTools/mock'
 import mockProjects from 'components/Project/mock'
 
 export default function Index(props: HomeTemplateProps) {
-  return <Home {...props} />
+  return <HomeTemplate {...props} />
 }
 
 export async function getStaticProps() {

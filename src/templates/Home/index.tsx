@@ -27,7 +27,7 @@ export type HomeTemplateProps = {
   projects: ProjectProps[]
 }
 
-const Home = ({
+const HomeTemplate = ({
   menu,
   footer,
   hero,
@@ -107,7 +107,7 @@ const Home = ({
           Projetos recentes
         </Heading>
         <S.Projects>
-          <Container>{projects.map(renderProjects)}</Container>
+          <Container>{projects.slice(0, 4).map(renderProjects)}</Container>
         </S.Projects>
       </S.SectionProjectsRecents>
       <S.SectionContact>
@@ -120,4 +120,4 @@ const Home = ({
   )
 }
 
-export default Home
+export default HomeTemplate
