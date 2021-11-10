@@ -17,16 +17,6 @@ export default {
       path: '/about',
       text: 'Sobre',
     },
-    {
-      id: '4',
-      path: '/learning',
-      text: 'Aprendizado',
-    },
-    {
-      id: '5',
-      path: '/contact',
-      text: 'Contato',
-    },
   ],
   contactLinks: [
     {
