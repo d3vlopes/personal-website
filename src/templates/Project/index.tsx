@@ -1,12 +1,12 @@
 import { Github } from '@styled-icons/boxicons-logos'
 import { Behance } from '@styled-icons/evaicons-solid/Behance'
+import { OpenFolder } from '@styled-icons/fluentui-system-filled/OpenFolder'
 
 import Base from 'templates/Base'
 
 import { Container } from 'components/Container'
 import { ContactLinkProps } from 'components/ContactLink'
 import { MenuProps } from 'components/Menu'
-import ProjectBanner, { ProjectBannerProps } from 'components/ProjectBanner'
 import Project, { ProjectProps } from 'components/Project'
 import TextContent from 'components/TextContent'
 import Heading from 'components/Heading'
@@ -17,8 +17,9 @@ import * as S from './styles'
 export type ProjectTemplateProps = {
   menu: MenuProps
   footer: ContactLinkProps[]
-  banner: ProjectBannerProps
+  cover: string
   content: string
+  projectUrl: string
   projectCodeUrl: string
   projectDesignUrl: string
   moreProjects: ProjectProps[]
@@ -27,8 +28,9 @@ export type ProjectTemplateProps = {
 const ProjectTemplate = ({
   menu,
   footer,
-  banner,
+  cover,
   content,
+  projectUrl,
   projectCodeUrl,
   projectDesignUrl,
   moreProjects,
@@ -42,34 +44,49 @@ const ProjectTemplate = ({
   return (
     <Base menu={menu} footer={footer}>
       <S.Wrapper>
-        <ProjectBanner {...banner} />
+        <S.Cover
+          src={cover}
+          role="image"
+          aria-label="Imagem de destaque do projeto"
+          data-testid="cover"
+        />
         <S.Main>
           <Container>
             <S.Content>
               <TextContent content={content} />
-              <S.ButtonGroup>
-                <Button
-                  as="a"
-                  role="button"
-                  href={projectCodeUrl}
-                  target="_blank"
-                  variant="outline"
-                  icon={<Github />}
-                >
-                  Ver código
-                </Button>
-                <Button
-                  as="a"
-                  role="button"
-                  href={projectDesignUrl}
-                  target="_blank"
-                  variant="outline"
-                  icon={<Behance />}
-                >
-                  Ver design
-                </Button>
-              </S.ButtonGroup>
             </S.Content>
+            <S.ButtonGroup>
+              <Button
+                as="a"
+                role="button"
+                href={projectUrl}
+                target="_blank"
+                variant="outline"
+                icon={<OpenFolder />}
+              >
+                Visitar
+              </Button>
+              <Button
+                as="a"
+                role="button"
+                href={projectCodeUrl}
+                target="_blank"
+                variant="outline"
+                icon={<Github />}
+              >
+                Ver código
+              </Button>
+              <Button
+                as="a"
+                role="button"
+                href={projectDesignUrl}
+                target="_blank"
+                variant="outline"
+                icon={<Behance />}
+              >
+                Ver design
+              </Button>
+            </S.ButtonGroup>
           </Container>
           <S.SectionMoreProjects>
             <Heading as="h2" size="xxxlarge" lineBottom>
