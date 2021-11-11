@@ -1,14 +1,35 @@
 import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
-import { Cover as ProjectBannerStyles } from 'components/ProjectBanner/styles'
 import { Wrapper as HeadingStyles } from 'components/Heading/styles'
 import { ContentGridContainer as ProjectStyles } from 'components/Project/styles'
 
-export const Wrapper = styled.div`
-  ${ProjectBannerStyles} {
-    margin-top: 11rem;
-  }
+export const Wrapper = styled.div``
+
+type CoverProps = {
+  src: string
+}
+
+export const Cover = styled.div<CoverProps>`
+  ${({ src }) => css`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 11.2rem;
+    right: 0;
+    left: 0;
+    height: 60rem;
+    background-image: linear-gradient(
+        177.39deg,
+        rgba(0, 0, 0, 0.05) 45%,
+        rgba(0, 0, 0, 0) 100%
+      ),
+      url(${src});
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+  `}
 `
 
 export const Main = styled.main``
@@ -21,10 +42,15 @@ export const Content = styled.div`
 export const ButtonGroup = styled.div`
   ${({ theme }) => css`
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
     gap: ${theme.spacings.xsmall};
     margin: ${theme.spacings.large} 0 ${theme.spacings.xxlarge};
+    width: 100%;
+
+    ${media.lessThan('medium')`
+      flex-direction: column;
+      align-items: center;
+    `}
   `}
 `
 

@@ -69,7 +69,7 @@ describe('<Projects />', () => {
     expect(sectionProjects).toHaveStyle({
       display: 'grid',
       gap: '1.6rem',
-      'grid-template-columns': '1fr',
+      'grid-template-columns': 'repeat(2,minmax(20rem,1fr))',
       margin: '4.0rem 0',
     })
     expect(projectContainer[0]).toHaveStyle({
@@ -103,14 +103,6 @@ describe('<Projects />', () => {
       gap: '12rem',
       margin: '12rem 0',
     })
-
-    // await waitFor(() => {
-    //   setTimeout(() => {
-    //     expect(sectionProjects).toHaveStyle({
-    //       opacity: 1,
-    //     })
-    //   }, 2000)
-    // })
 
     expect(buttonGrid).toHaveStyle({
       'background-color': '#3B3A51',
