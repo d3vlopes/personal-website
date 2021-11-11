@@ -10,12 +10,9 @@ import ProjectTemplate, { ProjectTemplateProps } from '.'
 const props: ProjectTemplateProps = {
   menu: menuMock,
   footer: footerMock,
-  banner: {
-    src: '/img/project/won-games.png',
-    projectName: 'Project Name',
-    projectUrl: 'https://www.projecturl.com',
-  },
+  cover: '/img/project/won-games.png',
   content: '<p>Loren ipsum dolor<p>',
+  projectUrl: 'http://https://www.projecturl.com',
   projectCodeUrl: 'https://www.google.com',
   projectDesignUrl: 'https://www.behance.net',
   moreProjects: projectMock.slice(0, 3),
@@ -30,15 +27,6 @@ jest.mock('components/Menu', () => {
     __esModule: true,
     default: function Mock() {
       return <div data-testid="Mock Menu"></div>
-    },
-  }
-})
-
-jest.mock('components/ProjectBanner', () => {
-  return {
-    __esModule: true,
-    default: function Mock() {
-      return <div data-testid="Mock ProjectBanner"></div>
     },
   }
 })
@@ -76,14 +64,17 @@ describe('<ProjectTemplate />', () => {
   it('should render ProjectTemplate', () => {
     renderWithTheme(<ProjectTemplate {...props} />)
 
+    const banner = getByTestId('cover')
+    const buttonVisit = getByRole('button', { name: 'Visitar' })
     const buttonViewCode = getByRole('button', { name: 'Ver código' })
     const buttonViewDesign = getByRole('button', { name: 'Ver design' })
     const moreProjectsHeading = getByRole('heading', { name: 'Mais projetos' })
 
     expect(getByTestId('Mock Menu')).toBeInTheDocument()
 
-    expect(getByTestId('Mock ProjectBanner')).toBeInTheDocument()
+    expect(banner).toHaveAttribute('src', '/img/project/won-games.png')
     expect(getByTestId('Mock TextContent')).toBeInTheDocument()
+    expect(buttonVisit).toBeInTheDocument()
     expect(buttonViewCode).toBeInTheDocument()
     expect(buttonViewDesign).toBeInTheDocument()
     expect(moreProjectsHeading).toBeInTheDocument()

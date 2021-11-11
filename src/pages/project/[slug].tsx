@@ -29,9 +29,6 @@ export async function getStaticPaths() {
 
 export const getStaticProps: GetStaticProps = async () => {
   const data = projectsMock
-  const slug = 'won-games'
-
-  const project = data.filter((project) => project.slug === slug)
 
   if (!data.length) {
     return { notFound: true }
@@ -41,11 +38,8 @@ export const getStaticProps: GetStaticProps = async () => {
     props: {
       menu: mockMenu,
       footer: mockFooter,
-      banner: {
-        src: '/img/project/won-games.png',
-        projectName: project[0].name,
-        projectUrl: 'https://www.google.com/',
-      },
+      cover: '/img/project/won-games.jpg',
+      projectUrl: 'http://https://www.projecturl.com',
       content: mockContent,
       projectCodeUrl: 'https://www.google.com',
       projectDesignUrl: 'https://www.behance.net',
