@@ -13,6 +13,7 @@ module.exports = {
     '!src/utils/getImageUrl.ts',
     '!src/types/**/*.d.ts',
     '!src/graphql/**/*.ts',
+    '!src/pages/api/*.ts',
   ],
   setupFilesAfterEnv: ['<rootDir>/.jest/setup.ts'],
   modulePaths: ['<rootDir>/src/'],

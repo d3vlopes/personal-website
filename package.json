@@ -45,11 +45,13 @@
     "dotenv": "^10.0.0",
     "graphql": "^15.5.1",
     "medium-zoom": "^1.0.6",
+    "msw": "^0.35.0",
     "next": "11.1.0",
     "next-pwa": "^5.2.24",
     "nodemailer": "^6.7.0",
     "react": "17.0.2",
     "react-dom": "17.0.2",
+    "react-hot-toast": "^2.1.1",
     "react-inlinesvg": "^2.3.0",
     "styled-components": "5.3.0",
     "styled-media-query": "^2.1.2"
