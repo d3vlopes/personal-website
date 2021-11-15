@@ -1,6 +1,7 @@
 import { useState } from 'react'
+import toast, { Toaster } from 'react-hot-toast'
+import { SpinnerIos as Spinner } from '@styled-icons/fluentui-system-filled/SpinnerIos'
 
-import Button from 'components/Button'
 import FormField from 'components/FormField'
 
 import * as S from './styles'
@@ -12,17 +13,26 @@ const Form = () => {
     subject: '',
     message: '',
   })
-  // const [loading, setLoading] = useState(false)
-  // const [disabled, setDisabled] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }))
   }
 
+  const notify = (status: 'success' | 'fail') => {
+    if (status === 'success') {
+      toast.success('Mensagem enviada com sucesso!', { duration: 4000 })
+    } else {
+      toast.error('Não foi possível enviar a mensagem, tente novamente', {
+        duration: 4000,
+      })
+    }
+  }
+
   const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
 
-    const data = {
+    const mailData = {
       name: values.name,
       email: values.email,
       subject: values.subject,
@@ -30,19 +40,34 @@ const Form = () => {
     }
 
     try {
-      fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(data),
-      })
-      alert('Enviado')
+      setLoading(true)
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/api/contact/`,
+        {
+          method: 'POST',
+          headers: { 'content-type': 'application/json' },
+          body: JSON.stringify(mailData),
+        },
+      )
+
+      const data = await response.json()
+
+      if (data.status === 'success') {
+        setLoading(false)
+        notify(data.status)
+      } else {
+        setLoading(false)
+        notify(data.status)
+      }
     } catch (error) {
-      console.log(error)
+      notify('fail')
+      setLoading(false)
     }
   }
 
   return (
     <S.Wrapper>
+      <Toaster />
       <form onSubmit={handleSubmit}>
         <FormField
           label="Nome"
@@ -76,9 +101,9 @@ const Form = () => {
           required
           data-testid="message"
         />
-        <Button type="submit" size="small">
-          Enviar
-        </Button>
+        <S.SubmitButton $loading={loading} type="submit" size="small">
+          {loading ? <Spinner color="#FFF" size={16} /> : 'Enviar'}
+        </S.SubmitButton>
       </form>
     </S.Wrapper>
   )
