@@ -10,15 +10,11 @@
     "typecheck": "tsc --project tsconfig.json --noEmit",
     "test": "jest",
     "test:watch": "yarn test --watch",
-    "schema:download": "apollo client:download-schema --endpoint=http://localhost:1337/graphql schema-temp.gql",
-    "schema:convert": "node convertToNonNull.js",
-    "codegen": "apollo codegen:generate --target typescript --excludes=node_modules/ --includes=src/graphql/**/*.ts --localSchemaFile schema-temp.gql --tagName=gql --outputFlat src/graphql/generate",
-    "types:generate": "yarn schema:download && yarn schema:convert && yarn codegen",
-    "generate": "yarn plop --plopfile generators/plopfile.js",
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public",
     "postinstall": "husky install",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "codegen": "graphql-codegen --config codegen.yml"
   },
   "husky": {
     "commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
@@ -31,7 +27,6 @@
     ]
   },
   "dependencies": {
-    "@apollo/client": "^3.3.21",
     "@styled-icons/bootstrap": "^10.34.0",
     "@styled-icons/boxicons-logos": "^10.37.0",
     "@styled-icons/boxicons-regular": "^10.38.0",
@@ -44,6 +39,7 @@
     "@styled-icons/remix-fill": "^10.18.0",
     "dotenv": "^10.0.0",
     "graphql": "^15.5.1",
+    "graphql-request": "^3.6.1",
     "medium-zoom": "^1.0.6",
     "msw": "^0.35.0",
     "next": "11.1.0",
@@ -62,6 +58,10 @@
     "@babel/preset-typescript": "^7.12.7",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
+    "@graphql-codegen/add": "^3.1.0",
+    "@graphql-codegen/cli": "2.3.0",
+    "@graphql-codegen/typescript": "2.4.0",
+    "@graphql-codegen/typescript-operations": "2.2.0",
     "@storybook/addon-essentials": "6.3.7",
     "@storybook/react": "6.3.7",
     "@testing-library/jest-dom": "^5.14.1",
@@ -74,7 +74,6 @@
     "@types/styled-components": "^5.1.12",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
-    "apollo": "^2.33.4",
     "babel-loader": "^8.2.2",
     "babel-plugin-styled-components": "^1.13.2",
     "commitizen": "^4.2.4",
