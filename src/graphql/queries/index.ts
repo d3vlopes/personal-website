@@ -1,12 +1,15 @@
 import { gql } from 'graphql-request'
 
-import { ContactLinksFragment } from 'graphql/fragments'
+import {
+  ContactLinksFragment,
+  ProjectsRecentsFragment,
+} from 'graphql/fragments'
 
 export const GET_HOME = gql`
   ${ContactLinksFragment}
 
-  query getHome {
-    menus {
+  query getHome($menuSlug: String!, $footerSlug: String!) {
+    menu(where: { slug: $menuSlug }) {
       links: pages {
         id
         path
@@ -16,10 +19,43 @@ export const GET_HOME = gql`
         ...ContactLinksFragment
       }
     }
-    footers {
+    footer(where: { slug: $footerSlug }) {
       contactsLinks {
         ...ContactLinksFragment
       }
+    }
+    heroes {
+      photo {
+        url
+      }
+      helloMessage
+      name
+      description
+      buttonText
+    }
+    skills {
+      icon {
+        url
+      }
+      title
+      description
+    }
+    tools {
+      type
+      src {
+        url
+      }
+      name
+    }
+  }
+`
+
+export const GET_RECENTS_PROJECTS = gql`
+  ${ProjectsRecentsFragment}
+
+  query getRecentsProjects($first: Int) {
+    projects(first: $first) {
+      ...ProjectsRecentsFragment
     }
   }
 `

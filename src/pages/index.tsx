@@ -1,25 +1,67 @@
+import { GetStaticProps } from 'next'
+
 import HomeTemplate, { HomeTemplateProps } from 'templates/Home'
 
-import mockMenu from 'components/Menu/mock'
-import mockFooter from 'components/ContactLink/mock'
-import mockHero from 'components/Hero/mock'
-import mockSkills from 'components/CardSkill/mock'
-import mockTools from 'components/TabTools/mock'
-import mockProjects from 'components/Project/mock'
+import { GET_HOME, GET_RECENTS_PROJECTS } from 'graphql/queries'
+import {
+  GetHomeQuery,
+  GetRecentsProjectsQuery,
+} from 'graphql/generated/graphql'
+
+import {
+  contactsLinksMapper,
+  linksMapper,
+  projectsRecentsMapper,
+  skillsMapper,
+  toolsMapper,
+} from 'utils/mappers'
+import { client } from 'utils/client'
 
 export default function Index(props: HomeTemplateProps) {
   return <HomeTemplate {...props} />
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
+  const {
+    menu,
+    footer,
+    heroes: hero,
+    skills,
+    tools,
+  } = await client.request<GetHomeQuery>(GET_HOME, {
+    menuSlug: 'primary',
+    footerSlug: 'primary',
+  })
+
+  const { links, contactsLinks: menuContactLinks } = menu!
+  const { contactsLinks: footerContactLinks } = footer!
+  const { photo, name, helloMessage, description, buttonText } = hero[0]
+
+  const { projects } = await client.request<GetRecentsProjectsQuery>(
+    GET_RECENTS_PROJECTS,
+    {
+      first: 4,
+    },
+  )
+
   return {
     props: {
-      menu: mockMenu,
-      footer: mockFooter,
-      hero: mockHero,
-      skills: mockSkills,
-      tools: mockTools,
-      projects: mockProjects,
+      menu: {
+        links: linksMapper(links),
+        contactLinks: contactsLinksMapper(menuContactLinks),
+      },
+      footer: contactsLinksMapper(footerContactLinks),
+      hero: {
+        photo: photo.url,
+        hello: helloMessage,
+        name,
+        description,
+        buttonText,
+      },
+      skills: skillsMapper(skills),
+      tools: toolsMapper(tools),
+      projects: projectsRecentsMapper(projects),
     },
+    revalidate: 60 * 60 * 24,
   }
 }

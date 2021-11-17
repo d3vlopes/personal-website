@@ -1,13 +1,13 @@
-import Link from 'next/link'
+// import Link from 'next/link'
 
 import { Fragment } from 'react'
 
 import Base from 'templates/Base'
 
+// import Button from 'components/Button'
+// import MediaMatch from 'components/MediaMatch'
 import Heading from 'components/Heading'
-import Button from 'components/Button'
 import Form from 'components/Form'
-import MediaMatch from 'components/MediaMatch'
 import TabTools, { TabToolsProps } from 'components/TabTools'
 import CardSkill, { CardSkillProps } from 'components/CardSkill'
 import Hero, { HeroProps } from 'components/Hero'
@@ -73,7 +73,7 @@ const HomeTemplate = ({
         <TabTools {...tools} />
       </S.SectionTools>
 
-      <Container>
+      {/* <Container>
         <S.CallOfLearning data-testid="call of learning">
           <S.Content>
             <Heading as="h2" size="huge">
@@ -101,13 +101,13 @@ const HomeTemplate = ({
           </S.Content>
           <S.Image data-testid="call of learning image" />
         </S.CallOfLearning>
-      </Container>
+      </Container> */}
       <S.SectionProjectsRecents>
         <Heading as="h2" lineBottom size="huge">
           Projetos recentes
         </Heading>
         <S.Projects>
-          <Container>{projects.slice(0, 4).map(renderProjects)}</Container>
+          <Container>{projects.map(renderProjects)}</Container>
         </S.Projects>
       </S.SectionProjectsRecents>
       <S.SectionContact>

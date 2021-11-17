@@ -9,3 +9,14 @@ export const ContactLinksFragment = gql`
     link
   }
 `
+
+export const ProjectsRecentsFragment = gql`
+  fragment ProjectsRecentsFragment on Project {
+    thumbnail {
+      url
+    }
+    name
+    description
+    slug
+  }
+`
