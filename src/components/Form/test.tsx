@@ -1,22 +1,18 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 global.fetch = require('node-fetch')
 
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
-import { rest } from 'msw'
-import { setupServer } from 'msw/node'
 
 import { renderWithTheme } from 'utils/test/helpers'
 
 import Form from '.'
 
-const server = setupServer()
-
 const { getByTestId, getByRole, findByText } = screen
 
 describe('<Form />', () => {
   beforeAll(() => {
-    server.listen()
-
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
       value: jest.fn().mockImplementation((query) => ({
@@ -30,12 +26,6 @@ describe('<Form />', () => {
         dispatchEvent: jest.fn(),
       })),
     })
-  })
-
-  afterEach(() => server.resetHandlers())
-
-  afterAll(() => {
-    server.close()
   })
 
   it('should render Form', () => {
@@ -62,16 +52,7 @@ describe('<Form />', () => {
     expect(submitButton).toBeInTheDocument()
   })
 
-  it('should show fail message if there is network error', async () => {
-    server.use(
-      rest.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
-        async (req, res) => {
-          return res.networkError('Failed to connect')
-        },
-      ),
-    )
-
+  it('should show fail message', async () => {
     renderWithTheme(<Form />)
 
     const nameInput = getByTestId('name')
@@ -93,54 +74,21 @@ describe('<Form />', () => {
     expect(await message).toBeInTheDocument()
   })
 
-  it('should show fail message if there is an error sending email', async () => {
-    server.use(
-      rest.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
-        async (req, res, ctx) => {
-          return res(
-            ctx.json({
-              status: 'fail',
-            }),
-          )
-        },
-      ),
-    )
-
-    renderWithTheme(<Form />)
-
-    const nameInput = getByTestId('name')
-    const emailInput = getByTestId('mail')
-    const subjectInput = getByTestId('subject')
-    const messageTextArea = getByTestId('message')
-    const submitButton = getByRole('button', { name: 'Enviar' })
-
-    userEvent.type(nameInput, 'Lopes')
-    userEvent.type(emailInput, 'email@provider.com')
-    userEvent.type(subjectInput, 'Subject')
-    userEvent.type(messageTextArea, 'Loren ipsum dolor')
-    userEvent.click(submitButton)
-
-    const message = findByText(
-      'Não foi possível enviar a mensagem, tente novamente',
-    )
-
-    expect(await message).toBeInTheDocument()
-  })
-
-  it('should show success message if there is success', async () => {
-    server.use(
-      rest.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact`,
-        async (req, res, ctx) => {
-          return res(
-            ctx.json({
-              status: 'success',
-            }),
-          )
-        },
-      ),
-    )
+  it('should send email and show success message', async () => {
+    const send = jest.spyOn(require('emailjs-com'), 'send')
+    const mailData = {
+      name: 'John Doe',
+      email: 'test@email.com',
+      subject: 'Subject',
+      message: 'Loren ipsum dolor',
+    }
+    const data = {
+      serviceId: 'serviceID_123',
+      templateID: 'templateID_123',
+      templatePrams: mailData,
+      userID: 'userID_123',
+    }
+    send.mockImplementationOnce(() => [data])
 
     renderWithTheme(<Form />)
 
