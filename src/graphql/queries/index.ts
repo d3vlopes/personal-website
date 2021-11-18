@@ -1,9 +1,6 @@
 import { gql } from 'graphql-request'
 
-import {
-  ContactLinksFragment,
-  ProjectsRecentsFragment,
-} from 'graphql/fragments'
+import { ContactLinksFragment, ProjectFragment } from 'graphql/fragments'
 
 export const GET_HOME = gql`
   ${ContactLinksFragment}
@@ -51,11 +48,11 @@ export const GET_HOME = gql`
 `
 
 export const GET_RECENTS_PROJECTS = gql`
-  ${ProjectsRecentsFragment}
+  ${ProjectFragment}
 
   query getRecentsProjects($first: Int) {
-    projects(first: $first) {
-      ...ProjectsRecentsFragment
+    projects(first: $first, orderBy: createdAt_DESC) {
+      ...ProjectFragment
     }
   }
 `

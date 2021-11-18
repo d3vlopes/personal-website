@@ -10,8 +10,8 @@ export const ContactLinksFragment = gql`
   }
 `
 
-export const ProjectsRecentsFragment = gql`
-  fragment ProjectsRecentsFragment on Project {
+export const ProjectFragment = gql`
+  fragment ProjectFragment on Project {
     thumbnail {
       url
     }
