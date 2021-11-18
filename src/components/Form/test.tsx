@@ -4,6 +4,7 @@ global.fetch = require('node-fetch')
 
 import { screen } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
+import toast from 'react-hot-toast'
 
 import { renderWithTheme } from 'utils/test/helpers'
 
@@ -13,6 +14,8 @@ const { getByTestId, getByRole, findByText } = screen
 
 describe('<Form />', () => {
   beforeAll(() => {
+    toast.remove()
+
     Object.defineProperty(window, 'matchMedia', {
       writable: true,
       value: jest.fn().mockImplementation((query) => ({
@@ -52,28 +55,6 @@ describe('<Form />', () => {
     expect(submitButton).toBeInTheDocument()
   })
 
-  it('should show fail message', async () => {
-    renderWithTheme(<Form />)
-
-    const nameInput = getByTestId('name')
-    const emailInput = getByTestId('mail')
-    const subjectInput = getByTestId('subject')
-    const messageTextArea = getByTestId('message')
-    const submitButton = getByRole('button', { name: 'Enviar' })
-
-    userEvent.type(nameInput, 'Lopes')
-    userEvent.type(emailInput, 'email@provider.com')
-    userEvent.type(subjectInput, 'Subject')
-    userEvent.type(messageTextArea, 'Loren ipsum dolor')
-    userEvent.click(submitButton)
-
-    const message = findByText(
-      'Não foi possível enviar a mensagem, tente novamente',
-    )
-
-    expect(await message).toBeInTheDocument()
-  })
-
   it('should send email and show success message', async () => {
     const send = jest.spyOn(require('emailjs-com'), 'send')
     const mailData = {
@@ -105,6 +86,28 @@ describe('<Form />', () => {
     userEvent.click(submitButton)
 
     const message = findByText('Mensagem enviada com sucesso!')
+
+    expect(await message).toBeInTheDocument()
+  })
+
+  it('should show fail message', async () => {
+    renderWithTheme(<Form />)
+
+    const nameInput = getByTestId('name')
+    const emailInput = getByTestId('mail')
+    const subjectInput = getByTestId('subject')
+    const messageTextArea = getByTestId('message')
+    const submitButton = getByRole('button', { name: 'Enviar' })
+
+    userEvent.type(nameInput, 'Lopes')
+    userEvent.type(emailInput, 'email@provider.com')
+    userEvent.type(subjectInput, 'Subject')
+    userEvent.type(messageTextArea, 'Loren ipsum dolor')
+    userEvent.click(submitButton)
+
+    const message = findByText(
+      'Não foi possível enviar a mensagem, tente novamente',
+    )
 
     expect(await message).toBeInTheDocument()
   })

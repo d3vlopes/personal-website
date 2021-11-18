@@ -1,10 +1,11 @@
 import { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
-import { send } from 'emailjs-com'
+import { SpinnerIos as Spinner } from '@styled-icons/fluentui-system-filled/SpinnerIos'
 
 import FormField from 'components/FormField'
 
 import * as S from './styles'
+import { sendMail } from 'services/sendMail'
 
 const Form = () => {
   const [values, setValues] = useState({
@@ -14,7 +15,6 @@ const Form = () => {
     message: '',
   })
   const [loading, setLoading] = useState(false)
-  const templateID = 'template_yjvzbbb'
 
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }))
@@ -42,12 +42,7 @@ const Form = () => {
 
     try {
       setLoading(true)
-      send(
-        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
-        templateID,
-        mailData,
-        process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
-      )
+      await sendMail(mailData)
       setLoading(false)
       notify('success')
     } catch (error) {
@@ -93,7 +88,7 @@ const Form = () => {
           data-testid="message"
         />
         <S.SubmitButton $loading={loading} type="submit" size="small">
-          Enviar
+          {loading ? <Spinner color="#FFF" size={16} /> : 'Enviar'}
         </S.SubmitButton>
       </form>
     </S.Wrapper>
