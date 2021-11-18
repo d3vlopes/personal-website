@@ -53,7 +53,7 @@ export const Image = styled.img`
     border-radius: ${theme.border.radius.small};
 
     ${media.lessThan('medium')`
-      height: 23.4rem;
+      height: 21rem;
     `}
   `}
 `

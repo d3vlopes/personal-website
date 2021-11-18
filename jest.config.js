@@ -8,7 +8,7 @@ module.exports = {
     '!src/**/mock.ts',
     '!src/pages/**/*.tsx',
     '!src/styles/**/*.ts',
-    '!src/utils/client.ts',
+    '!src/services/api.ts',
     '!src/types/**/*.ts',
     '!src/graphql/**/*.ts',
     '!src/pages/api/*.ts',

@@ -157,7 +157,7 @@ exports[`<Project /> should match snapshot 1`] = `
 
 @media (max-width:768px) {
   .c2 {
-    height: 23.4rem;
+    height: 21rem;
   }
 }
 

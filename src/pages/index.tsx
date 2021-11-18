@@ -15,7 +15,7 @@ import {
   skillsMapper,
   toolsMapper,
 } from 'utils/mappers'
-import { client } from 'utils/client'
+import { api } from 'services/api'
 
 export default function Index(props: HomeTemplateProps) {
   return <HomeTemplate {...props} />
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
     heroes: hero,
     skills,
     tools,
-  } = await client.request<GetHomeQuery>(GET_HOME, {
+  } = await api.request<GetHomeQuery>(GET_HOME, {
     menuSlug: 'primary',
     footerSlug: 'primary',
   })
@@ -37,7 +37,7 @@ export const getStaticProps: GetStaticProps = async () => {
   const { contactsLinks: footerContactLinks } = footer!
   const { photo, name, helloMessage, description, buttonText } = hero[0]
 
-  const { projects } = await client.request<GetRecentsProjectsQuery>(
+  const { projects } = await api.request<GetRecentsProjectsQuery>(
     GET_RECENTS_PROJECTS,
     {
       first: 4,
