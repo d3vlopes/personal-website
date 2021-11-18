@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
-import { SpinnerIos as Spinner } from '@styled-icons/fluentui-system-filled/SpinnerIos'
+import { send } from 'emailjs-com'
 
 import FormField from 'components/FormField'
 
@@ -14,6 +14,7 @@ const Form = () => {
     message: '',
   })
   const [loading, setLoading] = useState(false)
+  const templateID = 'template_yjvzbbb'
 
   const handleInput = (field: string, value: string) => {
     setValues((s) => ({ ...s, [field]: value }))
@@ -41,27 +42,17 @@ const Form = () => {
 
     try {
       setLoading(true)
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/api/contact/`,
-        {
-          method: 'POST',
-          headers: { 'content-type': 'application/json' },
-          body: JSON.stringify(mailData),
-        },
+      send(
+        process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID!,
+        templateID,
+        mailData,
+        process.env.NEXT_PUBLIC_EMAILJS_USER_ID,
       )
-
-      const data = await response.json()
-
-      if (data.status === 'success') {
-        setLoading(false)
-        notify(data.status)
-      } else {
-        setLoading(false)
-        notify(data.status)
-      }
-    } catch (error) {
-      notify('fail')
       setLoading(false)
+      notify('success')
+    } catch (error) {
+      setLoading(false)
+      notify('fail')
     }
   }
 
@@ -102,7 +93,7 @@ const Form = () => {
           data-testid="message"
         />
         <S.SubmitButton $loading={loading} type="submit" size="small">
-          {loading ? <Spinner color="#FFF" size={16} /> : 'Enviar'}
+          Enviar
         </S.SubmitButton>
       </form>
     </S.Wrapper>
