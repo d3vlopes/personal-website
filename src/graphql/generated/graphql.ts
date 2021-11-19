@@ -10214,7 +10214,11 @@ export enum _SystemDateTimeFieldVariation {
 
 export type ContactLinksFragmentFragment = { __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } };
 
-export type ProjectsRecentsFragmentFragment = { __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined };
+export type MenuFragmentFragment = { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> };
+
+export type FooterFragmentFragment = { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> };
+
+export type ProjectFragmentFragment = { __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined };
 
 export type GetHomeQueryVariables = Exact<{
   menuSlug: Scalars['String'];

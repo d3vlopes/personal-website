@@ -10,6 +10,27 @@ export const ContactLinksFragment = gql`
   }
 `
 
+export const MenuFragment = gql`
+  fragment MenuFragment on Menu {
+    links: pages {
+      id
+      path
+      menuLabel
+    }
+    contactsLinks {
+      ...ContactLinksFragment
+    }
+  }
+`
+
+export const FooterFragment = gql`
+  fragment FooterFragment on Footer {
+    contactsLinks {
+      ...ContactLinksFragment
+    }
+  }
+`
+
 export const ProjectFragment = gql`
   fragment ProjectFragment on Project {
     thumbnail {

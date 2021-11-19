@@ -1,25 +1,23 @@
 import { gql } from 'graphql-request'
 
-import { ContactLinksFragment, ProjectFragment } from 'graphql/fragments'
+import {
+  ContactLinksFragment,
+  ProjectFragment,
+  MenuFragment,
+  FooterFragment,
+} from 'graphql/fragments'
 
 export const GET_HOME = gql`
   ${ContactLinksFragment}
+  ${MenuFragment}
+  ${FooterFragment}
 
   query getHome($menuSlug: String!, $footerSlug: String!) {
     menu(where: { slug: $menuSlug }) {
-      links: pages {
-        id
-        path
-        menuLabel
-      }
-      contactsLinks {
-        ...ContactLinksFragment
-      }
+      ...MenuFragment
     }
     footer(where: { slug: $footerSlug }) {
-      contactsLinks {
-        ...ContactLinksFragment
-      }
+      ...FooterFragment
     }
     heroes {
       photo {
