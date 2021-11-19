@@ -54,3 +54,41 @@ export const GET_RECENTS_PROJECTS = gql`
     }
   }
 `
+
+export const GET_ABOUT = gql`
+  ${ContactLinksFragment}
+  ${MenuFragment}
+  ${FooterFragment}
+
+  query getAbout($menuSlug: String!, $pageSlug: String!, $footerSlug: String!) {
+    menu(where: { slug: $menuSlug }) {
+      ...MenuFragment
+    }
+    page(where: { slug: $pageSlug }) {
+      title
+      subtitle
+      blocks {
+        __typename
+        ... on ProfileInformation {
+          image {
+            url
+          }
+          name
+          age
+          city
+          liking
+          dream
+        }
+        ... on Timeline {
+          title
+          content {
+            html
+          }
+        }
+      }
+    }
+    footer(where: { slug: $footerSlug }) {
+      ...FooterFragment
+    }
+  }
+`
