@@ -4,6 +4,7 @@ import {
   skillsMapper,
   toolsMapper,
   projectsRecentsMapper,
+  timelinesMapper,
 } from '.'
 import {
   ContactLinksProps,
@@ -11,6 +12,7 @@ import {
   SkillsProps,
   ToolsProps,
   ProjectsRecentsProps,
+  TimelinesProps,
 } from 'types/mappers'
 
 describe('linksMapper', () => {
@@ -180,6 +182,36 @@ describe('projectsRecentsMapper', () => {
         name: 'Project 2',
         description: 'Loren ipsum dolor',
         slug: 'project-2',
+      },
+    ])
+  })
+})
+
+describe('timelinesMapper', () => {
+  it('should return the right format when mapped', () => {
+    const timelines = [
+      {
+        title: 'O início',
+        content: {
+          html: '<p>Loren ipsum dolor</p>',
+        },
+      },
+      {
+        title: 'Primeiro emprego',
+        content: {
+          html: '<p>Loren ipsum dolor</p>',
+        },
+      },
+    ] as TimelinesProps[]
+
+    expect(timelinesMapper(timelines)).toStrictEqual([
+      {
+        title: 'O início',
+        content: '<p>Loren ipsum dolor</p>',
+      },
+      {
+        title: 'Primeiro emprego',
+        content: '<p>Loren ipsum dolor</p>',
       },
     ])
   })
