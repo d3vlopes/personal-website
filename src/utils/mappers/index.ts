@@ -3,6 +3,7 @@ import {
   MenuLinkProps,
   ProjectsRecentsProps,
   SkillsProps,
+  TimelinesProps,
   ToolsProps,
 } from 'types/mappers'
 
@@ -56,5 +57,12 @@ export const projectsRecentsMapper = (projects: ProjectsRecentsProps[]) => {
     name: project.name,
     description: project.description,
     slug: project.slug,
+  }))
+}
+
+export const timelinesMapper = (timelines: TimelinesProps[]) => {
+  return timelines.map((timeline) => ({
+    title: timeline.title,
+    content: timeline.content.html,
   }))
 }
