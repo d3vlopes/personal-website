@@ -1,23 +1,72 @@
 import AboutTemplate, { AboutTemplateProps } from 'templates/About'
 
-import mockMenu from 'components/Menu/mock'
-import mockFooter from 'components/ContactLink/mock'
-import mockCardProfile from 'components/CardProfile/mock'
-import mockCardTimeline from 'components/CardTimeline/mock'
+import { GET_ABOUT } from 'graphql/queries'
+import { GetAboutQuery } from 'graphql/generated/graphql'
+
+import { api } from 'services/api'
+import {
+  contactsLinksMapper,
+  linksMapper,
+  timelinesMapper,
+} from 'utils/mappers'
+import { TimelinesProps } from 'types/mappers'
+
+type ProfileInformation = {
+  __typename: 'ProfileInformation'
+  name: string
+  age: number
+  city: string
+  liking: string
+  dream: string
+  image: {
+    __typename?: 'Asset'
+    url: string
+  }
+}
 
 export default function AboutPage(props: AboutTemplateProps) {
   return <AboutTemplate {...props} />
 }
 
 export async function getStaticProps() {
+  const { menu, footer, page } = await api.request<GetAboutQuery>(GET_ABOUT, {
+    menuSlug: 'primary',
+    pageSlug: 'about',
+    footerSlug: 'primary',
+  })
+
+  const { links, contactsLinks: menuContactLinks } = menu!
+  const { contactsLinks: footerContactLinks } = footer!
+  const { title, subtitle, blocks } = page!
+
+  const blockProfileInformation = blocks.filter(
+    (block) => block.__typename === 'ProfileInformation',
+  ) as ProfileInformation[]
+
+  const blockTimelines = blocks.filter(
+    (block) => block.__typename === 'Timeline',
+  ) as TimelinesProps[]
+
+  const profileInformation = blockProfileInformation[0]
+
   return {
     props: {
-      menu: mockMenu,
-      footer: mockFooter,
-      title: 'Sobre mim',
-      subtitle: 'Um pouco sobre minha história, interesses e sonhos.',
-      cardProfile: mockCardProfile,
-      cardTimeline: mockCardTimeline,
+      menu: {
+        links: linksMapper(links),
+        contactLinks: contactsLinksMapper(menuContactLinks),
+      },
+      footer: contactsLinksMapper(footerContactLinks),
+      title,
+      subtitle,
+      cardProfile: {
+        image: profileInformation.image.url,
+        name: profileInformation.name,
+        age: profileInformation.age,
+        city: profileInformation.city,
+        liking: profileInformation.liking,
+        dream: profileInformation.dream,
+      },
+      cardTimeline: timelinesMapper(blockTimelines),
     },
   }
 }

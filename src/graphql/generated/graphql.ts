@@ -10214,7 +10214,11 @@ export enum _SystemDateTimeFieldVariation {
 
 export type ContactLinksFragmentFragment = { __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } };
 
-export type ProjectsRecentsFragmentFragment = { __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined };
+export type MenuFragmentFragment = { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> };
+
+export type FooterFragmentFragment = { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> };
+
+export type ProjectFragmentFragment = { __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined };
 
 export type GetHomeQueryVariables = Exact<{
   menuSlug: Scalars['String'];
@@ -10230,3 +10234,12 @@ export type GetRecentsProjectsQueryVariables = Exact<{
 
 
 export type GetRecentsProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined }> };
+
+export type GetAboutQueryVariables = Exact<{
+  menuSlug: Scalars['String'];
+  pageSlug: Scalars['String'];
+  footerSlug: Scalars['String'];
+}>;
+
+
+export type GetAboutQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined, page?: { __typename?: 'Page', title?: string | null | undefined, subtitle?: string | null | undefined, blocks: Array<{ __typename: 'Hero' } | { __typename: 'ProfileInformation', name: string, age: number, city: string, liking: string, dream: string, image: { __typename?: 'Asset', url: string } } | { __typename: 'Skill' } | { __typename: 'Timeline', title: string, content: { __typename?: 'RichText', html: string } } | { __typename: 'Tool' }> } | null | undefined, footer?: { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined };

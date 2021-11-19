@@ -36,3 +36,10 @@ export type ProjectsRecentsProps = {
   slug: string
   thumbnail?: { url: string } | null | undefined
 }
+
+export type TimelinesProps = {
+  title: string
+  content: {
+    html: string
+  }
+}

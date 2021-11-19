@@ -1,25 +1,23 @@
 import { gql } from 'graphql-request'
 
-import { ContactLinksFragment, ProjectFragment } from 'graphql/fragments'
+import {
+  ContactLinksFragment,
+  ProjectFragment,
+  MenuFragment,
+  FooterFragment,
+} from 'graphql/fragments'
 
 export const GET_HOME = gql`
   ${ContactLinksFragment}
+  ${MenuFragment}
+  ${FooterFragment}
 
   query getHome($menuSlug: String!, $footerSlug: String!) {
     menu(where: { slug: $menuSlug }) {
-      links: pages {
-        id
-        path
-        menuLabel
-      }
-      contactsLinks {
-        ...ContactLinksFragment
-      }
+      ...MenuFragment
     }
     footer(where: { slug: $footerSlug }) {
-      contactsLinks {
-        ...ContactLinksFragment
-      }
+      ...FooterFragment
     }
     heroes {
       photo {
@@ -53,6 +51,44 @@ export const GET_RECENTS_PROJECTS = gql`
   query getRecentsProjects($first: Int) {
     projects(first: $first, orderBy: createdAt_DESC) {
       ...ProjectFragment
+    }
+  }
+`
+
+export const GET_ABOUT = gql`
+  ${ContactLinksFragment}
+  ${MenuFragment}
+  ${FooterFragment}
+
+  query getAbout($menuSlug: String!, $pageSlug: String!, $footerSlug: String!) {
+    menu(where: { slug: $menuSlug }) {
+      ...MenuFragment
+    }
+    page(where: { slug: $pageSlug }) {
+      title
+      subtitle
+      blocks {
+        __typename
+        ... on ProfileInformation {
+          image {
+            url
+          }
+          name
+          age
+          city
+          liking
+          dream
+        }
+        ... on Timeline {
+          title
+          content {
+            html
+          }
+        }
+      }
+    }
+    footer(where: { slug: $footerSlug }) {
+      ...FooterFragment
     }
   }
 `
