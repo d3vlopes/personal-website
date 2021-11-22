@@ -1,6 +1,6 @@
 import AboutTemplate, { AboutTemplateProps } from 'templates/About'
 
-import { GET_ABOUT } from 'graphql/queries'
+import { GET_ABOUT_PAGE } from 'graphql/queries'
 import { GetAboutQuery } from 'graphql/generated/graphql'
 
 import { api } from 'services/api'
@@ -29,11 +29,14 @@ export default function AboutPage(props: AboutTemplateProps) {
 }
 
 export async function getStaticProps() {
-  const { menu, footer, page } = await api.request<GetAboutQuery>(GET_ABOUT, {
-    menuSlug: 'primary',
-    pageSlug: 'about',
-    footerSlug: 'primary',
-  })
+  const { menu, footer, page } = await api.request<GetAboutQuery>(
+    GET_ABOUT_PAGE,
+    {
+      menuSlug: 'primary',
+      pageSlug: 'about',
+      footerSlug: 'primary',
+    },
+  )
 
   const { links, contactsLinks: menuContactLinks } = menu!
   const { contactsLinks: footerContactLinks } = footer!

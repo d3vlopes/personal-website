@@ -3,7 +3,7 @@ import {
   contactsLinksMapper,
   skillsMapper,
   toolsMapper,
-  projectsRecentsMapper,
+  projectsMapper,
   timelinesMapper,
 } from '.'
 import {
@@ -11,7 +11,7 @@ import {
   MenuLinkProps,
   SkillsProps,
   ToolsProps,
-  ProjectsRecentsProps,
+  ProjectsProps,
   TimelinesProps,
 } from 'types/mappers'
 
@@ -149,7 +149,7 @@ describe('toolsMapper', () => {
   })
 })
 
-describe('projectsRecentsMapper', () => {
+describe('projectsMapper', () => {
   it('should return the right format when mapped', () => {
     const projects = [
       {
@@ -168,9 +168,9 @@ describe('projectsRecentsMapper', () => {
         description: 'Loren ipsum dolor',
         slug: 'project-2',
       },
-    ] as ProjectsRecentsProps[]
+    ] as ProjectsProps[]
 
-    expect(projectsRecentsMapper(projects)).toStrictEqual([
+    expect(projectsMapper(projects)).toStrictEqual([
       {
         src: 'thumbnail-url-project-1',
         name: 'Project 1',

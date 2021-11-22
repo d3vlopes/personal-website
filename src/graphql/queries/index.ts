@@ -7,7 +7,7 @@ import {
   FooterFragment,
 } from 'graphql/fragments'
 
-export const GET_HOME = gql`
+export const GET_HOME_PAGE = gql`
   ${ContactLinksFragment}
   ${MenuFragment}
   ${FooterFragment}
@@ -55,7 +55,7 @@ export const GET_RECENTS_PROJECTS = gql`
   }
 `
 
-export const GET_ABOUT = gql`
+export const GET_ABOUT_PAGE = gql`
   ${ContactLinksFragment}
   ${MenuFragment}
   ${FooterFragment}
