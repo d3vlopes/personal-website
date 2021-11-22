@@ -10243,3 +10243,13 @@ export type GetAboutQueryVariables = Exact<{
 
 
 export type GetAboutQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined, page?: { __typename?: 'Page', title?: string | null | undefined, subtitle?: string | null | undefined, blocks: Array<{ __typename: 'Hero' } | { __typename: 'ProfileInformation', name: string, age: number, city: string, liking: string, dream: string, image: { __typename?: 'Asset', url: string } } | { __typename: 'Skill' } | { __typename: 'Timeline', title: string, content: { __typename?: 'RichText', html: string } } | { __typename: 'Tool' }> } | null | undefined, footer?: { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined };
+
+export type GetProjectsQueryVariables = Exact<{
+  menuSlug: Scalars['String'];
+  first?: Maybe<Scalars['Int']>;
+  pageSlug: Scalars['String'];
+  footerSlug: Scalars['String'];
+}>;
+
+
+export type GetProjectsQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined, page?: { __typename?: 'Page', title?: string | null | undefined, subtitle?: string | null | undefined } | null | undefined, projects: Array<{ __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined }>, footer?: { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined };

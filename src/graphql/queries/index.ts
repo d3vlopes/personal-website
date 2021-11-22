@@ -92,3 +92,32 @@ export const GET_ABOUT_PAGE = gql`
     }
   }
 `
+
+export const GET_PROJECTS_PAGE = gql`
+  ${ContactLinksFragment}
+  ${MenuFragment}
+  ${ProjectFragment}
+  ${FooterFragment}
+
+  query getProjects(
+    $menuSlug: String!
+    $first: Int
+    $pageSlug: String!
+    $footerSlug: String!
+  ) {
+    menu(where: { slug: $menuSlug }) {
+      ...MenuFragment
+    }
+    page(where: { slug: $pageSlug }) {
+      title
+      subtitle
+    }
+
+    projects(first: $first, orderBy: createdAt_DESC) {
+      ...ProjectFragment
+    }
+    footer(where: { slug: $footerSlug }) {
+      ...FooterFragment
+    }
+  }
+`
