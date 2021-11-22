@@ -30,7 +30,7 @@ export type ToolsProps = {
   }
 }
 
-export type ProjectsRecentsProps = {
+export type ProjectsProps = {
   name?: string | null | undefined
   description?: string | null | undefined
   slug: string

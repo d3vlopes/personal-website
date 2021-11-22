@@ -101,7 +101,7 @@ export const WrapperGrid = styled.div`
 
 export const ImageGrid = styled.img`
   ${({ theme }) => css`
-    min-height: 29.2rem;
+    min-height: 35rem;
     width: 100%;
     border-radius: ${theme.border.radius.medium} ${theme.border.radius.medium} 0
       0;
