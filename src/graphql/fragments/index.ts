@@ -31,13 +31,27 @@ export const FooterFragment = gql`
   }
 `
 
-export const ProjectFragment = gql`
-  fragment ProjectFragment on Project {
+export const ProjectsFragment = gql`
+  fragment ProjectsFragment on Project {
     thumbnail {
       url
     }
     name
     description
     slug
+  }
+`
+
+export const ProjectFragment = gql`
+  fragment ProjectFragment on Project {
+    cover {
+      url
+    }
+    projectUrl
+    content {
+      html
+    }
+    projectCodeUrl
+    projectDesignUrl
   }
 `

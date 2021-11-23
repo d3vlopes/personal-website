@@ -10218,7 +10218,9 @@ export type MenuFragmentFragment = { __typename?: 'Menu', links: Array<{ __typen
 
 export type FooterFragmentFragment = { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> };
 
-export type ProjectFragmentFragment = { __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined };
+export type ProjectsFragmentFragment = { __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined };
+
+export type ProjectFragmentFragment = { __typename?: 'Project', projectUrl?: string | null | undefined, projectCodeUrl?: string | null | undefined, projectDesignUrl?: string | null | undefined, cover?: { __typename?: 'Asset', url: string } | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined };
 
 export type GetHomeQueryVariables = Exact<{
   menuSlug: Scalars['String'];
@@ -10247,9 +10249,26 @@ export type GetAboutQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu'
 export type GetProjectsQueryVariables = Exact<{
   menuSlug: Scalars['String'];
   first?: Maybe<Scalars['Int']>;
-  pageSlug: Scalars['String'];
+  pageSlug?: Maybe<Scalars['String']>;
   footerSlug: Scalars['String'];
 }>;
 
 
 export type GetProjectsQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined, page?: { __typename?: 'Page', title?: string | null | undefined, subtitle?: string | null | undefined } | null | undefined, projects: Array<{ __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined }>, footer?: { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined };
+
+export type GetProjectQueryVariables = Exact<{
+  menuSlug: Scalars['String'];
+  projectSlug: Scalars['String'];
+  footerSlug: Scalars['String'];
+}>;
+
+
+export type GetProjectQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined, projects: Array<{ __typename?: 'Project', projectUrl?: string | null | undefined, projectCodeUrl?: string | null | undefined, projectDesignUrl?: string | null | undefined, cover?: { __typename?: 'Asset', url: string } | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined }>, footer?: { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined };
+
+export type GetMoreProjectsQueryVariables = Exact<{
+  slug?: Maybe<Scalars['String']>;
+  first?: Maybe<Scalars['Int']>;
+}>;
+
+
+export type GetMoreProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined }> };

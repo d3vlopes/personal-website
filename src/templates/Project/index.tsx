@@ -56,36 +56,42 @@ const ProjectTemplate = ({
               <TextContent content={content} />
             </S.Content>
             <S.ButtonGroup>
-              <Button
-                as="a"
-                role="button"
-                href={projectUrl}
-                target="_blank"
-                variant="outline"
-                icon={<OpenFolder />}
-              >
-                Visitar
-              </Button>
-              <Button
-                as="a"
-                role="button"
-                href={projectCodeUrl}
-                target="_blank"
-                variant="outline"
-                icon={<Github />}
-              >
-                Ver código
-              </Button>
-              <Button
-                as="a"
-                role="button"
-                href={projectDesignUrl}
-                target="_blank"
-                variant="outline"
-                icon={<Behance />}
-              >
-                Ver design
-              </Button>
+              {!!projectUrl && (
+                <Button
+                  as="a"
+                  role="button"
+                  href={projectUrl}
+                  target="_blank"
+                  variant="outline"
+                  icon={<OpenFolder />}
+                >
+                  Visitar
+                </Button>
+              )}
+              {projectCodeUrl && (
+                <Button
+                  as="a"
+                  role="button"
+                  href={projectCodeUrl}
+                  target="_blank"
+                  variant="outline"
+                  icon={<Github />}
+                >
+                  Ver código
+                </Button>
+              )}
+              {!!projectDesignUrl && (
+                <Button
+                  as="a"
+                  role="button"
+                  href={projectDesignUrl}
+                  target="_blank"
+                  variant="outline"
+                  icon={<Behance />}
+                >
+                  Ver design
+                </Button>
+              )}
             </S.ButtonGroup>
           </Container>
           <S.SectionMoreProjects>
