@@ -42,10 +42,10 @@ export const Content = styled.div`
 export const ButtonGroup = styled.div`
   ${({ theme }) => css`
     display: flex;
-    justify-content: center;
     gap: ${theme.spacings.xsmall};
-    margin: ${theme.spacings.large} 0 ${theme.spacings.xxlarge};
+    margin: ${theme.spacings.large} auto ${theme.spacings.xxlarge};
     width: 100%;
+    max-width: 59.7rem;
 
     ${media.lessThan('medium')`
       flex-direction: column;
