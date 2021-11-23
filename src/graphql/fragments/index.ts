@@ -31,8 +31,8 @@ export const FooterFragment = gql`
   }
 `
 
-export const ProjectFragment = gql`
-  fragment ProjectFragment on Project {
+export const ProjectsFragment = gql`
+  fragment ProjectsFragment on Project {
     thumbnail {
       url
     }
