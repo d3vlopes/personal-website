@@ -146,3 +146,13 @@ export const GET_PROJECT_PAGE = gql`
     }
   }
 `
+
+export const GET_MORE_PROJECTS = gql`
+  ${ProjectsFragment}
+
+  query getMoreProjects($slug: String, $first: Int) {
+    projects(where: { slug_not_contains: $slug }, first: $first) {
+      ...ProjectsFragment
+    }
+  }
+`
