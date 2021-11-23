@@ -41,3 +41,17 @@ export const ProjectsFragment = gql`
     slug
   }
 `
+
+export const ProjectFragment = gql`
+  fragment ProjectFragment on Project {
+    cover {
+      url
+    }
+    projectUrl
+    content {
+      html
+    }
+    projectCodeUrl
+    projectDesignUrl
+  }
+`
