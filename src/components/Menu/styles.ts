@@ -3,7 +3,7 @@ import media from 'styled-media-query'
 
 import { Container as ContainerStyles } from 'components/Container'
 
-export const Wrapper = styled.menu`
+export const Wrapper = styled.header`
   ${({ theme }) => css`
     background-color: ${theme.colors.bg.secondary.dark};
     width: 100%;

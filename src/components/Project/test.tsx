@@ -27,7 +27,7 @@ describe('<Project />', () => {
 
     expect(wrapperList).toBeInTheDocument()
     expect(wrapperGrid).not.toBeInTheDocument()
-    expect(image).toHaveAttribute('src', '/img/projects/kurtis.png')
+    expect(image).toBeInTheDocument()
     expect(name).toHaveStyle({
       'font-size': '3.2rem',
     })
@@ -51,7 +51,7 @@ describe('<Project />', () => {
 
     expect(wrapperList).not.toBeInTheDocument()
     expect(wrapperGrid).toBeInTheDocument()
-    expect(image).toHaveAttribute('src', '/img/projects/kurtis.png')
+    expect(image).toBeInTheDocument()
     expect(name).toHaveStyle({
       'font-size': '2.2rem',
     })

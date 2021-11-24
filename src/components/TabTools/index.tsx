@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { useState, Fragment } from 'react'
 
 import { CodeCurly } from '@styled-icons/boxicons-regular/CodeCurly'
@@ -26,7 +27,7 @@ const TabTools = ({ developer, design }: TabToolsProps) => {
     return (
       <Fragment key={`tool-${tool.name}`}>
         <S.Tool>
-          <S.Image src={tool.src} alt={tool.name} />
+          <Image src={tool.src} alt={tool.name} width={35} height={35} />
           <p>{tool.name}</p>
         </S.Tool>
       </Fragment>

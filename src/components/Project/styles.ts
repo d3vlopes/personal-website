@@ -22,6 +22,19 @@ export const ImageWrapper = styled.div`
     position: relative;
     z-index: 1;
 
+    div {
+      box-shadow: 10px 15px 10px 2px rgba(0, 0, 0, 0.15);
+    }
+
+    img {
+      width: 100%;
+      border-radius: ${theme.border.radius.small};
+
+      ${media.lessThan('medium')`
+        height: 21rem;
+      `}
+    }
+
     &::before {
       content: '';
       position: absolute;
@@ -42,19 +55,6 @@ export const ImageWrapper = styled.div`
         height: 20rem;
       `}
     }
-  `}
-`
-
-export const Image = styled.img`
-  ${({ theme }) => css`
-    width: 100%;
-    max-width: 51.3rem;
-    box-shadow: 10px 15px 10px 2px rgba(0, 0, 0, 0.15);
-    border-radius: ${theme.border.radius.small};
-
-    ${media.lessThan('medium')`
-      height: 21rem;
-    `}
   `}
 `
 
@@ -80,6 +80,7 @@ export const Description = styled.p`
 
 export const WrapperGrid = styled.div`
   ${({ theme }) => css`
+    position: relative;
     display: flex;
     flex-direction: column;
 
@@ -87,6 +88,15 @@ export const WrapperGrid = styled.div`
       text-decoration: none;
       color: ${theme.colors.text.light};
       transition: color ${theme.transition.default};
+
+      &:first-child {
+        box-shadow: 10px 15px 10px 2px rgba(0, 0, 0, 0.15);
+      }
+
+      img {
+        width: 100%;
+        border-radius: ${theme.border.radius.medium};
+      }
 
       &:hover {
         color: ${theme.colors.primary.main};
@@ -96,15 +106,6 @@ export const WrapperGrid = styled.div`
     ${HeadingStyles} {
       margin-bottom: 0;
     }
-  `}
-`
-
-export const ImageGrid = styled.img`
-  ${({ theme }) => css`
-    min-height: 35rem;
-    width: 100%;
-    border-radius: ${theme.border.radius.medium} ${theme.border.radius.medium} 0
-      0;
   `}
 `
 

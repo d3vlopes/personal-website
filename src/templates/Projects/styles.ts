@@ -109,7 +109,7 @@ export const SectionProjects = styled.section<LayoutDisplayProps>`
     animation: ${fadeIn ? `fade-in ${theme.transition.slow}` : ''};
     display: ${display === 'grid' ? 'grid' : 'flex'};
     flex-direction: ${display === 'list' ? 'column' : ''};
-    gap: ${display === 'grid' ? theme.spacings.xsmall : theme.spacings.huge};
+    gap: ${display === 'grid' ? theme.spacings.xsmall : '20rem'};
     grid-template-columns: ${display === 'grid'
       ? 'repeat(2, minmax(20rem, 1fr))'
       : ''};

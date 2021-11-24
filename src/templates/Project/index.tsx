@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { Github } from '@styled-icons/boxicons-logos'
 import { Behance } from '@styled-icons/evaicons-solid/Behance'
 import { OpenFolder } from '@styled-icons/fluentui-system-filled/OpenFolder'
@@ -44,12 +45,15 @@ const ProjectTemplate = ({
   return (
     <Base menu={menu} footer={footer}>
       <S.Wrapper>
-        <S.Cover
-          src={cover}
-          role="image"
-          aria-label="Imagem de destaque do projeto"
-          data-testid="cover"
-        />
+        <S.Cover>
+          <Image
+            data-testid="cover"
+            src={cover}
+            alt="Imagem de destaque do projeto"
+            layout="fill"
+            quality={100}
+          />
+        </S.Cover>
         <S.Main>
           <Container>
             <S.Content>

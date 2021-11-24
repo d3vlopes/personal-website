@@ -1,3 +1,5 @@
+import Image from 'next/image'
+
 import * as S from './styles'
 
 export type CardSkillProps = {
@@ -9,7 +11,7 @@ export type CardSkillProps = {
 const CardSkill = ({ icon, title, description }: CardSkillProps) => {
   return (
     <S.Wrapper>
-      <S.Icon src={icon} alt={title} />
+      <Image src={icon} alt={title} width={60} height={60} />
       <S.Title>{title}</S.Title>
       <S.Description>{description}</S.Description>
     </S.Wrapper>
