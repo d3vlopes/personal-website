@@ -2,7 +2,10 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 import { Wrapper as HeadingStyles } from 'components/Heading/styles'
-import { ContentGridContainer as ProjectStyles } from 'components/Project/styles'
+import {
+  ContentGridContainer as ProjectStyles,
+  WrapperGrid,
+} from 'components/Project/styles'
 
 export const Wrapper = styled.div``
 
@@ -48,6 +51,12 @@ export const SectionMoreProjects = styled.section`
     align-items: center;
     background-color: ${theme.colors.bg.secondary.main};
     padding: ${theme.spacings.xxlarge} 0;
+
+    ${WrapperGrid} {
+      img {
+        border-radius: ${theme.border.radius.medium};
+      }
+    }
 
     ${HeadingStyles} {
       margin-bottom: ${theme.spacings.xxlarge};

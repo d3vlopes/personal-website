@@ -89,13 +89,10 @@ export const WrapperGrid = styled.div`
       color: ${theme.colors.text.light};
       transition: color ${theme.transition.default};
 
-      &:first-child {
-        box-shadow: 10px 15px 10px 2px rgba(0, 0, 0, 0.15);
-      }
-
       img {
         width: 100%;
-        border-radius: ${theme.border.radius.medium};
+        border-radius: ${theme.border.radius.medium}
+          ${theme.border.radius.medium} 0 0;
       }
 
       &:hover {
