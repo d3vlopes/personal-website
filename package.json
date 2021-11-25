@@ -88,6 +88,7 @@
     "jest": "^27.0.6",
     "jest-styled-components": "^7.0.5",
     "lint-staged": "^11.0.0",
+    "next-sitemap": "^1.6.203",
     "plop": "^2.7.4",
     "prettier": "^2.3.2",
     "storybook-addon-designs": "^6.1.0",
