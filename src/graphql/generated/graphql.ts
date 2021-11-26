@@ -10272,3 +10272,8 @@ export type GetMoreProjectsQueryVariables = Exact<{
 
 
 export type GetMoreProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined }> };
+
+export type GetAllProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', updatedAt: any, slug: string }> };
