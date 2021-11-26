@@ -36,7 +36,7 @@ public/workbox-*.js
 # storybook
 storybook-static
 
-# assets
-
-# outside files
+#Seo
+public/robots.txt
+public/sitemap.xml
 
