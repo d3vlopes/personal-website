@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import { NextSeo } from 'next-seo'
 import { Github } from '@styled-icons/boxicons-logos'
 import { Behance } from '@styled-icons/evaicons-solid/Behance'
 import { OpenFolder } from '@styled-icons/fluentui-system-filled/OpenFolder'
@@ -24,6 +25,9 @@ export type ProjectTemplateProps = {
   projectCodeUrl: string
   projectDesignUrl: string
   moreProjects: ProjectProps[]
+  slug: string
+  name: string
+  description: string
 }
 
 const ProjectTemplate = ({
@@ -35,6 +39,9 @@ const ProjectTemplate = ({
   projectCodeUrl,
   projectDesignUrl,
   moreProjects,
+  slug,
+  name,
+  description,
 }: ProjectTemplateProps) => {
   const renderMoreProjects = (project: ProjectProps) => (
     <S.ProjectContainer key={`project-${project.slug}`} data-testid="project">
@@ -44,6 +51,22 @@ const ProjectTemplate = ({
 
   return (
     <Base menu={menu} footer={footer}>
+      <NextSeo
+        title={`${name} | Leandro Lopes`}
+        description={description}
+        canonical={`https://my-portfolio-d3vlopes.vercel.app/project/${slug}`}
+        openGraph={{
+          url: `https://my-portfolio-d3vlopes.vercel.app/project/${slug}`,
+          title: `${name} - Leandro Lopes`,
+          description,
+          images: [
+            {
+              url: cover,
+              alt: `${name}`,
+            },
+          ],
+        }}
+      />
       <S.Wrapper>
         <S.Cover>
           <Image

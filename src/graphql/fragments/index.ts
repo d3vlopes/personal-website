@@ -53,5 +53,7 @@ export const ProjectFragment = gql`
     }
     projectCodeUrl
     projectDesignUrl
+    name
+    description
   }
 `
