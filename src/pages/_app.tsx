@@ -20,7 +20,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="manifest" href="/manifest.json" />
         <meta
           name="description"
-          content="Site pessoal onde falo sobre mim e dos meus trabalhos como desenvolvedor e design"
+          content="Site pessoal onde mostro um pouco sobre mim e dos meus trabalhos como desenvolvedor e design"
         />
       </Head>
       <DefaultSeo {...SEO} />

@@ -1,5 +1,5 @@
 {
-  "name": "Leandro Lopes - Desenvolvedor Frontend | UI Design",
+  "name": "Leandro Lopes | Desenvolvedor Frontend, UI Design",
   "short_name": "Leandro Lopes",
   "icons": [
     {
@@ -14,7 +14,7 @@
     }
   ],
   "background_color": "#23252F",
-  "description": "Site para mostrar sobre mim e meus trabalhos como desenvolvedor e design",
+  "description": "Site pessoal onde mostro um pouco sobre mim e dos meus trabalhos como desenvolvedor e design",
   "display": "fullscreen",
   "start_url": "/",
   "theme_color": "#23252F"
