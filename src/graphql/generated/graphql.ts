@@ -10220,7 +10220,7 @@ export type FooterFragmentFragment = { __typename?: 'Footer', contactsLinks: Arr
 
 export type ProjectsFragmentFragment = { __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined };
 
-export type ProjectFragmentFragment = { __typename?: 'Project', projectUrl?: string | null | undefined, projectCodeUrl?: string | null | undefined, projectDesignUrl?: string | null | undefined, cover?: { __typename?: 'Asset', url: string } | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined };
+export type ProjectFragmentFragment = { __typename?: 'Project', projectUrl?: string | null | undefined, projectCodeUrl?: string | null | undefined, projectDesignUrl?: string | null | undefined, name?: string | null | undefined, description?: string | null | undefined, cover?: { __typename?: 'Asset', url: string } | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined };
 
 export type GetHomeQueryVariables = Exact<{
   menuSlug: Scalars['String'];
@@ -10263,7 +10263,7 @@ export type GetProjectQueryVariables = Exact<{
 }>;
 
 
-export type GetProjectQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined, projects: Array<{ __typename?: 'Project', projectUrl?: string | null | undefined, projectCodeUrl?: string | null | undefined, projectDesignUrl?: string | null | undefined, cover?: { __typename?: 'Asset', url: string } | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined }>, footer?: { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined };
+export type GetProjectQuery = { __typename?: 'Query', menu?: { __typename?: 'Menu', links: Array<{ __typename?: 'Page', id: string, path: string, menuLabel: string }>, contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined, projects: Array<{ __typename?: 'Project', projectUrl?: string | null | undefined, projectCodeUrl?: string | null | undefined, projectDesignUrl?: string | null | undefined, name?: string | null | undefined, description?: string | null | undefined, cover?: { __typename?: 'Asset', url: string } | null | undefined, content?: { __typename?: 'RichText', html: string } | null | undefined }>, footer?: { __typename?: 'Footer', contactsLinks: Array<{ __typename?: 'ContactLinks', name: string, link: string, icon: { __typename?: 'Asset', url: string } }> } | null | undefined };
 
 export type GetMoreProjectsQueryVariables = Exact<{
   slug?: Maybe<Scalars['String']>;
@@ -10272,3 +10272,8 @@ export type GetMoreProjectsQueryVariables = Exact<{
 
 
 export type GetMoreProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', name?: string | null | undefined, description?: string | null | undefined, slug: string, thumbnail?: { __typename?: 'Asset', url: string } | null | undefined }> };
+
+export type GetAllProjectsQueryVariables = Exact<{ [key: string]: never; }>;
+
+
+export type GetAllProjectsQuery = { __typename?: 'Query', projects: Array<{ __typename?: 'Project', updatedAt: any, slug: string }> };

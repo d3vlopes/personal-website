@@ -72,7 +72,7 @@ describe('<ProjectTemplate />', () => {
 
     expect(getByTestId('Mock Menu')).toBeInTheDocument()
 
-    expect(banner).toHaveAttribute('src', '/img/project/won-games.png')
+    expect(banner).toBeInTheDocument()
     expect(getByTestId('Mock TextContent')).toBeInTheDocument()
     expect(buttonVisit).toBeInTheDocument()
     expect(buttonViewCode).toBeInTheDocument()

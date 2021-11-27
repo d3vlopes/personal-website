@@ -100,7 +100,7 @@ describe('<Projects />', () => {
       animation: 'fade-in 0.5s ease-in-out',
       display: 'flex',
       'flex-direction': 'column',
-      gap: '12rem',
+      gap: '20rem',
       margin: '12rem 0',
     })
 

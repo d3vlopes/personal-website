@@ -79,6 +79,9 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       projectCodeUrl: project?.projectCodeUrl,
       projectDesignUrl: project?.projectDesignUrl,
       moreProjects: projectsMapper(moreProjects),
+      name: project.name,
+      description: project.description,
+      slug,
     },
   }
 }

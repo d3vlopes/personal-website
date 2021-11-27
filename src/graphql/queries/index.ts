@@ -156,3 +156,12 @@ export const GET_MORE_PROJECTS = gql`
     }
   }
 `
+
+export const GET_ALL_PROJECTS = gql`
+  query getAllProjects {
+    projects {
+      updatedAt
+      slug
+    }
+  }
+`

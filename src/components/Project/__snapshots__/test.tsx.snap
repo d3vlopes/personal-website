@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<Project /> should match snapshot 1`] = `
-.c4 {
+.c3 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -12,7 +12,7 @@ exports[`<Project /> should match snapshot 1`] = `
   line-height: calc(3.2rem + 1rem);
 }
 
-.c6 {
+.c5 {
   display: -webkit-inline-box;
   display: -webkit-inline-flex;
   display: -ms-inline-flexbox;
@@ -39,21 +39,21 @@ exports[`<Project /> should match snapshot 1`] = `
   height: 5rem;
 }
 
-.c6:focus {
+.c5:focus {
   outline: 1px dashed #DEE7EA;
 }
 
-.c6:hover {
+.c5:hover {
   -webkit-transform: translateY(-0.5rem);
   -ms-transform: translateY(-0.5rem);
   transform: translateY(-0.5rem);
 }
 
-.c6:hover svg {
+.c5:hover svg {
   color: #6D59A8;
 }
 
-.c6 span {
+.c5 span {
   font-family: Rubik,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Oxygen,Ubuntu,Cantarell,'Open Sans','Helvetica Neue',sans-serif;
   font-weight: 500;
   line-height: 100%;
@@ -64,11 +64,11 @@ exports[`<Project /> should match snapshot 1`] = `
   letter-spacing: 0.05rem;
 }
 
-.c6:hover {
+.c5:hover {
   background-color: #543F8C;
 }
 
-.c6 svg {
+.c5 svg {
   width: 2.2rem;
   height: 2.2rem;
 }
@@ -86,6 +86,15 @@ exports[`<Project /> should match snapshot 1`] = `
   z-index: 1;
 }
 
+.c1 div {
+  box-shadow: 10px 15px 10px 2px rgba(0,0,0,0.15);
+}
+
+.c1 img {
+  width: 100%;
+  border-radius: 0.4rem;
+}
+
 .c1::before {
   content: '';
   position: absolute;
@@ -99,13 +108,6 @@ exports[`<Project /> should match snapshot 1`] = `
 }
 
 .c2 {
-  width: 100%;
-  max-width: 51.3rem;
-  box-shadow: 10px 15px 10px 2px rgba(0,0,0,0.15);
-  border-radius: 0.4rem;
-}
-
-.c3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -115,7 +117,7 @@ exports[`<Project /> should match snapshot 1`] = `
   flex-direction: column;
 }
 
-.c5 {
+.c4 {
   font-size: 1.8rem;
   line-height: 170%;
   color: #DEE7EA;
@@ -142,6 +144,12 @@ exports[`<Project /> should match snapshot 1`] = `
   }
 }
 
+@media (max-width:768px) {
+  .c1 img {
+    height: 21rem;
+  }
+}
+
 @media (min-width:768px) and (max-width:1440px) {
   .c1::before {
     left: -2.6rem;
@@ -156,13 +164,7 @@ exports[`<Project /> should match snapshot 1`] = `
 }
 
 @media (max-width:768px) {
-  .c2 {
-    height: 21rem;
-  }
-}
-
-@media (max-width:768px) {
-  .c5 {
+  .c4 {
     font-size: 1.6rem;
   }
 }
@@ -177,28 +179,45 @@ exports[`<Project /> should match snapshot 1`] = `
     <a
       href="/project/kurtis-classrom"
     >
-      <img
-        alt="Project Name"
-        class="c2"
-        src="/img/projects/kurtis.png"
-      />
+      <div
+        style="display: inline-block; max-width: 100%; overflow: hidden; position: relative; box-sizing: border-box; margin: 0px;"
+      >
+        <div
+          style="box-sizing: border-box; display: block; max-width: 100%;"
+        >
+          <img
+            alt=""
+            aria-hidden="true"
+            src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNTEzIiBoZWlnaHQ9IjI0OSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2ZXJzaW9uPSIxLjEiLz4="
+            style="max-width: 100%; display: block; margin: 0px; padding: 0px;"
+          />
+        </div>
+        <noscript />
+        <img
+          alt="Project Name"
+          data-nimg="true"
+          decoding="async"
+          src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          style="position: absolute; top: 0px; left: 0px; bottom: 0px; right: 0px; box-sizing: border-box; padding: 0px; margin: auto; display: block; width: 0px; height: 0px; min-width: 100%; max-width: 100%; min-height: 100%; max-height: 100%;"
+        />
+      </div>
     </a>
   </div>
   <div
-    class="c3"
+    class="c2"
   >
     <h3
-      class="c4"
+      class="c3"
     >
       Project Name
     </h3>
     <p
-      class="c5"
+      class="c4"
     >
       Loren ipsum dolor
     </p>
     <a
-      class="c6"
+      class="c5"
       data-testid="button"
       href="/project/kurtis-classrom"
     >

@@ -2,10 +2,11 @@ import { useState } from 'react'
 import toast, { Toaster } from 'react-hot-toast'
 import { SpinnerIos as Spinner } from '@styled-icons/fluentui-system-filled/SpinnerIos'
 
+import { sendMail } from 'services/sendMail'
+
 import FormField from 'components/FormField'
 
 import * as S from './styles'
-import { sendMail } from 'services/sendMail'
 
 const Form = () => {
   const [values, setValues] = useState({

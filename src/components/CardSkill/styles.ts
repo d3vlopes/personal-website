@@ -32,10 +32,6 @@ export const Wrapper = styled.div`
   `}
 `
 
-export const Icon = styled.img`
-  max-width: min(6rem, 100%);
-`
-
 export const Title = styled.h3`
   ${({ theme }) => css`
     position: relative;
