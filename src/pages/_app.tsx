@@ -1,3 +1,4 @@
+import NextNprogress from 'nextjs-progressbar'
 import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
@@ -22,8 +23,17 @@ function App({ Component, pageProps }: AppProps) {
           content="Site pessoal onde falo sobre mim e dos meus trabalhos como desenvolvedor e design"
         />
       </Head>
-      <GlobalStyles />
       <DefaultSeo {...SEO} />
+      <GlobalStyles />
+      <NextNprogress
+        color="#6D59A8"
+        startPosition={0.3}
+        stopDelayMs={200}
+        height={5}
+        options={{
+          showSpinner: false,
+        }}
+      />
       <Script
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
