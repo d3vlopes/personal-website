@@ -25,9 +25,9 @@ export type ProjectTemplateProps = {
   projectCodeUrl: string
   projectDesignUrl: string
   moreProjects: ProjectProps[]
-  slug: string
-  name: string
-  description: string
+  slug?: string
+  name?: string
+  description?: string
 }
 
 const ProjectTemplate = ({
