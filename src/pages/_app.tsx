@@ -3,7 +3,7 @@ import Head from 'next/head'
 import { AppProps } from 'next/app'
 import { ThemeProvider } from 'styled-components'
 import { DefaultSeo } from 'next-seo'
-import Script from 'next/script'
+// import Script from 'next/script'
 
 import SEO from '../../next-seo.config'
 
@@ -34,7 +34,7 @@ function App({ Component, pageProps }: AppProps) {
           showSpinner: false,
         }}
       />
-      <Script
+      {/* <Script
         strategy="lazyOnload"
         src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}`}
       />
@@ -45,7 +45,7 @@ function App({ Component, pageProps }: AppProps) {
           gtag('js', new Date());
           gtag('config', '${process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS}');
         `}
-      </Script>
+      </Script> */}
       <Component {...pageProps} />
     </ThemeProvider>
   )
