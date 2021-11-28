@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetServerSideProps } from 'next'
 
 import HomeTemplate, { HomeTemplateProps } from 'templates/Home'
 
@@ -21,7 +21,7 @@ export default function Index(props: HomeTemplateProps) {
   return <HomeTemplate {...props} />
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const {
     menu,
     footer,
@@ -62,6 +62,5 @@ export const getStaticProps: GetStaticProps = async () => {
       tools: toolsMapper(tools),
       projects: projectsMapper(projects),
     },
-    revalidate: 60 * 60 * 24,
   }
 }
