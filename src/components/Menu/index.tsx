@@ -17,7 +17,7 @@ type MenuLink = {
 export type MenuProps = {
   links: MenuLink[]
   contactLinks: ContactLinkProps[]
-  activeLink?: '/' | '/projects' | '/about' | '/learning' | '/contact' | string
+  activeLink?: '/' | '/projects' | '/about' | '/learning' | string
 }
 
 const Menu = ({ links, contactLinks, activeLink }: MenuProps) => {
