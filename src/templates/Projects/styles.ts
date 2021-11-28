@@ -8,7 +8,7 @@ export const Wrapper = styled.main`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: ${theme.spacings.large} 0 ${theme.spacings.xxlarge} 0;
+    padding: 15rem 0 ${theme.spacings.xxlarge} 0;
 
     ${HeadingStyles},
     ${Subtitle} {

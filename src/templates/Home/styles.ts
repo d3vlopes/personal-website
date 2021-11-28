@@ -10,10 +10,10 @@ import { Wrapper as FormStyles } from 'components/Form/styles'
 export const Hero = styled.div`
   ${({ theme }) => css`
     ${HeroStyles} {
-      margin: ${theme.spacings.medium} 0 ${theme.spacings.xxlarge};
+      margin: 20rem 0 ${theme.spacings.xxlarge};
 
       ${media.lessThan('medium')`
-        margin: ${theme.spacings.medium} 0 ${theme.spacings.large};
+        margin: ${theme.spacings.huge} 0 ${theme.spacings.large};
       `}
     }
   `}
