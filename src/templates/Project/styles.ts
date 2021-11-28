@@ -26,7 +26,11 @@ export const Main = styled.main``
 
 export const Content = styled.div`
   max-width: 59.7rem;
-  margin: calc(60rem + 4rem) auto 0;
+  margin: 80rem auto 0;
+
+  ${media.lessThan('medium')`
+    margin: 76rem auto 0;
+  `}
 `
 
 export const ButtonGroup = styled.div`

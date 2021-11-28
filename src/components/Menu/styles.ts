@@ -5,10 +5,12 @@ import { Container as ContainerStyles } from 'components/Container'
 
 export const Wrapper = styled.header`
   ${({ theme }) => css`
+    position: fixed;
     background-color: ${theme.colors.bg.secondary.dark};
     width: 100%;
     padding-top: ${theme.spacings.small};
     padding-bottom: ${theme.spacings.small};
+    z-index: ${theme.layers.menu};
 
     ${ContainerStyles} {
       display: grid;
@@ -108,6 +110,10 @@ export const ContactLinks = styled.div`
     display: flex;
     gap: ${theme.spacings.xsmall};
     justify-content: end;
+
+    ${media.lessThan('medium')`
+      margin-top: ${theme.spacings.medium};
+    `}
   `}
 `
 
