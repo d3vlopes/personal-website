@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next'
 
 import HomeTemplate, { HomeTemplateProps } from 'templates/Home'
 
-import { GET_HOME, GET_RECENTS_PROJECTS } from 'graphql/queries'
+import { GET_HOME_PAGE, GET_RECENTS_PROJECTS } from 'graphql/queries'
 import {
   GetHomeQuery,
   GetRecentsProjectsQuery,
@@ -11,7 +11,7 @@ import {
 import {
   contactsLinksMapper,
   linksMapper,
-  projectsRecentsMapper,
+  projectsMapper,
   skillsMapper,
   toolsMapper,
 } from 'utils/mappers'
@@ -28,7 +28,7 @@ export const getStaticProps: GetStaticProps = async () => {
     heroes: hero,
     skills,
     tools,
-  } = await api.request<GetHomeQuery>(GET_HOME, {
+  } = await api.request<GetHomeQuery>(GET_HOME_PAGE, {
     menuSlug: 'primary',
     footerSlug: 'primary',
   })
@@ -60,7 +60,7 @@ export const getStaticProps: GetStaticProps = async () => {
       },
       skills: skillsMapper(skills),
       tools: toolsMapper(tools),
-      projects: projectsRecentsMapper(projects),
+      projects: projectsMapper(projects),
     },
     revalidate: 60 * 60 * 24,
   }

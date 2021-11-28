@@ -1,4 +1,5 @@
 import { Fragment } from 'react'
+import { NextSeo } from 'next-seo'
 
 import Base from 'templates/Base'
 
@@ -38,6 +39,7 @@ const AboutTemplate = ({
 
   return (
     <Base menu={menu} footer={footer}>
+      <NextSeo title={'Sobre mim | Leandro Lopes'} description={subtitle} />
       <S.Wrapper>
         <Heading lineBottom>{title}</Heading>
         <S.Subtitle>{subtitle}</S.Subtitle>

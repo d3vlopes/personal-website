@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 import Heading from 'components/Heading'
 import Button from 'components/Button'
@@ -26,7 +27,13 @@ const Project = ({
         <S.ImageWrapper data-testid="list">
           <Link href={`/project/${slug}`} passHref>
             <a>
-              <S.Image src={src} alt={name} />
+              <Image
+                src={src}
+                alt={name}
+                width={513}
+                height={249}
+                quality={100}
+              />
             </a>
           </Link>
         </S.ImageWrapper>
@@ -54,7 +61,14 @@ const Project = ({
       <S.WrapperGrid data-testid="grid">
         <Link href={`/project/${slug}`} passHref>
           <a>
-            <S.ImageGrid src={src} alt={name} />
+            <Image
+              src={src}
+              alt={name}
+              width={397}
+              height={292}
+              quality={100}
+              layout="responsive"
+            />
           </a>
         </Link>
         <Link href={`/project/${slug}`} passHref>

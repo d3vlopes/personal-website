@@ -1,7 +1,7 @@
 import {
   ContactLinksProps,
   MenuLinkProps,
-  ProjectsRecentsProps,
+  ProjectsProps,
   SkillsProps,
   TimelinesProps,
   ToolsProps,
@@ -51,7 +51,7 @@ export const toolsMapper = (tools: ToolsProps[]) => {
   }
 }
 
-export const projectsRecentsMapper = (projects: ProjectsRecentsProps[]) => {
+export const projectsMapper = (projects: ProjectsProps[]) => {
   return projects.map((project) => ({
     src: project.thumbnail?.url,
     name: project.name,

@@ -46,6 +46,7 @@ export const Wrapper = styled.div`
     img {
       max-width: 100%;
       transition: all ${theme.transition.default};
+      margin: ${theme.spacings.xsmall} 0;
 
       &:hover {
         transform: scale(1.1);

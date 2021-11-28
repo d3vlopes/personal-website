@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { NextSeo } from 'next-seo'
 import { ViewList as List, Grid } from '@styled-icons/bootstrap/'
 
 import Base from 'templates/Base'
@@ -57,6 +58,7 @@ const ProjectsTemplate = ({
 
   return (
     <Base menu={menu} footer={footer}>
+      <NextSeo title={'Projetos | Leandro Lopes'} description={subtitle} />
       <S.Wrapper>
         <Heading lineBottom>{title}</Heading>
         <S.Subtitle>{subtitle}</S.Subtitle>

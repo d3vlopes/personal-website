@@ -2,50 +2,44 @@ import styled, { css } from 'styled-components'
 import media from 'styled-media-query'
 
 import { Wrapper as HeadingStyles } from 'components/Heading/styles'
-import { ContentGridContainer as ProjectStyles } from 'components/Project/styles'
+import {
+  ContentGridContainer as ProjectStyles,
+  WrapperGrid,
+} from 'components/Project/styles'
 
 export const Wrapper = styled.div``
 
-type CoverProps = {
-  src: string
-}
-
-export const Cover = styled.div<CoverProps>`
-  ${({ src }) => css`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 11.2rem;
-    right: 0;
-    left: 0;
-    height: 60rem;
-    background-image: linear-gradient(
-        177.39deg,
-        rgba(0, 0, 0, 0.05) 45%,
-        rgba(0, 0, 0, 0) 100%
-      ),
-      url(${src});
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-  `}
+export const Cover = styled.div`
+  position: absolute;
+  top: 11.2rem;
+  right: 0;
+  left: 0;
+  height: 60rem;
+  background-image: linear-gradient(
+    177.39deg,
+    rgba(0, 0, 0, 0.05) 45%,
+    rgba(0, 0, 0, 0) 100%
+  );
 `
 
 export const Main = styled.main``
 
 export const Content = styled.div`
   max-width: 59.7rem;
-  margin: calc(60rem + 4rem) auto 0;
+  margin: 80rem auto 0;
+
+  ${media.lessThan('medium')`
+    margin: 76rem auto 0;
+  `}
 `
 
 export const ButtonGroup = styled.div`
   ${({ theme }) => css`
     display: flex;
-    justify-content: center;
     gap: ${theme.spacings.xsmall};
-    margin: ${theme.spacings.large} 0 ${theme.spacings.xxlarge};
+    margin: ${theme.spacings.large} auto ${theme.spacings.xxlarge};
     width: 100%;
+    max-width: 59.7rem;
 
     ${media.lessThan('medium')`
       flex-direction: column;
@@ -61,6 +55,12 @@ export const SectionMoreProjects = styled.section`
     align-items: center;
     background-color: ${theme.colors.bg.secondary.main};
     padding: ${theme.spacings.xxlarge} 0;
+
+    ${WrapperGrid} {
+      img {
+        border-radius: ${theme.border.radius.medium};
+      }
+    }
 
     ${HeadingStyles} {
       margin-bottom: ${theme.spacings.xxlarge};

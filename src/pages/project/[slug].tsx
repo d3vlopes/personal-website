@@ -1,14 +1,21 @@
+import { GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
+import {
+  GetMoreProjectsQuery,
+  GetProjectQuery,
+  GetProjectsQuery,
+} from 'graphql/generated/graphql'
+import {
+  GET_MORE_PROJECTS,
+  GET_PROJECTS_PAGE,
+  GET_PROJECT_PAGE,
+} from 'graphql/queries'
+
+import { api } from 'services/api'
+import { contactsLinksMapper, linksMapper, projectsMapper } from 'utils/mappers'
+
 import ProjectTemplate, { ProjectTemplateProps } from 'templates/Project'
-
-import mockMenu from 'components/Menu/mock'
-import mockFooter from 'components/ContactLink/mock'
-import { project as mockContent } from 'components/TextContent/mock'
-import mockProjects from 'components/Project/mock'
-
-import projectsMock from 'components/Project/mock'
-import { GetStaticProps } from 'next'
 
 export default function Index(props: ProjectTemplateProps) {
   const router = useRouter()
@@ -18,32 +25,63 @@ export default function Index(props: ProjectTemplateProps) {
 }
 
 export async function getStaticPaths() {
-  const data = projectsMock
+  const { projects } = await api.request<GetProjectsQuery>(GET_PROJECTS_PAGE, {
+    menuSlug: 'primary',
+    first: 12,
+    footerSlug: 'primary',
+  })
 
-  const paths = data.map(({ slug }) => ({
+  const paths = projects.map(({ slug }) => ({
     params: { slug },
   }))
 
   return { paths, fallback: true }
 }
 
-export const getStaticProps: GetStaticProps = async () => {
-  const data = projectsMock
+export const getStaticProps: GetStaticProps = async ({ params }) => {
+  const slug = params?.slug
 
-  if (!data.length) {
+  const { menu, footer, projects } = await api.request<GetProjectQuery>(
+    GET_PROJECT_PAGE,
+    {
+      menuSlug: 'primary',
+      projectSlug: slug,
+      footerSlug: 'primary',
+    },
+  )
+
+  if (!projects.length) {
     return { notFound: true }
   }
 
+  const { links, contactsLinks: menuContactLinks } = menu!
+  const { contactsLinks: footerContactLinks } = footer!
+  const project = projects[0]
+
+  const { projects: moreProjects } = await api.request<GetMoreProjectsQuery>(
+    GET_MORE_PROJECTS,
+    {
+      slug,
+      first: 3,
+    },
+  )
+
   return {
     props: {
-      menu: mockMenu,
-      footer: mockFooter,
-      cover: '/img/project/won-games.jpg',
-      projectUrl: 'http://https://www.projecturl.com',
-      content: mockContent,
-      projectCodeUrl: 'https://www.google.com',
-      projectDesignUrl: 'https://www.behance.net',
-      moreProjects: mockProjects.slice(0, 3),
+      menu: {
+        links: linksMapper(links),
+        contactLinks: contactsLinksMapper(menuContactLinks),
+      },
+      footer: contactsLinksMapper(footerContactLinks),
+      cover: project.cover?.url,
+      projectUrl: project?.projectUrl,
+      content: project.content?.html,
+      projectCodeUrl: project?.projectCodeUrl,
+      projectDesignUrl: project?.projectDesignUrl,
+      moreProjects: projectsMapper(moreProjects),
+      name: project.name,
+      description: project.description,
+      slug,
     },
   }
 }

@@ -46,6 +46,7 @@ exports[`<TextContent /> should match snapshot 1`] = `
   max-width: 100%;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  margin: 1.6rem 0;
 }
 
 .c0 img:hover {
