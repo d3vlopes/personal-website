@@ -31,7 +31,7 @@ export const Wrapper = styled.main`
 
 export const Subtitle = styled.h2`
   ${({ theme }) => css`
-    margin-bottom: ${theme.spacings.medium};
+    margin: 0 ${theme.spacings.xxsmall} ${theme.spacings.medium};
     font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.weight.regular};
     line-height: 120%;
