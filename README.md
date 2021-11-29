@@ -2,7 +2,7 @@
   <img src=".github/logo.svg" alt="Leandro Lopes">
 </div>
 
-![My Portfolio preview](.github/preview.png)
+![My Portfolio preview](.github/preview.jpg)
 
 ## Sobre
 <h4 align="left">
