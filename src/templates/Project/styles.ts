@@ -20,6 +20,10 @@ export const Cover = styled.div`
     rgba(0, 0, 0, 0.05) 45%,
     rgba(0, 0, 0, 0) 100%
   );
+
+  ${media.lessThan('medium')`
+    height: 45rem;
+  `}
 `
 
 export const Main = styled.main``
@@ -29,7 +33,7 @@ export const Content = styled.div`
   margin: 80rem auto 0;
 
   ${media.lessThan('medium')`
-    margin: 76rem auto 0;
+    margin: 60rem auto 0;
   `}
 `
 
