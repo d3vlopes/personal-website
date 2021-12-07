@@ -83,5 +83,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
       description: project.description,
       slug,
     },
+    revalidate: 60,
   }
 }
