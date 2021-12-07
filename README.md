@@ -37,4 +37,4 @@ https://my-portfolio-d3vlopes.vercel.app
 - [GraphCMS](https://graphcms.com/)
 
 ## Layout
-Você pode visualizar o layout do projeto <a href="https://www.figma.com/file/KIQWZ47GDrrNCIxysbEqOA/My-Portfolio?node-id=1191%3A1218" target="_blank">clicando aqui</a>.
+Você pode visualizar o layout do projeto <a href="https://www.figma.com/file/msZGD49dCxyy2iDAoN7Hav/My-Portfolio-(Public)?node-id=1201%3A989" target="_blank">clicando aqui</a>.
