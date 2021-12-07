@@ -1,6 +1,6 @@
 {
   "name": "my-portfolio",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -57,7 +57,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.6",
-    "@babel/preset-typescript": "^7.12.7",
+    "@babel/preset-typescript": "^7.16.0",
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@graphql-codegen/add": "^3.1.0",
