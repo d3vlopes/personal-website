@@ -1,6 +1,6 @@
 {
   "name": "my-portfolio",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -71,7 +71,7 @@
     "@testing-library/user-event": "^13.1.6",
     "@types/jest": "^26.0.24",
     "@types/node": "^16.3.1",
-    "@types/react": "^17.0.18",
+    "@types/react": "^17.0.37",
     "@types/styled-components": "^5.1.12",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
     "@typescript-eslint/parser": "^4.28.3",
