@@ -1,3 +1,5 @@
+import { GetStaticProps } from 'next'
+
 import AboutTemplate, { AboutTemplateProps } from 'templates/About'
 
 import { GET_ABOUT_PAGE } from 'graphql/queries'
@@ -28,7 +30,7 @@ export default function AboutPage(props: AboutTemplateProps) {
   return <AboutTemplate {...props} />
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const { menu, footer, page } = await api.request<GetAboutQuery>(
     GET_ABOUT_PAGE,
     {
@@ -71,5 +73,6 @@ export async function getStaticProps() {
       },
       cardTimeline: timelinesMapper(blockTimelines),
     },
+    revalidate: 60 * 60 * 24,
   }
 }
