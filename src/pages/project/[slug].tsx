@@ -1,4 +1,4 @@
-import { GetStaticProps } from 'next'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { useRouter } from 'next/router'
 
 import {
@@ -24,7 +24,7 @@ export default function Index(props: ProjectTemplateProps) {
   return <ProjectTemplate {...props} />
 }
 
-export async function getStaticPaths() {
+export const getStaticPaths: GetStaticPaths = async () => {
   const { projects } = await api.request<GetProjectsQuery>(GET_PROJECTS_PAGE, {
     menuSlug: 'primary',
     first: 12,
