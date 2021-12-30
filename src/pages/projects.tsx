@@ -1,3 +1,5 @@
+import { GetStaticProps } from 'next'
+
 import { GetProjectsQuery } from 'graphql/generated/graphql'
 import { GET_PROJECTS_PAGE } from 'graphql/queries'
 
@@ -10,7 +12,7 @@ export default function Projects(props: ProjectsTemplateProps) {
   return <ProjectsTemplate {...props} />
 }
 
-export async function getStaticProps() {
+export const getStaticProps: GetStaticProps = async () => {
   const { menu, footer, page, projects } = await api.request<GetProjectsQuery>(
     GET_PROJECTS_PAGE,
     {
