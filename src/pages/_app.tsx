@@ -22,6 +22,10 @@ function App({ Component, pageProps }: AppProps) {
           name="description"
           content="Site pessoal onde mostro um pouco sobre mim e dos meus trabalhos como desenvolvedor e design"
         />
+        <meta
+          name="google-site-verification"
+          content="SHR0iLsieaSD3nyflAp7wd7TkRY_uGLtY06Tl30RbNU"
+        />
       </Head>
       <DefaultSeo {...SEO} />
       <GlobalStyles />
