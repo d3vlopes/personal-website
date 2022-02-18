@@ -73,35 +73,6 @@ const HomeTemplate = ({
         <TabTools {...tools} />
       </S.SectionTools>
 
-      {/* <Container>
-        <S.CallOfLearning data-testid="call of learning">
-          <S.Content>
-            <Heading as="h2" size="huge">
-              Minha jornada de aprendizado
-            </Heading>
-            <MediaMatch greaterThan="medium">
-              <Link href="/learning" passHref>
-                <Button
-                  variant="secondary"
-                  size="large"
-                  hoverUp
-                  data-testid="button"
-                >
-                  Saber mais
-                </Button>
-              </Link>
-            </MediaMatch>
-            <MediaMatch lessThan="medium">
-              <Link href="/learning" passHref>
-                <Button variant="secondary" size="medium" hoverUp>
-                  Saber mais
-                </Button>
-              </Link>
-            </MediaMatch>
-          </S.Content>
-          <S.Image data-testid="call of learning image" />
-        </S.CallOfLearning>
-      </Container> */}
       <S.SectionProjectsRecents>
         <Heading as="h2" lineBottom size="huge">
           Projetos recentes
