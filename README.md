@@ -22,7 +22,7 @@ https://my-portfolio-d3vlopes.vercel.app
 - Criação de componentes com [Storybook](https://storybook.js.org/)
 - Testes com [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) & [Jest](https://jestjs.io/)
 - Consumo de dados com [GraphQL](https://graphql.org/)
-- Envio de email com [GraphQL](https://graphql.org/)
+- Envio de email com [EmailJS](https://www.emailjs.com)
 
 
 ## Outras tecnologias e ferramentas utilizadas
