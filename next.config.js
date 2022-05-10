@@ -8,6 +8,6 @@ module.exports = withPWA({
     disable: !isProd,
   },
   images: {
-    domains: ['localhost', 'media.graphcms.com'],
+    domains: ['localhost', 'media.graphassets.com'],
   },
 })
