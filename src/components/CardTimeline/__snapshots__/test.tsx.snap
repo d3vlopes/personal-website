@@ -137,6 +137,10 @@ exports[`<CardTimeline /> should match snapshot  1`] = `
   margin: 2.4rem;
 }
 
+.c2 video {
+  max-width: 100%;
+}
+
 .c0 {
   position: relative;
   background: #302F43;
