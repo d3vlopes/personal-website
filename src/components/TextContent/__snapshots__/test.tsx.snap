@@ -137,6 +137,10 @@ exports[`<TextContent /> should match snapshot 1`] = `
   margin: 2.4rem;
 }
 
+.c0 video {
+  max-width: 100%;
+}
+
 @media (max-width:768px) {
   .c0 {
     font-size: 1.6rem;

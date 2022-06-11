@@ -75,6 +75,7 @@ const ProjectTemplate = ({
             alt="Imagem de destaque do projeto"
             layout="fill"
             quality={100}
+            placeholder="empty"
           />
         </S.Cover>
         <S.Main>
