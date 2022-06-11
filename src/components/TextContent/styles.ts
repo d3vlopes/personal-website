@@ -146,5 +146,9 @@ export const Wrapper = styled.div`
       padding-left: ${theme.spacings.small};
       margin: ${theme.spacings.small};
     }
+
+    video {
+      max-width: 100%;
+    }
   `}
 `
